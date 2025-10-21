@@ -1,0 +1,2645 @@
+quarter,year,city,cpi_index
+Sep-1948,1948,Australia,3.7
+Sep-1948,1948,Greater Sydney,3.7
+Sep-1948,1948,Greater Melbourne,3.8
+Sep-1948,1948,Greater Brisbane,3.7
+Sep-1948,1948,Greater Adelaide,3.8
+Sep-1948,1948,Greater Perth,3.7
+Sep-1948,1948,Greater Hobart,3.8
+Sep-1948,1948,Australian Capital Territory,3.9
+Dec-1948,1948,Australia,3.8
+Dec-1948,1948,Greater Sydney,3.7
+Dec-1948,1948,Greater Melbourne,3.8
+Dec-1948,1948,Greater Brisbane,3.7
+Dec-1948,1948,Greater Adelaide,3.9
+Dec-1948,1948,Greater Perth,3.8
+Dec-1948,1948,Greater Hobart,3.9
+Dec-1948,1948,Australian Capital Territory,4.1
+Mar-1949,1949,Australia,3.9
+Mar-1949,1949,Greater Sydney,3.9
+Mar-1949,1949,Greater Melbourne,3.9
+Mar-1949,1949,Greater Brisbane,3.8
+Mar-1949,1949,Greater Adelaide,4.0
+Mar-1949,1949,Greater Perth,3.9
+Mar-1949,1949,Greater Hobart,4.0
+Mar-1949,1949,Australian Capital Territory,4.1
+Jun-1949,1949,Australia,4.0
+Jun-1949,1949,Greater Sydney,3.9
+Jun-1949,1949,Greater Melbourne,4.0
+Jun-1949,1949,Greater Brisbane,3.9
+Jun-1949,1949,Greater Adelaide,4.0
+Jun-1949,1949,Greater Perth,4.0
+Jun-1949,1949,Greater Hobart,4.1
+Jun-1949,1949,Australian Capital Territory,4.2
+Sep-1949,1949,Australia,4.1
+Sep-1949,1949,Greater Sydney,4.0
+Sep-1949,1949,Greater Melbourne,4.1
+Sep-1949,1949,Greater Brisbane,4.0
+Sep-1949,1949,Greater Adelaide,4.1
+Sep-1949,1949,Greater Perth,4.1
+Sep-1949,1949,Greater Hobart,4.1
+Sep-1949,1949,Australian Capital Territory,4.3
+Dec-1949,1949,Australia,4.1
+Dec-1949,1949,Greater Sydney,4.1
+Dec-1949,1949,Greater Melbourne,4.2
+Dec-1949,1949,Greater Brisbane,4.1
+Dec-1949,1949,Greater Adelaide,4.1
+Dec-1949,1949,Greater Perth,4.2
+Dec-1949,1949,Greater Hobart,4.2
+Dec-1949,1949,Australian Capital Territory,4.3
+Mar-1950,1950,Australia,4.2
+Mar-1950,1950,Greater Sydney,4.1
+Mar-1950,1950,Greater Melbourne,4.3
+Mar-1950,1950,Greater Brisbane,4.1
+Mar-1950,1950,Greater Adelaide,4.2
+Mar-1950,1950,Greater Perth,4.2
+Mar-1950,1950,Greater Hobart,4.2
+Mar-1950,1950,Australian Capital Territory,4.4
+Jun-1950,1950,Australia,4.3
+Jun-1950,1950,Greater Sydney,4.3
+Jun-1950,1950,Greater Melbourne,4.4
+Jun-1950,1950,Greater Brisbane,4.2
+Jun-1950,1950,Greater Adelaide,4.4
+Jun-1950,1950,Greater Perth,4.4
+Jun-1950,1950,Greater Hobart,4.3
+Jun-1950,1950,Australian Capital Territory,4.6
+Sep-1950,1950,Australia,4.4
+Sep-1950,1950,Greater Sydney,4.4
+Sep-1950,1950,Greater Melbourne,4.5
+Sep-1950,1950,Greater Brisbane,4.3
+Sep-1950,1950,Greater Adelaide,4.4
+Sep-1950,1950,Greater Perth,4.5
+Sep-1950,1950,Greater Hobart,4.4
+Sep-1950,1950,Australian Capital Territory,4.7
+Dec-1950,1950,Australia,4.6
+Dec-1950,1950,Greater Sydney,4.6
+Dec-1950,1950,Greater Melbourne,4.6
+Dec-1950,1950,Greater Brisbane,4.4
+Dec-1950,1950,Greater Adelaide,4.6
+Dec-1950,1950,Greater Perth,4.6
+Dec-1950,1950,Greater Hobart,4.5
+Dec-1950,1950,Australian Capital Territory,4.8
+Mar-1951,1951,Australia,4.8
+Mar-1951,1951,Greater Sydney,4.7
+Mar-1951,1951,Greater Melbourne,4.9
+Mar-1951,1951,Greater Brisbane,4.7
+Mar-1951,1951,Greater Adelaide,4.8
+Mar-1951,1951,Greater Perth,4.8
+Mar-1951,1951,Greater Hobart,4.8
+Mar-1951,1951,Australian Capital Territory,5.1
+Jun-1951,1951,Australia,5.1
+Jun-1951,1951,Greater Sydney,5.1
+Jun-1951,1951,Greater Melbourne,5.1
+Jun-1951,1951,Greater Brisbane,4.9
+Jun-1951,1951,Greater Adelaide,5.1
+Jun-1951,1951,Greater Perth,5.1
+Jun-1951,1951,Greater Hobart,5.2
+Jun-1951,1951,Australian Capital Territory,5.4
+Sep-1951,1951,Australia,5.3
+Sep-1951,1951,Greater Sydney,5.4
+Sep-1951,1951,Greater Melbourne,5.4
+Sep-1951,1951,Greater Brisbane,5.1
+Sep-1951,1951,Greater Adelaide,5.4
+Sep-1951,1951,Greater Perth,5.4
+Sep-1951,1951,Greater Hobart,5.4
+Sep-1951,1951,Australian Capital Territory,5.7
+Dec-1951,1951,Australia,5.7
+Dec-1951,1951,Greater Sydney,5.7
+Dec-1951,1951,Greater Melbourne,5.8
+Dec-1951,1951,Greater Brisbane,5.6
+Dec-1951,1951,Greater Adelaide,5.7
+Dec-1951,1951,Greater Perth,5.7
+Dec-1951,1951,Greater Hobart,5.8
+Dec-1951,1951,Australian Capital Territory,6.0
+Mar-1952,1952,Australia,5.9
+Mar-1952,1952,Greater Sydney,5.9
+Mar-1952,1952,Greater Melbourne,5.9
+Mar-1952,1952,Greater Brisbane,5.8
+Mar-1952,1952,Greater Adelaide,5.9
+Mar-1952,1952,Greater Perth,6.0
+Mar-1952,1952,Greater Hobart,6.0
+Mar-1952,1952,Australian Capital Territory,6.2
+Jun-1952,1952,Australia,6.1
+Jun-1952,1952,Greater Sydney,6.1
+Jun-1952,1952,Greater Melbourne,6.2
+Jun-1952,1952,Greater Brisbane,5.9
+Jun-1952,1952,Greater Adelaide,6.2
+Jun-1952,1952,Greater Perth,6.2
+Jun-1952,1952,Greater Hobart,6.2
+Jun-1952,1952,Australian Capital Territory,6.5
+Sep-1952,1952,Australia,6.2
+Sep-1952,1952,Greater Sydney,6.2
+Sep-1952,1952,Greater Melbourne,6.3
+Sep-1952,1952,Greater Brisbane,6.1
+Sep-1952,1952,Greater Adelaide,6.3
+Sep-1952,1952,Greater Perth,6.4
+Sep-1952,1952,Greater Hobart,6.3
+Sep-1952,1952,Australian Capital Territory,6.7
+Dec-1952,1952,Australia,6.3
+Dec-1952,1952,Greater Sydney,6.3
+Dec-1952,1952,Greater Melbourne,6.3
+Dec-1952,1952,Greater Brisbane,6.1
+Dec-1952,1952,Greater Adelaide,6.3
+Dec-1952,1952,Greater Perth,6.4
+Dec-1952,1952,Greater Hobart,6.4
+Dec-1952,1952,Australian Capital Territory,6.7
+Mar-1953,1953,Australia,6.3
+Mar-1953,1953,Greater Sydney,6.3
+Mar-1953,1953,Greater Melbourne,6.4
+Mar-1953,1953,Greater Brisbane,6.1
+Mar-1953,1953,Greater Adelaide,6.4
+Mar-1953,1953,Greater Perth,6.5
+Mar-1953,1953,Greater Hobart,6.5
+Mar-1953,1953,Australian Capital Territory,6.8
+Jun-1953,1953,Australia,6.4
+Jun-1953,1953,Greater Sydney,6.4
+Jun-1953,1953,Greater Melbourne,6.5
+Jun-1953,1953,Greater Brisbane,6.2
+Jun-1953,1953,Greater Adelaide,6.4
+Jun-1953,1953,Greater Perth,6.5
+Jun-1953,1953,Greater Hobart,6.6
+Jun-1953,1953,Australian Capital Territory,6.8
+Sep-1953,1953,Australia,6.5
+Sep-1953,1953,Greater Sydney,6.4
+Sep-1953,1953,Greater Melbourne,6.5
+Sep-1953,1953,Greater Brisbane,6.2
+Sep-1953,1953,Greater Adelaide,6.5
+Sep-1953,1953,Greater Perth,6.6
+Sep-1953,1953,Greater Hobart,6.8
+Sep-1953,1953,Australian Capital Territory,6.9
+Dec-1953,1953,Australia,6.4
+Dec-1953,1953,Greater Sydney,6.4
+Dec-1953,1953,Greater Melbourne,6.5
+Dec-1953,1953,Greater Brisbane,6.2
+Dec-1953,1953,Greater Adelaide,6.5
+Dec-1953,1953,Greater Perth,6.6
+Dec-1953,1953,Greater Hobart,6.8
+Dec-1953,1953,Australian Capital Territory,7.0
+Mar-1954,1954,Australia,6.5
+Mar-1954,1954,Greater Sydney,6.4
+Mar-1954,1954,Greater Melbourne,6.5
+Mar-1954,1954,Greater Brisbane,6.2
+Mar-1954,1954,Greater Adelaide,6.5
+Mar-1954,1954,Greater Perth,6.6
+Mar-1954,1954,Greater Hobart,6.8
+Mar-1954,1954,Australian Capital Territory,6.9
+Jun-1954,1954,Australia,6.5
+Jun-1954,1954,Greater Sydney,6.4
+Jun-1954,1954,Greater Melbourne,6.5
+Jun-1954,1954,Greater Brisbane,6.2
+Jun-1954,1954,Greater Adelaide,6.5
+Jun-1954,1954,Greater Perth,6.7
+Jun-1954,1954,Greater Hobart,6.8
+Jun-1954,1954,Australian Capital Territory,6.9
+Sep-1954,1954,Australia,6.5
+Sep-1954,1954,Greater Sydney,6.4
+Sep-1954,1954,Greater Melbourne,6.4
+Sep-1954,1954,Greater Brisbane,6.2
+Sep-1954,1954,Greater Adelaide,6.5
+Sep-1954,1954,Greater Perth,6.7
+Sep-1954,1954,Greater Hobart,6.7
+Sep-1954,1954,Australian Capital Territory,6.9
+Dec-1954,1954,Australia,6.5
+Dec-1954,1954,Greater Sydney,6.4
+Dec-1954,1954,Greater Melbourne,6.4
+Dec-1954,1954,Greater Brisbane,6.2
+Dec-1954,1954,Greater Adelaide,6.5
+Dec-1954,1954,Greater Perth,6.7
+Dec-1954,1954,Greater Hobart,6.7
+Dec-1954,1954,Australian Capital Territory,7.0
+Mar-1955,1955,Australia,6.5
+Mar-1955,1955,Greater Sydney,6.5
+Mar-1955,1955,Greater Melbourne,6.5
+Mar-1955,1955,Greater Brisbane,6.3
+Mar-1955,1955,Greater Adelaide,6.6
+Mar-1955,1955,Greater Perth,6.7
+Mar-1955,1955,Greater Hobart,6.8
+Mar-1955,1955,Australian Capital Territory,7.0
+Jun-1955,1955,Australia,6.6
+Jun-1955,1955,Greater Sydney,6.5
+Jun-1955,1955,Greater Melbourne,6.6
+Jun-1955,1955,Greater Brisbane,6.3
+Jun-1955,1955,Greater Adelaide,6.6
+Jun-1955,1955,Greater Perth,6.8
+Jun-1955,1955,Greater Hobart,6.8
+Jun-1955,1955,Australian Capital Territory,7.1
+Sep-1955,1955,Australia,6.6
+Sep-1955,1955,Greater Sydney,6.5
+Sep-1955,1955,Greater Melbourne,6.7
+Sep-1955,1955,Greater Brisbane,6.3
+Sep-1955,1955,Greater Adelaide,6.6
+Sep-1955,1955,Greater Perth,6.8
+Sep-1955,1955,Greater Hobart,7.0
+Sep-1955,1955,Australian Capital Territory,7.2
+Dec-1955,1955,Australia,6.7
+Dec-1955,1955,Greater Sydney,6.6
+Dec-1955,1955,Greater Melbourne,6.8
+Dec-1955,1955,Greater Brisbane,6.4
+Dec-1955,1955,Greater Adelaide,6.7
+Dec-1955,1955,Greater Perth,6.9
+Dec-1955,1955,Greater Hobart,7.1
+Dec-1955,1955,Australian Capital Territory,7.2
+Mar-1956,1956,Australia,6.7
+Mar-1956,1956,Greater Sydney,6.6
+Mar-1956,1956,Greater Melbourne,6.9
+Mar-1956,1956,Greater Brisbane,6.5
+Mar-1956,1956,Greater Adelaide,6.8
+Mar-1956,1956,Greater Perth,6.9
+Mar-1956,1956,Greater Hobart,7.2
+Mar-1956,1956,Australian Capital Territory,7.3
+Jun-1956,1956,Australia,7.0
+Jun-1956,1956,Greater Sydney,6.9
+Jun-1956,1956,Greater Melbourne,7.2
+Jun-1956,1956,Greater Brisbane,6.7
+Jun-1956,1956,Greater Adelaide,7.0
+Jun-1956,1956,Greater Perth,7.1
+Jun-1956,1956,Greater Hobart,7.4
+Jun-1956,1956,Australian Capital Territory,7.4
+Sep-1956,1956,Australia,7.1
+Sep-1956,1956,Greater Sydney,7.1
+Sep-1956,1956,Greater Melbourne,7.3
+Sep-1956,1956,Greater Brisbane,6.8
+Sep-1956,1956,Greater Adelaide,7.1
+Sep-1956,1956,Greater Perth,7.1
+Sep-1956,1956,Greater Hobart,7.5
+Sep-1956,1956,Australian Capital Territory,7.6
+Dec-1956,1956,Australia,7.1
+Dec-1956,1956,Greater Sydney,7.1
+Dec-1956,1956,Greater Melbourne,7.3
+Dec-1956,1956,Greater Brisbane,6.8
+Dec-1956,1956,Greater Adelaide,7.1
+Dec-1956,1956,Greater Perth,7.2
+Dec-1956,1956,Greater Hobart,7.6
+Dec-1956,1956,Australian Capital Territory,7.7
+Mar-1957,1957,Australia,7.1
+Mar-1957,1957,Greater Sydney,7.1
+Mar-1957,1957,Greater Melbourne,7.2
+Mar-1957,1957,Greater Brisbane,6.8
+Mar-1957,1957,Greater Adelaide,7.0
+Mar-1957,1957,Greater Perth,7.2
+Mar-1957,1957,Greater Hobart,7.6
+Mar-1957,1957,Australian Capital Territory,7.7
+Jun-1957,1957,Australia,7.2
+Jun-1957,1957,Greater Sydney,7.1
+Jun-1957,1957,Greater Melbourne,7.3
+Jun-1957,1957,Greater Brisbane,6.9
+Jun-1957,1957,Greater Adelaide,7.1
+Jun-1957,1957,Greater Perth,7.3
+Jun-1957,1957,Greater Hobart,7.6
+Jun-1957,1957,Australian Capital Territory,7.7
+Sep-1957,1957,Australia,7.2
+Sep-1957,1957,Greater Sydney,7.2
+Sep-1957,1957,Greater Melbourne,7.3
+Sep-1957,1957,Greater Brisbane,6.9
+Sep-1957,1957,Greater Adelaide,7.1
+Sep-1957,1957,Greater Perth,7.3
+Sep-1957,1957,Greater Hobart,7.6
+Sep-1957,1957,Australian Capital Territory,7.7
+Dec-1957,1957,Australia,7.2
+Dec-1957,1957,Greater Sydney,7.2
+Dec-1957,1957,Greater Melbourne,7.3
+Dec-1957,1957,Greater Brisbane,6.9
+Dec-1957,1957,Greater Adelaide,7.1
+Dec-1957,1957,Greater Perth,7.2
+Dec-1957,1957,Greater Hobart,7.6
+Dec-1957,1957,Australian Capital Territory,7.7
+Mar-1958,1958,Australia,7.2
+Mar-1958,1958,Greater Sydney,7.3
+Mar-1958,1958,Greater Melbourne,7.3
+Mar-1958,1958,Greater Brisbane,7.0
+Mar-1958,1958,Greater Adelaide,7.1
+Mar-1958,1958,Greater Perth,7.2
+Mar-1958,1958,Greater Hobart,7.6
+Mar-1958,1958,Australian Capital Territory,7.7
+Jun-1958,1958,Australia,7.2
+Jun-1958,1958,Greater Sydney,7.3
+Jun-1958,1958,Greater Melbourne,7.3
+Jun-1958,1958,Greater Brisbane,7.0
+Jun-1958,1958,Greater Adelaide,7.1
+Jun-1958,1958,Greater Perth,7.3
+Jun-1958,1958,Greater Hobart,7.6
+Jun-1958,1958,Australian Capital Territory,7.8
+Sep-1958,1958,Australia,7.2
+Sep-1958,1958,Greater Sydney,7.2
+Sep-1958,1958,Greater Melbourne,7.3
+Sep-1958,1958,Greater Brisbane,7.1
+Sep-1958,1958,Greater Adelaide,7.2
+Sep-1958,1958,Greater Perth,7.3
+Sep-1958,1958,Greater Hobart,7.6
+Sep-1958,1958,Australian Capital Territory,7.7
+Dec-1958,1958,Australia,7.3
+Dec-1958,1958,Greater Sydney,7.3
+Dec-1958,1958,Greater Melbourne,7.5
+Dec-1958,1958,Greater Brisbane,7.2
+Dec-1958,1958,Greater Adelaide,7.2
+Dec-1958,1958,Greater Perth,7.3
+Dec-1958,1958,Greater Hobart,7.7
+Dec-1958,1958,Australian Capital Territory,7.8
+Mar-1959,1959,Australia,7.3
+Mar-1959,1959,Greater Sydney,7.3
+Mar-1959,1959,Greater Melbourne,7.5
+Mar-1959,1959,Greater Brisbane,7.2
+Mar-1959,1959,Greater Adelaide,7.3
+Mar-1959,1959,Greater Perth,7.4
+Mar-1959,1959,Greater Hobart,7.7
+Mar-1959,1959,Australian Capital Territory,7.8
+Jun-1959,1959,Australia,7.3
+Jun-1959,1959,Greater Sydney,7.3
+Jun-1959,1959,Greater Melbourne,7.5
+Jun-1959,1959,Greater Brisbane,7.2
+Jun-1959,1959,Greater Adelaide,7.3
+Jun-1959,1959,Greater Perth,7.4
+Jun-1959,1959,Greater Hobart,7.7
+Jun-1959,1959,Australian Capital Territory,7.9
+Sep-1959,1959,Australia,7.4
+Sep-1959,1959,Greater Sydney,7.3
+Sep-1959,1959,Greater Melbourne,7.6
+Sep-1959,1959,Greater Brisbane,7.3
+Sep-1959,1959,Greater Adelaide,7.4
+Sep-1959,1959,Greater Perth,7.4
+Sep-1959,1959,Greater Hobart,7.7
+Sep-1959,1959,Australian Capital Territory,7.9
+Dec-1959,1959,Australia,7.5
+Dec-1959,1959,Greater Sydney,7.4
+Dec-1959,1959,Greater Melbourne,7.6
+Dec-1959,1959,Greater Brisbane,7.4
+Dec-1959,1959,Greater Adelaide,7.4
+Dec-1959,1959,Greater Perth,7.4
+Dec-1959,1959,Greater Hobart,7.7
+Dec-1959,1959,Australian Capital Territory,7.9
+Mar-1960,1960,Australia,7.5
+Mar-1960,1960,Greater Sydney,7.4
+Mar-1960,1960,Greater Melbourne,7.7
+Mar-1960,1960,Greater Brisbane,7.4
+Mar-1960,1960,Greater Adelaide,7.5
+Mar-1960,1960,Greater Perth,7.5
+Mar-1960,1960,Greater Hobart,7.8
+Mar-1960,1960,Australian Capital Territory,8.0
+Jun-1960,1960,Australia,7.6
+Jun-1960,1960,Greater Sydney,7.5
+Jun-1960,1960,Greater Melbourne,7.9
+Jun-1960,1960,Greater Brisbane,7.4
+Jun-1960,1960,Greater Adelaide,7.6
+Jun-1960,1960,Greater Perth,7.6
+Jun-1960,1960,Greater Hobart,7.9
+Jun-1960,1960,Australian Capital Territory,8.0
+Sep-1960,1960,Australia,7.7
+Sep-1960,1960,Greater Sydney,7.6
+Sep-1960,1960,Greater Melbourne,8.0
+Sep-1960,1960,Greater Brisbane,7.5
+Sep-1960,1960,Greater Adelaide,7.7
+Sep-1960,1960,Greater Perth,7.7
+Sep-1960,1960,Greater Hobart,8.1
+Sep-1960,1960,Australian Capital Territory,8.2
+Dec-1960,1960,Australia,7.8
+Dec-1960,1960,Greater Sydney,7.7
+Dec-1960,1960,Greater Melbourne,8.0
+Dec-1960,1960,Greater Brisbane,7.6
+Dec-1960,1960,Greater Adelaide,7.8
+Dec-1960,1960,Greater Perth,7.7
+Dec-1960,1960,Greater Hobart,8.2
+Dec-1960,1960,Australian Capital Territory,8.2
+Mar-1961,1961,Australia,7.8
+Mar-1961,1961,Greater Sydney,7.7
+Mar-1961,1961,Greater Melbourne,8.0
+Mar-1961,1961,Greater Brisbane,7.7
+Mar-1961,1961,Greater Adelaide,7.8
+Mar-1961,1961,Greater Perth,7.8
+Mar-1961,1961,Greater Hobart,8.3
+Mar-1961,1961,Australian Capital Territory,8.2
+Jun-1961,1961,Australia,7.9
+Jun-1961,1961,Greater Sydney,7.8
+Jun-1961,1961,Greater Melbourne,8.1
+Jun-1961,1961,Greater Brisbane,7.7
+Jun-1961,1961,Greater Adelaide,7.9
+Jun-1961,1961,Greater Perth,7.9
+Jun-1961,1961,Greater Hobart,8.3
+Jun-1961,1961,Australian Capital Territory,8.3
+Sep-1961,1961,Australia,7.8
+Sep-1961,1961,Greater Sydney,7.7
+Sep-1961,1961,Greater Melbourne,8.1
+Sep-1961,1961,Greater Brisbane,7.7
+Sep-1961,1961,Greater Adelaide,7.8
+Sep-1961,1961,Greater Perth,7.8
+Sep-1961,1961,Greater Hobart,8.4
+Sep-1961,1961,Australian Capital Territory,8.3
+Dec-1961,1961,Australia,7.8
+Dec-1961,1961,Greater Sydney,7.7
+Dec-1961,1961,Greater Melbourne,8.1
+Dec-1961,1961,Greater Brisbane,7.7
+Dec-1961,1961,Greater Adelaide,7.8
+Dec-1961,1961,Greater Perth,7.7
+Dec-1961,1961,Greater Hobart,8.3
+Dec-1961,1961,Australian Capital Territory,8.4
+Mar-1962,1962,Australia,7.8
+Mar-1962,1962,Greater Sydney,7.7
+Mar-1962,1962,Greater Melbourne,8.0
+Mar-1962,1962,Greater Brisbane,7.8
+Mar-1962,1962,Greater Adelaide,7.7
+Mar-1962,1962,Greater Perth,7.8
+Mar-1962,1962,Greater Hobart,8.3
+Mar-1962,1962,Australian Capital Territory,8.3
+Jun-1962,1962,Australia,7.8
+Jun-1962,1962,Greater Sydney,7.7
+Jun-1962,1962,Greater Melbourne,8.0
+Jun-1962,1962,Greater Brisbane,7.8
+Jun-1962,1962,Greater Adelaide,7.7
+Jun-1962,1962,Greater Perth,7.8
+Jun-1962,1962,Greater Hobart,8.3
+Jun-1962,1962,Australian Capital Territory,8.3
+Sep-1962,1962,Australia,7.8
+Sep-1962,1962,Greater Sydney,7.7
+Sep-1962,1962,Greater Melbourne,8.0
+Sep-1962,1962,Greater Brisbane,7.8
+Sep-1962,1962,Greater Adelaide,7.7
+Sep-1962,1962,Greater Perth,7.8
+Sep-1962,1962,Greater Hobart,8.3
+Sep-1962,1962,Australian Capital Territory,8.3
+Dec-1962,1962,Australia,7.8
+Dec-1962,1962,Greater Sydney,7.8
+Dec-1962,1962,Greater Melbourne,8.0
+Dec-1962,1962,Greater Brisbane,7.8
+Dec-1962,1962,Greater Adelaide,7.7
+Dec-1962,1962,Greater Perth,7.8
+Dec-1962,1962,Greater Hobart,8.3
+Dec-1962,1962,Australian Capital Territory,8.4
+Mar-1963,1963,Australia,7.8
+Mar-1963,1963,Greater Sydney,7.8
+Mar-1963,1963,Greater Melbourne,8.0
+Mar-1963,1963,Greater Brisbane,7.8
+Mar-1963,1963,Greater Adelaide,7.7
+Mar-1963,1963,Greater Perth,7.9
+Mar-1963,1963,Greater Hobart,8.3
+Mar-1963,1963,Australian Capital Territory,8.3
+Jun-1963,1963,Australia,7.8
+Jun-1963,1963,Greater Sydney,7.8
+Jun-1963,1963,Greater Melbourne,8.1
+Jun-1963,1963,Greater Brisbane,7.8
+Jun-1963,1963,Greater Adelaide,7.8
+Jun-1963,1963,Greater Perth,7.9
+Jun-1963,1963,Greater Hobart,8.3
+Jun-1963,1963,Australian Capital Territory,8.3
+Sep-1963,1963,Australia,7.9
+Sep-1963,1963,Greater Sydney,7.8
+Sep-1963,1963,Greater Melbourne,8.1
+Sep-1963,1963,Greater Brisbane,7.8
+Sep-1963,1963,Greater Adelaide,7.8
+Sep-1963,1963,Greater Perth,7.9
+Sep-1963,1963,Greater Hobart,8.3
+Sep-1963,1963,Australian Capital Territory,8.4
+Dec-1963,1963,Australia,7.9
+Dec-1963,1963,Greater Sydney,7.8
+Dec-1963,1963,Greater Melbourne,8.1
+Dec-1963,1963,Greater Brisbane,7.8
+Dec-1963,1963,Greater Adelaide,7.8
+Dec-1963,1963,Greater Perth,7.9
+Dec-1963,1963,Greater Hobart,8.4
+Dec-1963,1963,Australian Capital Territory,8.4
+Mar-1964,1964,Australia,8.0
+Mar-1964,1964,Greater Sydney,7.8
+Mar-1964,1964,Greater Melbourne,8.1
+Mar-1964,1964,Greater Brisbane,7.9
+Mar-1964,1964,Greater Adelaide,7.8
+Mar-1964,1964,Greater Perth,8.0
+Mar-1964,1964,Greater Hobart,8.4
+Mar-1964,1964,Australian Capital Territory,8.4
+Jun-1964,1964,Australia,8.0
+Jun-1964,1964,Greater Sydney,7.9
+Jun-1964,1964,Greater Melbourne,8.2
+Jun-1964,1964,Greater Brisbane,8.0
+Jun-1964,1964,Greater Adelaide,8.0
+Jun-1964,1964,Greater Perth,8.0
+Jun-1964,1964,Greater Hobart,8.4
+Jun-1964,1964,Australian Capital Territory,8.4
+Sep-1964,1964,Australia,8.1
+Sep-1964,1964,Greater Sydney,8.0
+Sep-1964,1964,Greater Melbourne,8.2
+Sep-1964,1964,Greater Brisbane,8.1
+Sep-1964,1964,Greater Adelaide,8.1
+Sep-1964,1964,Greater Perth,8.1
+Sep-1964,1964,Greater Hobart,8.5
+Sep-1964,1964,Australian Capital Territory,8.5
+Dec-1964,1964,Australia,8.2
+Dec-1964,1964,Greater Sydney,8.1
+Dec-1964,1964,Greater Melbourne,8.4
+Dec-1964,1964,Greater Brisbane,8.1
+Dec-1964,1964,Greater Adelaide,8.2
+Dec-1964,1964,Greater Perth,8.1
+Dec-1964,1964,Greater Hobart,8.6
+Dec-1964,1964,Australian Capital Territory,8.7
+Mar-1965,1965,Australia,8.2
+Mar-1965,1965,Greater Sydney,8.1
+Mar-1965,1965,Greater Melbourne,8.5
+Mar-1965,1965,Greater Brisbane,8.2
+Mar-1965,1965,Greater Adelaide,8.2
+Mar-1965,1965,Greater Perth,8.2
+Mar-1965,1965,Greater Hobart,8.6
+Mar-1965,1965,Australian Capital Territory,8.7
+Jun-1965,1965,Australia,8.3
+Jun-1965,1965,Greater Sydney,8.2
+Jun-1965,1965,Greater Melbourne,8.6
+Jun-1965,1965,Greater Brisbane,8.3
+Jun-1965,1965,Greater Adelaide,8.2
+Jun-1965,1965,Greater Perth,8.3
+Jun-1965,1965,Greater Hobart,8.8
+Jun-1965,1965,Australian Capital Territory,8.8
+Sep-1965,1965,Australia,8.4
+Sep-1965,1965,Greater Sydney,8.3
+Sep-1965,1965,Greater Melbourne,8.6
+Sep-1965,1965,Greater Brisbane,8.4
+Sep-1965,1965,Greater Adelaide,8.3
+Sep-1965,1965,Greater Perth,8.4
+Sep-1965,1965,Greater Hobart,8.9
+Sep-1965,1965,Australian Capital Territory,8.8
+Dec-1965,1965,Australia,8.5
+Dec-1965,1965,Greater Sydney,8.4
+Dec-1965,1965,Greater Melbourne,8.8
+Dec-1965,1965,Greater Brisbane,8.5
+Dec-1965,1965,Greater Adelaide,8.4
+Dec-1965,1965,Greater Perth,8.4
+Dec-1965,1965,Greater Hobart,9.0
+Dec-1965,1965,Australian Capital Territory,8.9
+Mar-1966,1966,Australia,8.6
+Mar-1966,1966,Greater Sydney,8.4
+Mar-1966,1966,Greater Melbourne,8.8
+Mar-1966,1966,Greater Brisbane,8.6
+Mar-1966,1966,Greater Adelaide,8.4
+Mar-1966,1966,Greater Perth,8.5
+Mar-1966,1966,Greater Hobart,8.9
+Mar-1966,1966,Australian Capital Territory,8.9
+Jun-1966,1966,Australia,8.6
+Jun-1966,1966,Greater Sydney,8.4
+Jun-1966,1966,Greater Melbourne,8.8
+Jun-1966,1966,Greater Brisbane,8.7
+Jun-1966,1966,Greater Adelaide,8.6
+Jun-1966,1966,Greater Perth,8.7
+Jun-1966,1966,Greater Hobart,9.0
+Jun-1966,1966,Australian Capital Territory,8.9
+Sep-1966,1966,Australia,8.6
+Sep-1966,1966,Greater Sydney,8.5
+Sep-1966,1966,Greater Melbourne,8.9
+Sep-1966,1966,Greater Brisbane,8.7
+Sep-1966,1966,Greater Adelaide,8.6
+Sep-1966,1966,Greater Perth,8.7
+Sep-1966,1966,Greater Hobart,9.0
+Sep-1966,1966,Australian Capital Territory,9.0
+Dec-1966,1966,Australia,8.7
+Dec-1966,1966,Greater Sydney,8.5
+Dec-1966,1966,Greater Melbourne,8.9
+Dec-1966,1966,Greater Brisbane,8.8
+Dec-1966,1966,Greater Adelaide,8.7
+Dec-1966,1966,Greater Perth,8.8
+Dec-1966,1966,Greater Hobart,9.0
+Dec-1966,1966,Australian Capital Territory,9.0
+Mar-1967,1967,Australia,8.8
+Mar-1967,1967,Greater Sydney,8.6
+Mar-1967,1967,Greater Melbourne,9.0
+Mar-1967,1967,Greater Brisbane,8.8
+Mar-1967,1967,Greater Adelaide,8.7
+Mar-1967,1967,Greater Perth,8.9
+Mar-1967,1967,Greater Hobart,9.2
+Mar-1967,1967,Australian Capital Territory,9.1
+Jun-1967,1967,Australia,8.9
+Jun-1967,1967,Greater Sydney,8.7
+Jun-1967,1967,Greater Melbourne,9.2
+Jun-1967,1967,Greater Brisbane,8.9
+Jun-1967,1967,Greater Adelaide,8.8
+Jun-1967,1967,Greater Perth,9.0
+Jun-1967,1967,Greater Hobart,9.3
+Jun-1967,1967,Australian Capital Territory,9.2
+Sep-1967,1967,Australia,9.0
+Sep-1967,1967,Greater Sydney,8.8
+Sep-1967,1967,Greater Melbourne,9.3
+Sep-1967,1967,Greater Brisbane,9.0
+Sep-1967,1967,Greater Adelaide,8.9
+Sep-1967,1967,Greater Perth,9.0
+Sep-1967,1967,Greater Hobart,9.5
+Sep-1967,1967,Australian Capital Territory,9.3
+Dec-1967,1967,Australia,9.0
+Dec-1967,1967,Greater Sydney,8.8
+Dec-1967,1967,Greater Melbourne,9.3
+Dec-1967,1967,Greater Brisbane,9.0
+Dec-1967,1967,Greater Adelaide,8.9
+Dec-1967,1967,Greater Perth,9.1
+Dec-1967,1967,Greater Hobart,9.6
+Dec-1967,1967,Australian Capital Territory,9.3
+Mar-1968,1968,Australia,9.1
+Mar-1968,1968,Greater Sydney,8.9
+Mar-1968,1968,Greater Melbourne,9.3
+Mar-1968,1968,Greater Brisbane,9.1
+Mar-1968,1968,Greater Adelaide,8.9
+Mar-1968,1968,Greater Perth,9.1
+Mar-1968,1968,Greater Hobart,9.5
+Mar-1968,1968,Australian Capital Territory,9.3
+Jun-1968,1968,Australia,9.1
+Jun-1968,1968,Greater Sydney,8.9
+Jun-1968,1968,Greater Melbourne,9.4
+Jun-1968,1968,Greater Brisbane,9.1
+Jun-1968,1968,Greater Adelaide,9.0
+Jun-1968,1968,Greater Perth,9.2
+Jun-1968,1968,Greater Hobart,9.5
+Jun-1968,1968,Australian Capital Territory,9.4
+Sep-1968,1968,Australia,9.2
+Sep-1968,1968,Greater Sydney,8.9
+Sep-1968,1968,Greater Melbourne,9.4
+Sep-1968,1968,Greater Brisbane,9.2
+Sep-1968,1968,Greater Adelaide,9.0
+Sep-1968,1968,Greater Perth,9.2
+Sep-1968,1968,Greater Hobart,9.6
+Sep-1968,1968,Australian Capital Territory,9.4
+Dec-1968,1968,Australia,9.2
+Dec-1968,1968,Greater Sydney,9.1
+Dec-1968,1968,Greater Melbourne,9.5
+Dec-1968,1968,Greater Brisbane,9.2
+Dec-1968,1968,Greater Adelaide,9.1
+Dec-1968,1968,Greater Perth,9.2
+Dec-1968,1968,Greater Hobart,9.7
+Dec-1968,1968,Australian Capital Territory,9.4
+Mar-1969,1969,Australia,9.4
+Mar-1969,1969,Greater Sydney,9.2
+Mar-1969,1969,Greater Melbourne,9.5
+Mar-1969,1969,Greater Brisbane,9.3
+Mar-1969,1969,Greater Adelaide,9.2
+Mar-1969,1969,Greater Perth,9.4
+Mar-1969,1969,Greater Hobart,9.7
+Mar-1969,1969,Australian Capital Territory,9.5
+Jun-1969,1969,Australia,9.4
+Jun-1969,1969,Greater Sydney,9.2
+Jun-1969,1969,Greater Melbourne,9.6
+Jun-1969,1969,Greater Brisbane,9.4
+Jun-1969,1969,Greater Adelaide,9.2
+Jun-1969,1969,Greater Perth,9.5
+Jun-1969,1969,Greater Hobart,9.8
+Jun-1969,1969,Australian Capital Territory,9.5
+Sep-1969,1969,Australia,9.5
+Sep-1969,1969,Greater Sydney,9.3
+Sep-1969,1969,Greater Melbourne,9.7
+Sep-1969,1969,Greater Brisbane,9.4
+Sep-1969,1969,Greater Adelaide,9.3
+Sep-1969,1969,Greater Perth,9.5
+Sep-1969,1969,Greater Hobart,9.8
+Sep-1969,1969,Australian Capital Territory,9.6
+Dec-1969,1969,Australia,9.5
+Dec-1969,1969,Greater Sydney,9.4
+Dec-1969,1969,Greater Melbourne,9.7
+Dec-1969,1969,Greater Brisbane,9.5
+Dec-1969,1969,Greater Adelaide,9.3
+Dec-1969,1969,Greater Perth,9.6
+Dec-1969,1969,Greater Hobart,9.9
+Dec-1969,1969,Australian Capital Territory,9.7
+Mar-1970,1970,Australia,9.6
+Mar-1970,1970,Greater Sydney,9.5
+Mar-1970,1970,Greater Melbourne,9.8
+Mar-1970,1970,Greater Brisbane,9.6
+Mar-1970,1970,Greater Adelaide,9.4
+Mar-1970,1970,Greater Perth,9.7
+Mar-1970,1970,Greater Hobart,9.9
+Mar-1970,1970,Australian Capital Territory,9.8
+Jun-1970,1970,Australia,9.7
+Jun-1970,1970,Greater Sydney,9.7
+Jun-1970,1970,Greater Melbourne,9.9
+Jun-1970,1970,Greater Brisbane,9.6
+Jun-1970,1970,Greater Adelaide,9.5
+Jun-1970,1970,Greater Perth,9.9
+Jun-1970,1970,Greater Hobart,10.0
+Jun-1970,1970,Australian Capital Territory,9.9
+Sep-1970,1970,Australia,9.8
+Sep-1970,1970,Greater Sydney,9.7
+Sep-1970,1970,Greater Melbourne,9.9
+Sep-1970,1970,Greater Brisbane,9.7
+Sep-1970,1970,Greater Adelaide,9.5
+Sep-1970,1970,Greater Perth,9.9
+Sep-1970,1970,Greater Hobart,10.0
+Sep-1970,1970,Australian Capital Territory,10.0
+Dec-1970,1970,Australia,10.0
+Dec-1970,1970,Greater Sydney,9.9
+Dec-1970,1970,Greater Melbourne,10.1
+Dec-1970,1970,Greater Brisbane,10.0
+Dec-1970,1970,Greater Adelaide,9.7
+Dec-1970,1970,Greater Perth,10.0
+Dec-1970,1970,Greater Hobart,10.3
+Dec-1970,1970,Australian Capital Territory,10.3
+Mar-1971,1971,Australia,10.1
+Mar-1971,1971,Greater Sydney,10.1
+Mar-1971,1971,Greater Melbourne,10.2
+Mar-1971,1971,Greater Brisbane,10.1
+Mar-1971,1971,Greater Adelaide,9.8
+Mar-1971,1971,Greater Perth,10.1
+Mar-1971,1971,Greater Hobart,10.3
+Mar-1971,1971,Australian Capital Territory,10.3
+Jun-1971,1971,Australia,10.2
+Jun-1971,1971,Greater Sydney,10.3
+Jun-1971,1971,Greater Melbourne,10.3
+Jun-1971,1971,Greater Brisbane,10.3
+Jun-1971,1971,Greater Adelaide,10.0
+Jun-1971,1971,Greater Perth,10.3
+Jun-1971,1971,Greater Hobart,10.5
+Jun-1971,1971,Australian Capital Territory,10.5
+Sep-1971,1971,Australia,10.5
+Sep-1971,1971,Greater Sydney,10.6
+Sep-1971,1971,Greater Melbourne,10.5
+Sep-1971,1971,Greater Brisbane,10.4
+Sep-1971,1971,Greater Adelaide,10.1
+Sep-1971,1971,Greater Perth,10.4
+Sep-1971,1971,Greater Hobart,10.7
+Sep-1971,1971,Australian Capital Territory,10.7
+Dec-1971,1971,Australia,10.7
+Dec-1971,1971,Greater Sydney,10.8
+Dec-1971,1971,Greater Melbourne,10.7
+Dec-1971,1971,Greater Brisbane,10.7
+Dec-1971,1971,Greater Adelaide,10.3
+Dec-1971,1971,Greater Perth,10.6
+Dec-1971,1971,Greater Hobart,11.0
+Dec-1971,1971,Australian Capital Territory,10.8
+Mar-1972,1972,Australia,10.8
+Mar-1972,1972,Greater Sydney,10.9
+Mar-1972,1972,Greater Melbourne,10.8
+Mar-1972,1972,Greater Brisbane,10.8
+Mar-1972,1972,Greater Adelaide,10.4
+Mar-1972,1972,Greater Perth,10.8
+Mar-1972,1972,Greater Hobart,11.1
+Mar-1972,1972,Australian Capital Territory,10.9
+Jun-1972,1972,Australia,10.9
+Jun-1972,1972,Greater Sydney,11.1
+Jun-1972,1972,Greater Melbourne,11.0
+Jun-1972,1972,Greater Brisbane,10.9
+Jun-1972,1972,Greater Adelaide,10.5
+Jun-1972,1972,Greater Perth,10.9
+Jun-1972,1972,Greater Hobart,11.1
+Jun-1972,1972,Australian Capital Territory,11.0
+Sep-1972,1972,Australia,11.1
+Sep-1972,1972,Greater Sydney,11.2
+Sep-1972,1972,Greater Melbourne,11.1
+Sep-1972,1972,Greater Brisbane,10.9
+Sep-1972,1972,Greater Adelaide,10.7
+Sep-1972,1972,Greater Perth,11.0
+Sep-1972,1972,Greater Hobart,11.3
+Sep-1972,1972,Australian Capital Territory,11.2
+Dec-1972,1972,Australia,11.2
+Dec-1972,1972,Greater Sydney,11.3
+Dec-1972,1972,Greater Melbourne,11.2
+Dec-1972,1972,Greater Brisbane,11.1
+Dec-1972,1972,Greater Adelaide,10.8
+Dec-1972,1972,Greater Perth,11.1
+Dec-1972,1972,Greater Hobart,11.4
+Dec-1972,1972,Australian Capital Territory,11.3
+Mar-1973,1973,Australia,11.4
+Mar-1973,1973,Greater Sydney,11.6
+Mar-1973,1973,Greater Melbourne,11.5
+Mar-1973,1973,Greater Brisbane,11.4
+Mar-1973,1973,Greater Adelaide,11.0
+Mar-1973,1973,Greater Perth,11.3
+Mar-1973,1973,Greater Hobart,11.6
+Mar-1973,1973,Australian Capital Territory,11.5
+Jun-1973,1973,Australia,11.8
+Jun-1973,1973,Greater Sydney,11.9
+Jun-1973,1973,Greater Melbourne,11.9
+Jun-1973,1973,Greater Brisbane,11.7
+Jun-1973,1973,Greater Adelaide,11.4
+Jun-1973,1973,Greater Perth,11.6
+Jun-1973,1973,Greater Hobart,12.0
+Jun-1973,1973,Australian Capital Territory,11.9
+Sep-1973,1973,Australia,12.2
+Sep-1973,1973,Greater Sydney,12.3
+Sep-1973,1973,Greater Melbourne,12.3
+Sep-1973,1973,Greater Brisbane,12.2
+Sep-1973,1973,Greater Adelaide,11.8
+Sep-1973,1973,Greater Perth,11.9
+Sep-1973,1973,Greater Hobart,12.3
+Sep-1973,1973,Australian Capital Territory,12.3
+Dec-1973,1973,Australia,12.6
+Dec-1973,1973,Greater Sydney,12.8
+Dec-1973,1973,Greater Melbourne,12.7
+Dec-1973,1973,Greater Brisbane,12.7
+Dec-1973,1973,Greater Adelaide,12.3
+Dec-1973,1973,Greater Perth,12.3
+Dec-1973,1973,Greater Hobart,12.9
+Dec-1973,1973,Australian Capital Territory,12.8
+Mar-1974,1974,Australia,13.0
+Mar-1974,1974,Greater Sydney,13.1
+Mar-1974,1974,Greater Melbourne,13.0
+Mar-1974,1974,Greater Brisbane,13.0
+Mar-1974,1974,Greater Adelaide,12.6
+Mar-1974,1974,Greater Perth,12.5
+Mar-1974,1974,Greater Hobart,13.1
+Mar-1974,1974,Australian Capital Territory,13.2
+Jun-1974,1974,Australia,13.5
+Jun-1974,1974,Greater Sydney,13.6
+Jun-1974,1974,Greater Melbourne,13.6
+Jun-1974,1974,Greater Brisbane,13.4
+Jun-1974,1974,Greater Adelaide,13.2
+Jun-1974,1974,Greater Perth,13.0
+Jun-1974,1974,Greater Hobart,13.7
+Jun-1974,1974,Australian Capital Territory,13.6
+Sep-1974,1974,Australia,14.2
+Sep-1974,1974,Greater Sydney,14.4
+Sep-1974,1974,Greater Melbourne,14.3
+Sep-1974,1974,Greater Brisbane,14.2
+Sep-1974,1974,Greater Adelaide,13.8
+Sep-1974,1974,Greater Perth,13.6
+Sep-1974,1974,Greater Hobart,14.4
+Sep-1974,1974,Australian Capital Territory,14.3
+Dec-1974,1974,Australia,14.7
+Dec-1974,1974,Greater Sydney,14.9
+Dec-1974,1974,Greater Melbourne,14.7
+Dec-1974,1974,Greater Brisbane,14.6
+Dec-1974,1974,Greater Adelaide,14.4
+Dec-1974,1974,Greater Perth,14.4
+Dec-1974,1974,Greater Hobart,15.1
+Dec-1974,1974,Australian Capital Territory,14.8
+Mar-1975,1975,Australia,15.3
+Mar-1975,1975,Greater Sydney,15.3
+Mar-1975,1975,Greater Melbourne,15.4
+Mar-1975,1975,Greater Brisbane,15.0
+Mar-1975,1975,Greater Adelaide,15.1
+Mar-1975,1975,Greater Perth,15.0
+Mar-1975,1975,Greater Hobart,15.4
+Mar-1975,1975,Australian Capital Territory,15.1
+Jun-1975,1975,Australia,15.8
+Jun-1975,1975,Greater Sydney,15.9
+Jun-1975,1975,Greater Melbourne,15.9
+Jun-1975,1975,Greater Brisbane,15.4
+Jun-1975,1975,Greater Adelaide,15.6
+Jun-1975,1975,Greater Perth,15.6
+Jun-1975,1975,Greater Hobart,15.9
+Jun-1975,1975,Australian Capital Territory,15.8
+Sep-1975,1975,Australia,15.9
+Sep-1975,1975,Greater Sydney,16.1
+Sep-1975,1975,Greater Melbourne,15.9
+Sep-1975,1975,Greater Brisbane,15.7
+Sep-1975,1975,Greater Adelaide,15.5
+Sep-1975,1975,Greater Perth,15.6
+Sep-1975,1975,Greater Hobart,16.1
+Sep-1975,1975,Australian Capital Territory,15.7
+Dec-1975,1975,Australia,16.8
+Dec-1975,1975,Greater Sydney,16.9
+Dec-1975,1975,Greater Melbourne,16.9
+Dec-1975,1975,Greater Brisbane,16.7
+Dec-1975,1975,Greater Adelaide,16.3
+Dec-1975,1975,Greater Perth,16.5
+Dec-1975,1975,Greater Hobart,17.3
+Dec-1975,1975,Australian Capital Territory,17.0
+Mar-1976,1976,Australia,17.3
+Mar-1976,1976,Greater Sydney,17.4
+Mar-1976,1976,Greater Melbourne,17.3
+Mar-1976,1976,Greater Brisbane,17.1
+Mar-1976,1976,Greater Adelaide,16.9
+Mar-1976,1976,Greater Perth,17.1
+Mar-1976,1976,Greater Hobart,17.7
+Mar-1976,1976,Australian Capital Territory,17.4
+Jun-1976,1976,Australia,17.7
+Jun-1976,1976,Greater Sydney,17.8
+Jun-1976,1976,Greater Melbourne,17.8
+Jun-1976,1976,Greater Brisbane,17.6
+Jun-1976,1976,Greater Adelaide,17.4
+Jun-1976,1976,Greater Perth,17.7
+Jun-1976,1976,Greater Hobart,18.3
+Jun-1976,1976,Australian Capital Territory,18.0
+Sep-1976,1976,Australia,18.1
+Sep-1976,1976,Greater Sydney,18.1
+Sep-1976,1976,Greater Melbourne,18.2
+Sep-1976,1976,Greater Brisbane,18.0
+Sep-1976,1976,Greater Adelaide,17.9
+Sep-1976,1976,Greater Perth,18.2
+Sep-1976,1976,Greater Hobart,18.7
+Sep-1976,1976,Australian Capital Territory,18.4
+Dec-1976,1976,Australia,19.2
+Dec-1976,1976,Greater Sydney,19.1
+Dec-1976,1976,Greater Melbourne,19.3
+Dec-1976,1976,Greater Brisbane,19.1
+Dec-1976,1976,Greater Adelaide,19.1
+Dec-1976,1976,Greater Perth,19.3
+Dec-1976,1976,Greater Hobart,19.8
+Dec-1976,1976,Australian Capital Territory,19.4
+Mar-1977,1977,Australia,19.6
+Mar-1977,1977,Greater Sydney,19.5
+Mar-1977,1977,Greater Melbourne,19.8
+Mar-1977,1977,Greater Brisbane,19.5
+Mar-1977,1977,Greater Adelaide,19.5
+Mar-1977,1977,Greater Perth,19.8
+Mar-1977,1977,Greater Hobart,20.2
+Mar-1977,1977,Australian Capital Territory,19.7
+Jun-1977,1977,Australia,20.1
+Jun-1977,1977,Greater Sydney,19.9
+Jun-1977,1977,Greater Melbourne,20.4
+Jun-1977,1977,Greater Brisbane,19.9
+Jun-1977,1977,Greater Adelaide,19.9
+Jun-1977,1977,Greater Perth,20.2
+Jun-1977,1977,Greater Hobart,20.7
+Jun-1977,1977,Australian Capital Territory,20.0
+Sep-1977,1977,Australia,20.5
+Sep-1977,1977,Greater Sydney,20.3
+Sep-1977,1977,Greater Melbourne,20.8
+Sep-1977,1977,Greater Brisbane,20.3
+Sep-1977,1977,Greater Adelaide,20.4
+Sep-1977,1977,Greater Perth,20.7
+Sep-1977,1977,Greater Hobart,21.2
+Sep-1977,1977,Australian Capital Territory,20.4
+Dec-1977,1977,Australia,21.0
+Dec-1977,1977,Greater Sydney,20.7
+Dec-1977,1977,Greater Melbourne,21.2
+Dec-1977,1977,Greater Brisbane,20.7
+Dec-1977,1977,Greater Adelaide,20.9
+Dec-1977,1977,Greater Perth,21.5
+Dec-1977,1977,Greater Hobart,21.7
+Dec-1977,1977,Australian Capital Territory,21.1
+Mar-1978,1978,Australia,21.3
+Mar-1978,1978,Greater Sydney,21.0
+Mar-1978,1978,Greater Melbourne,21.5
+Mar-1978,1978,Greater Brisbane,21.1
+Mar-1978,1978,Greater Adelaide,21.1
+Mar-1978,1978,Greater Perth,21.7
+Mar-1978,1978,Greater Hobart,22.0
+Mar-1978,1978,Australian Capital Territory,21.3
+Jun-1978,1978,Australia,21.7
+Jun-1978,1978,Greater Sydney,21.4
+Jun-1978,1978,Greater Melbourne,22.0
+Jun-1978,1978,Greater Brisbane,21.5
+Jun-1978,1978,Greater Adelaide,21.5
+Jun-1978,1978,Greater Perth,22.1
+Jun-1978,1978,Greater Hobart,22.4
+Jun-1978,1978,Australian Capital Territory,21.6
+Sep-1978,1978,Australia,22.1
+Sep-1978,1978,Greater Sydney,21.9
+Sep-1978,1978,Greater Melbourne,22.4
+Sep-1978,1978,Greater Brisbane,21.9
+Sep-1978,1978,Greater Adelaide,22.0
+Sep-1978,1978,Greater Perth,22.5
+Sep-1978,1978,Greater Hobart,22.7
+Sep-1978,1978,Australian Capital Territory,22.1
+Dec-1978,1978,Australia,22.6
+Dec-1978,1978,Greater Sydney,22.4
+Dec-1978,1978,Greater Melbourne,22.8
+Dec-1978,1978,Greater Brisbane,22.6
+Dec-1978,1978,Greater Adelaide,22.3
+Dec-1978,1978,Greater Perth,23.0
+Dec-1978,1978,Greater Hobart,23.2
+Dec-1978,1978,Australian Capital Territory,22.6
+Mar-1979,1979,Australia,23.0
+Mar-1979,1979,Greater Sydney,22.8
+Mar-1979,1979,Greater Melbourne,23.2
+Mar-1979,1979,Greater Brisbane,22.8
+Mar-1979,1979,Greater Adelaide,22.7
+Mar-1979,1979,Greater Perth,23.3
+Mar-1979,1979,Greater Hobart,23.7
+Mar-1979,1979,Australian Capital Territory,23.0
+Jun-1979,1979,Australia,23.6
+Jun-1979,1979,Greater Sydney,23.5
+Jun-1979,1979,Greater Melbourne,23.8
+Jun-1979,1979,Greater Brisbane,23.3
+Jun-1979,1979,Greater Adelaide,23.3
+Jun-1979,1979,Greater Perth,24.0
+Jun-1979,1979,Greater Hobart,24.4
+Jun-1979,1979,Australian Capital Territory,23.7
+Sep-1979,1979,Australia,24.2
+Sep-1979,1979,Greater Sydney,24.1
+Sep-1979,1979,Greater Melbourne,24.5
+Sep-1979,1979,Greater Brisbane,23.8
+Sep-1979,1979,Greater Adelaide,23.7
+Sep-1979,1979,Greater Perth,24.4
+Sep-1979,1979,Greater Hobart,25.0
+Sep-1979,1979,Australian Capital Territory,24.3
+Dec-1979,1979,Australia,24.9
+Dec-1979,1979,Greater Sydney,24.7
+Dec-1979,1979,Greater Melbourne,25.1
+Dec-1979,1979,Greater Brisbane,24.6
+Dec-1979,1979,Greater Adelaide,24.6
+Dec-1979,1979,Greater Perth,25.2
+Dec-1979,1979,Greater Hobart,25.7
+Dec-1979,1979,Australian Capital Territory,24.9
+Mar-1980,1980,Australia,25.4
+Mar-1980,1980,Greater Sydney,25.4
+Mar-1980,1980,Greater Melbourne,25.5
+Mar-1980,1980,Greater Brisbane,25.2
+Mar-1980,1980,Greater Adelaide,25.1
+Mar-1980,1980,Greater Perth,25.7
+Mar-1980,1980,Greater Hobart,26.2
+Mar-1980,1980,Australian Capital Territory,25.6
+Jun-1980,1980,Australia,26.2
+Jun-1980,1980,Greater Sydney,26.1
+Jun-1980,1980,Greater Melbourne,26.3
+Jun-1980,1980,Greater Brisbane,25.8
+Jun-1980,1980,Greater Adelaide,25.8
+Jun-1980,1980,Greater Perth,26.3
+Jun-1980,1980,Greater Hobart,26.8
+Jun-1980,1980,Australian Capital Territory,26.3
+Sep-1980,1980,Australia,26.6
+Sep-1980,1980,Greater Sydney,26.6
+Sep-1980,1980,Greater Melbourne,26.8
+Sep-1980,1980,Greater Brisbane,26.2
+Sep-1980,1980,Greater Adelaide,26.1
+Sep-1980,1980,Greater Perth,26.9
+Sep-1980,1980,Greater Hobart,27.5
+Sep-1980,1980,Greater Darwin,28.8
+Sep-1980,1980,Australian Capital Territory,26.8
+Dec-1980,1980,Australia,27.2
+Dec-1980,1980,Greater Sydney,27.1
+Dec-1980,1980,Greater Melbourne,27.4
+Dec-1980,1980,Greater Brisbane,26.8
+Dec-1980,1980,Greater Adelaide,26.7
+Dec-1980,1980,Greater Perth,27.3
+Dec-1980,1980,Greater Hobart,28.0
+Dec-1980,1980,Greater Darwin,29.5
+Dec-1980,1980,Australian Capital Territory,27.4
+Mar-1981,1981,Australia,27.8
+Mar-1981,1981,Greater Sydney,27.9
+Mar-1981,1981,Greater Melbourne,28.0
+Mar-1981,1981,Greater Brisbane,27.4
+Mar-1981,1981,Greater Adelaide,27.4
+Mar-1981,1981,Greater Perth,27.9
+Mar-1981,1981,Greater Hobart,28.6
+Mar-1981,1981,Greater Darwin,30.1
+Mar-1981,1981,Australian Capital Territory,28.0
+Jun-1981,1981,Australia,28.4
+Jun-1981,1981,Greater Sydney,28.4
+Jun-1981,1981,Greater Melbourne,28.6
+Jun-1981,1981,Greater Brisbane,28.1
+Jun-1981,1981,Greater Adelaide,28.1
+Jun-1981,1981,Greater Perth,28.5
+Jun-1981,1981,Greater Hobart,29.2
+Jun-1981,1981,Greater Darwin,30.6
+Jun-1981,1981,Australian Capital Territory,28.7
+Sep-1981,1981,Australia,29.0
+Sep-1981,1981,Greater Sydney,28.9
+Sep-1981,1981,Greater Melbourne,29.3
+Sep-1981,1981,Greater Brisbane,28.8
+Sep-1981,1981,Greater Adelaide,28.7
+Sep-1981,1981,Greater Perth,29.4
+Sep-1981,1981,Greater Hobart,29.9
+Sep-1981,1981,Greater Darwin,31.3
+Sep-1981,1981,Australian Capital Territory,29.3
+Dec-1981,1981,Australia,30.2
+Dec-1981,1981,Greater Sydney,30.1
+Dec-1981,1981,Greater Melbourne,30.6
+Dec-1981,1981,Greater Brisbane,29.9
+Dec-1981,1981,Greater Adelaide,29.8
+Dec-1981,1981,Greater Perth,30.7
+Dec-1981,1981,Greater Hobart,31.0
+Dec-1981,1981,Greater Darwin,33.1
+Dec-1981,1981,Australian Capital Territory,30.5
+Mar-1982,1982,Australia,30.8
+Mar-1982,1982,Greater Sydney,30.7
+Mar-1982,1982,Greater Melbourne,31.0
+Mar-1982,1982,Greater Brisbane,30.6
+Mar-1982,1982,Greater Adelaide,30.2
+Mar-1982,1982,Greater Perth,31.0
+Mar-1982,1982,Greater Hobart,31.5
+Mar-1982,1982,Greater Darwin,33.6
+Mar-1982,1982,Australian Capital Territory,31.0
+Jun-1982,1982,Australia,31.5
+Jun-1982,1982,Greater Sydney,31.6
+Jun-1982,1982,Greater Melbourne,31.7
+Jun-1982,1982,Greater Brisbane,31.0
+Jun-1982,1982,Greater Adelaide,31.0
+Jun-1982,1982,Greater Perth,31.6
+Jun-1982,1982,Greater Hobart,32.1
+Jun-1982,1982,Greater Darwin,34.2
+Jun-1982,1982,Australian Capital Territory,31.9
+Sep-1982,1982,Australia,32.6
+Sep-1982,1982,Greater Sydney,32.7
+Sep-1982,1982,Greater Melbourne,32.8
+Sep-1982,1982,Greater Brisbane,32.0
+Sep-1982,1982,Greater Adelaide,32.1
+Sep-1982,1982,Greater Perth,32.8
+Sep-1982,1982,Greater Hobart,33.1
+Sep-1982,1982,Greater Darwin,35.3
+Sep-1982,1982,Australian Capital Territory,32.9
+Dec-1982,1982,Australia,33.6
+Dec-1982,1982,Greater Sydney,33.7
+Dec-1982,1982,Greater Melbourne,33.7
+Dec-1982,1982,Greater Brisbane,33.1
+Dec-1982,1982,Greater Adelaide,33.0
+Dec-1982,1982,Greater Perth,33.7
+Dec-1982,1982,Greater Hobart,34.2
+Dec-1982,1982,Greater Darwin,36.4
+Dec-1982,1982,Australian Capital Territory,34.2
+Mar-1983,1983,Australia,34.3
+Mar-1983,1983,Greater Sydney,34.4
+Mar-1983,1983,Greater Melbourne,34.4
+Mar-1983,1983,Greater Brisbane,33.9
+Mar-1983,1983,Greater Adelaide,33.9
+Mar-1983,1983,Greater Perth,34.2
+Mar-1983,1983,Greater Hobart,35.0
+Mar-1983,1983,Greater Darwin,37.1
+Mar-1983,1983,Australian Capital Territory,34.9
+Jun-1983,1983,Australia,35.0
+Jun-1983,1983,Greater Sydney,35.1
+Jun-1983,1983,Greater Melbourne,35.4
+Jun-1983,1983,Greater Brisbane,34.3
+Jun-1983,1983,Greater Adelaide,34.8
+Jun-1983,1983,Greater Perth,34.8
+Jun-1983,1983,Greater Hobart,35.6
+Jun-1983,1983,Greater Darwin,37.8
+Jun-1983,1983,Australian Capital Territory,35.5
+Sep-1983,1983,Australia,35.6
+Sep-1983,1983,Greater Sydney,35.5
+Sep-1983,1983,Greater Melbourne,35.9
+Sep-1983,1983,Greater Brisbane,35.1
+Sep-1983,1983,Greater Adelaide,35.3
+Sep-1983,1983,Greater Perth,35.8
+Sep-1983,1983,Greater Hobart,36.1
+Sep-1983,1983,Greater Darwin,38.3
+Sep-1983,1983,Australian Capital Territory,36.0
+Dec-1983,1983,Australia,36.5
+Dec-1983,1983,Greater Sydney,36.2
+Dec-1983,1983,Greater Melbourne,37.0
+Dec-1983,1983,Greater Brisbane,35.8
+Dec-1983,1983,Greater Adelaide,36.0
+Dec-1983,1983,Greater Perth,36.5
+Dec-1983,1983,Greater Hobart,36.9
+Dec-1983,1983,Greater Darwin,38.8
+Dec-1983,1983,Australian Capital Territory,36.9
+Mar-1984,1984,Australia,36.3
+Mar-1984,1984,Greater Sydney,36.1
+Mar-1984,1984,Greater Melbourne,36.8
+Mar-1984,1984,Greater Brisbane,35.9
+Mar-1984,1984,Greater Adelaide,36.0
+Mar-1984,1984,Greater Perth,36.2
+Mar-1984,1984,Greater Hobart,37.0
+Mar-1984,1984,Greater Darwin,39.0
+Mar-1984,1984,Australian Capital Territory,36.9
+Jun-1984,1984,Australia,36.4
+Jun-1984,1984,Greater Sydney,36.1
+Jun-1984,1984,Greater Melbourne,36.9
+Jun-1984,1984,Greater Brisbane,36.2
+Jun-1984,1984,Greater Adelaide,36.1
+Jun-1984,1984,Greater Perth,36.2
+Jun-1984,1984,Greater Hobart,37.0
+Jun-1984,1984,Greater Darwin,39.0
+Jun-1984,1984,Australian Capital Territory,37.0
+Sep-1984,1984,Australia,36.9
+Sep-1984,1984,Greater Sydney,36.5
+Sep-1984,1984,Greater Melbourne,37.5
+Sep-1984,1984,Greater Brisbane,36.7
+Sep-1984,1984,Greater Adelaide,36.4
+Sep-1984,1984,Greater Perth,36.8
+Sep-1984,1984,Greater Hobart,37.4
+Sep-1984,1984,Greater Darwin,39.5
+Sep-1984,1984,Australian Capital Territory,37.5
+Dec-1984,1984,Australia,37.4
+Dec-1984,1984,Greater Sydney,37.1
+Dec-1984,1984,Greater Melbourne,37.9
+Dec-1984,1984,Greater Brisbane,37.1
+Dec-1984,1984,Greater Adelaide,37.2
+Dec-1984,1984,Greater Perth,37.2
+Dec-1984,1984,Greater Hobart,38.2
+Dec-1984,1984,Greater Darwin,39.9
+Dec-1984,1984,Australian Capital Territory,38.1
+Mar-1985,1985,Australia,37.9
+Mar-1985,1985,Greater Sydney,37.6
+Mar-1985,1985,Greater Melbourne,38.4
+Mar-1985,1985,Greater Brisbane,37.6
+Mar-1985,1985,Greater Adelaide,37.7
+Mar-1985,1985,Greater Perth,37.8
+Mar-1985,1985,Greater Hobart,38.8
+Mar-1985,1985,Greater Darwin,40.3
+Mar-1985,1985,Australian Capital Territory,38.7
+Jun-1985,1985,Australia,38.8
+Jun-1985,1985,Greater Sydney,38.4
+Jun-1985,1985,Greater Melbourne,39.5
+Jun-1985,1985,Greater Brisbane,38.3
+Jun-1985,1985,Greater Adelaide,38.7
+Jun-1985,1985,Greater Perth,38.7
+Jun-1985,1985,Greater Hobart,39.7
+Jun-1985,1985,Greater Darwin,41.2
+Jun-1985,1985,Australian Capital Territory,39.6
+Sep-1985,1985,Australia,39.7
+Sep-1985,1985,Greater Sydney,39.3
+Sep-1985,1985,Greater Melbourne,40.3
+Sep-1985,1985,Greater Brisbane,39.3
+Sep-1985,1985,Greater Adelaide,39.5
+Sep-1985,1985,Greater Perth,39.4
+Sep-1985,1985,Greater Hobart,40.7
+Sep-1985,1985,Greater Darwin,42.6
+Sep-1985,1985,Australian Capital Territory,40.5
+Dec-1985,1985,Australia,40.5
+Dec-1985,1985,Greater Sydney,40.2
+Dec-1985,1985,Greater Melbourne,41.0
+Dec-1985,1985,Greater Brisbane,40.0
+Dec-1985,1985,Greater Adelaide,40.4
+Dec-1985,1985,Greater Perth,40.3
+Dec-1985,1985,Greater Hobart,41.5
+Dec-1985,1985,Greater Darwin,43.1
+Dec-1985,1985,Australian Capital Territory,41.4
+Mar-1986,1986,Australia,41.4
+Mar-1986,1986,Greater Sydney,41.1
+Mar-1986,1986,Greater Melbourne,42.1
+Mar-1986,1986,Greater Brisbane,41.0
+Mar-1986,1986,Greater Adelaide,41.0
+Mar-1986,1986,Greater Perth,41.0
+Mar-1986,1986,Greater Hobart,42.2
+Mar-1986,1986,Greater Darwin,43.9
+Mar-1986,1986,Australian Capital Territory,42.3
+Jun-1986,1986,Australia,42.1
+Jun-1986,1986,Greater Sydney,41.8
+Jun-1986,1986,Greater Melbourne,42.8
+Jun-1986,1986,Greater Brisbane,41.4
+Jun-1986,1986,Greater Adelaide,41.8
+Jun-1986,1986,Greater Perth,41.7
+Jun-1986,1986,Greater Hobart,43.1
+Jun-1986,1986,Greater Darwin,44.4
+Jun-1986,1986,Australian Capital Territory,43.0
+Sep-1986,1986,Australia,43.2
+Sep-1986,1986,Greater Sydney,42.8
+Sep-1986,1986,Greater Melbourne,43.9
+Sep-1986,1986,Greater Brisbane,42.5
+Sep-1986,1986,Greater Adelaide,43.0
+Sep-1986,1986,Greater Perth,43.1
+Sep-1986,1986,Greater Hobart,44.2
+Sep-1986,1986,Greater Darwin,45.6
+Sep-1986,1986,Australian Capital Territory,43.9
+Dec-1986,1986,Australia,44.4
+Dec-1986,1986,Greater Sydney,44.1
+Dec-1986,1986,Greater Melbourne,45.2
+Dec-1986,1986,Greater Brisbane,43.6
+Dec-1986,1986,Greater Adelaide,44.1
+Dec-1986,1986,Greater Perth,44.4
+Dec-1986,1986,Greater Hobart,45.7
+Dec-1986,1986,Greater Darwin,47.2
+Dec-1986,1986,Australian Capital Territory,45.0
+Mar-1987,1987,Australia,45.3
+Mar-1987,1987,Greater Sydney,45.0
+Mar-1987,1987,Greater Melbourne,46.0
+Mar-1987,1987,Greater Brisbane,44.5
+Mar-1987,1987,Greater Adelaide,44.9
+Mar-1987,1987,Greater Perth,45.2
+Mar-1987,1987,Greater Hobart,46.6
+Mar-1987,1987,Greater Darwin,48.0
+Mar-1987,1987,Australian Capital Territory,45.8
+Jun-1987,1987,Australia,46.0
+Jun-1987,1987,Greater Sydney,45.7
+Jun-1987,1987,Greater Melbourne,46.8
+Jun-1987,1987,Greater Brisbane,45.1
+Jun-1987,1987,Greater Adelaide,45.6
+Jun-1987,1987,Greater Perth,46.0
+Jun-1987,1987,Greater Hobart,47.4
+Jun-1987,1987,Greater Darwin,48.8
+Jun-1987,1987,Australian Capital Territory,46.5
+Sep-1987,1987,Australia,46.8
+Sep-1987,1987,Greater Sydney,46.5
+Sep-1987,1987,Greater Melbourne,47.6
+Sep-1987,1987,Greater Brisbane,45.7
+Sep-1987,1987,Greater Adelaide,46.1
+Sep-1987,1987,Greater Perth,46.7
+Sep-1987,1987,Greater Hobart,48.2
+Sep-1987,1987,Greater Darwin,49.6
+Sep-1987,1987,Australian Capital Territory,47.1
+Dec-1987,1987,Australia,47.6
+Dec-1987,1987,Greater Sydney,47.2
+Dec-1987,1987,Greater Melbourne,48.4
+Dec-1987,1987,Greater Brisbane,46.6
+Dec-1987,1987,Greater Adelaide,47.1
+Dec-1987,1987,Greater Perth,47.5
+Dec-1987,1987,Greater Hobart,49.0
+Dec-1987,1987,Greater Darwin,50.4
+Dec-1987,1987,Australian Capital Territory,48.0
+Mar-1988,1988,Australia,48.4
+Mar-1988,1988,Greater Sydney,48.3
+Mar-1988,1988,Greater Melbourne,49.1
+Mar-1988,1988,Greater Brisbane,47.4
+Mar-1988,1988,Greater Adelaide,47.7
+Mar-1988,1988,Greater Perth,48.2
+Mar-1988,1988,Greater Hobart,49.8
+Mar-1988,1988,Greater Darwin,51.1
+Mar-1988,1988,Australian Capital Territory,48.9
+Jun-1988,1988,Australia,49.3
+Jun-1988,1988,Greater Sydney,49.0
+Jun-1988,1988,Greater Melbourne,50.1
+Jun-1988,1988,Greater Brisbane,48.3
+Jun-1988,1988,Greater Adelaide,48.5
+Jun-1988,1988,Greater Perth,49.1
+Jun-1988,1988,Greater Hobart,50.5
+Jun-1988,1988,Greater Darwin,51.9
+Jun-1988,1988,Australian Capital Territory,49.8
+Sep-1988,1988,Australia,50.2
+Sep-1988,1988,Greater Sydney,50.3
+Sep-1988,1988,Greater Melbourne,50.8
+Sep-1988,1988,Greater Brisbane,49.0
+Sep-1988,1988,Greater Adelaide,49.5
+Sep-1988,1988,Greater Perth,50.1
+Sep-1988,1988,Greater Hobart,51.1
+Sep-1988,1988,Greater Darwin,52.2
+Sep-1988,1988,Australian Capital Territory,50.4
+Dec-1988,1988,Australia,51.2
+Dec-1988,1988,Greater Sydney,51.6
+Dec-1988,1988,Greater Melbourne,51.7
+Dec-1988,1988,Greater Brisbane,49.9
+Dec-1988,1988,Greater Adelaide,50.3
+Dec-1988,1988,Greater Perth,51.1
+Dec-1988,1988,Greater Hobart,51.9
+Dec-1988,1988,Greater Darwin,52.8
+Dec-1988,1988,Australian Capital Territory,51.3
+Mar-1989,1989,Australia,51.7
+Mar-1989,1989,Greater Sydney,51.7
+Mar-1989,1989,Greater Melbourne,52.4
+Mar-1989,1989,Greater Brisbane,50.6
+Mar-1989,1989,Greater Adelaide,51.3
+Mar-1989,1989,Greater Perth,51.6
+Mar-1989,1989,Greater Hobart,52.9
+Mar-1989,1989,Greater Darwin,53.5
+Mar-1989,1989,Australian Capital Territory,51.9
+Jun-1989,1989,Australia,53.0
+Jun-1989,1989,Greater Sydney,52.9
+Jun-1989,1989,Greater Melbourne,53.8
+Jun-1989,1989,Greater Brisbane,51.8
+Jun-1989,1989,Greater Adelaide,52.3
+Jun-1989,1989,Greater Perth,52.8
+Jun-1989,1989,Greater Hobart,53.9
+Jun-1989,1989,Greater Darwin,54.4
+Jun-1989,1989,Australian Capital Territory,53.1
+Sep-1989,1989,Australia,54.2
+Sep-1989,1989,Greater Sydney,54.4
+Sep-1989,1989,Greater Melbourne,55.0
+Sep-1989,1989,Greater Brisbane,52.8
+Sep-1989,1989,Greater Adelaide,53.2
+Sep-1989,1989,Greater Perth,54.0
+Sep-1989,1989,Greater Hobart,54.8
+Sep-1989,1989,Greater Darwin,55.2
+Sep-1989,1989,Australian Capital Territory,53.9
+Dec-1989,1989,Australia,55.2
+Dec-1989,1989,Greater Sydney,55.4
+Dec-1989,1989,Greater Melbourne,56.0
+Dec-1989,1989,Greater Brisbane,53.7
+Dec-1989,1989,Greater Adelaide,54.0
+Dec-1989,1989,Greater Perth,55.1
+Dec-1989,1989,Greater Hobart,55.8
+Dec-1989,1989,Greater Darwin,56.2
+Dec-1989,1989,Australian Capital Territory,55.1
+Mar-1990,1990,Australia,56.2
+Mar-1990,1990,Greater Sydney,56.3
+Mar-1990,1990,Greater Melbourne,56.9
+Mar-1990,1990,Greater Brisbane,54.5
+Mar-1990,1990,Greater Adelaide,54.8
+Mar-1990,1990,Greater Perth,56.4
+Mar-1990,1990,Greater Hobart,56.7
+Mar-1990,1990,Greater Darwin,56.9
+Mar-1990,1990,Australian Capital Territory,56.2
+Jun-1990,1990,Australia,57.1
+Jun-1990,1990,Greater Sydney,57.2
+Jun-1990,1990,Greater Melbourne,58.0
+Jun-1990,1990,Greater Brisbane,55.3
+Jun-1990,1990,Greater Adelaide,55.8
+Jun-1990,1990,Greater Perth,57.3
+Jun-1990,1990,Greater Hobart,57.2
+Jun-1990,1990,Greater Darwin,57.9
+Jun-1990,1990,Australian Capital Territory,56.8
+Sep-1990,1990,Australia,57.5
+Sep-1990,1990,Greater Sydney,57.6
+Sep-1990,1990,Greater Melbourne,58.5
+Sep-1990,1990,Greater Brisbane,55.6
+Sep-1990,1990,Greater Adelaide,56.5
+Sep-1990,1990,Greater Perth,57.8
+Sep-1990,1990,Greater Hobart,57.8
+Sep-1990,1990,Greater Darwin,58.5
+Sep-1990,1990,Australian Capital Territory,57.2
+Dec-1990,1990,Australia,59.0
+Dec-1990,1990,Greater Sydney,58.9
+Dec-1990,1990,Greater Melbourne,60.2
+Dec-1990,1990,Greater Brisbane,57.0
+Dec-1990,1990,Greater Adelaide,58.2
+Dec-1990,1990,Greater Perth,59.2
+Dec-1990,1990,Greater Hobart,59.2
+Dec-1990,1990,Greater Darwin,60.2
+Dec-1990,1990,Australian Capital Territory,58.8
+Mar-1991,1991,Australia,58.9
+Mar-1991,1991,Greater Sydney,59.0
+Mar-1991,1991,Greater Melbourne,59.9
+Mar-1991,1991,Greater Brisbane,57.2
+Mar-1991,1991,Greater Adelaide,58.1
+Mar-1991,1991,Greater Perth,58.6
+Mar-1991,1991,Greater Hobart,59.1
+Mar-1991,1991,Greater Darwin,60.0
+Mar-1991,1991,Australian Capital Territory,58.6
+Jun-1991,1991,Australia,59.0
+Jun-1991,1991,Greater Sydney,58.9
+Jun-1991,1991,Greater Melbourne,60.3
+Jun-1991,1991,Greater Brisbane,57.2
+Jun-1991,1991,Greater Adelaide,58.4
+Jun-1991,1991,Greater Perth,58.6
+Jun-1991,1991,Greater Hobart,59.4
+Jun-1991,1991,Greater Darwin,60.3
+Jun-1991,1991,Australian Capital Territory,58.6
+Sep-1991,1991,Australia,59.3
+Sep-1991,1991,Greater Sydney,59.2
+Sep-1991,1991,Greater Melbourne,60.8
+Sep-1991,1991,Greater Brisbane,57.4
+Sep-1991,1991,Greater Adelaide,58.8
+Sep-1991,1991,Greater Perth,58.9
+Sep-1991,1991,Greater Hobart,59.9
+Sep-1991,1991,Greater Darwin,60.4
+Sep-1991,1991,Australian Capital Territory,59.4
+Dec-1991,1991,Australia,59.9
+Dec-1991,1991,Greater Sydney,59.8
+Dec-1991,1991,Greater Melbourne,61.2
+Dec-1991,1991,Greater Brisbane,58.0
+Dec-1991,1991,Greater Adelaide,59.3
+Dec-1991,1991,Greater Perth,59.1
+Dec-1991,1991,Greater Hobart,60.3
+Dec-1991,1991,Greater Darwin,61.2
+Dec-1991,1991,Australian Capital Territory,59.9
+Mar-1992,1992,Australia,59.9
+Mar-1992,1992,Greater Sydney,59.8
+Mar-1992,1992,Greater Melbourne,61.2
+Mar-1992,1992,Greater Brisbane,58.1
+Mar-1992,1992,Greater Adelaide,59.6
+Mar-1992,1992,Greater Perth,59.1
+Mar-1992,1992,Greater Hobart,60.3
+Mar-1992,1992,Greater Darwin,61.2
+Mar-1992,1992,Australian Capital Territory,60.1
+Jun-1992,1992,Australia,59.7
+Jun-1992,1992,Greater Sydney,59.5
+Jun-1992,1992,Greater Melbourne,61.1
+Jun-1992,1992,Greater Brisbane,57.9
+Jun-1992,1992,Greater Adelaide,59.6
+Jun-1992,1992,Greater Perth,58.8
+Jun-1992,1992,Greater Hobart,60.1
+Jun-1992,1992,Greater Darwin,61.3
+Jun-1992,1992,Australian Capital Territory,59.9
+Sep-1992,1992,Australia,59.8
+Sep-1992,1992,Greater Sydney,59.7
+Sep-1992,1992,Greater Melbourne,61.0
+Sep-1992,1992,Greater Brisbane,57.8
+Sep-1992,1992,Greater Adelaide,60.0
+Sep-1992,1992,Greater Perth,58.8
+Sep-1992,1992,Greater Hobart,60.4
+Sep-1992,1992,Greater Darwin,61.6
+Sep-1992,1992,Australian Capital Territory,60.3
+Dec-1992,1992,Australia,60.1
+Dec-1992,1992,Greater Sydney,60.0
+Dec-1992,1992,Greater Melbourne,61.1
+Dec-1992,1992,Greater Brisbane,58.5
+Dec-1992,1992,Greater Adelaide,60.3
+Dec-1992,1992,Greater Perth,59.1
+Dec-1992,1992,Greater Hobart,60.6
+Dec-1992,1992,Greater Darwin,61.7
+Dec-1992,1992,Australian Capital Territory,60.5
+Mar-1993,1993,Australia,60.6
+Mar-1993,1993,Greater Sydney,60.4
+Mar-1993,1993,Greater Melbourne,61.9
+Mar-1993,1993,Greater Brisbane,59.0
+Mar-1993,1993,Greater Adelaide,60.8
+Mar-1993,1993,Greater Perth,59.3
+Mar-1993,1993,Greater Hobart,61.2
+Mar-1993,1993,Greater Darwin,62.1
+Mar-1993,1993,Australian Capital Territory,61.1
+Jun-1993,1993,Australia,60.8
+Jun-1993,1993,Greater Sydney,60.5
+Jun-1993,1993,Greater Melbourne,62.2
+Jun-1993,1993,Greater Brisbane,59.3
+Jun-1993,1993,Greater Adelaide,61.2
+Jun-1993,1993,Greater Perth,59.5
+Jun-1993,1993,Greater Hobart,61.4
+Jun-1993,1993,Greater Darwin,62.2
+Jun-1993,1993,Australian Capital Territory,61.2
+Sep-1993,1993,Australia,61.1
+Sep-1993,1993,Greater Sydney,60.7
+Sep-1993,1993,Greater Melbourne,62.4
+Sep-1993,1993,Greater Brisbane,59.4
+Sep-1993,1993,Greater Adelaide,61.4
+Sep-1993,1993,Greater Perth,60.1
+Sep-1993,1993,Greater Hobart,62.3
+Sep-1993,1993,Greater Darwin,62.5
+Sep-1993,1993,Australian Capital Territory,61.6
+Dec-1993,1993,Australia,61.2
+Dec-1993,1993,Greater Sydney,60.8
+Dec-1993,1993,Greater Melbourne,62.6
+Dec-1993,1993,Greater Brisbane,59.6
+Dec-1993,1993,Greater Adelaide,61.4
+Dec-1993,1993,Greater Perth,60.5
+Dec-1993,1993,Greater Hobart,62.6
+Dec-1993,1993,Greater Darwin,63.2
+Dec-1993,1993,Australian Capital Territory,61.8
+Mar-1994,1994,Australia,61.5
+Mar-1994,1994,Greater Sydney,60.9
+Mar-1994,1994,Greater Melbourne,62.8
+Mar-1994,1994,Greater Brisbane,59.9
+Mar-1994,1994,Greater Adelaide,61.9
+Mar-1994,1994,Greater Perth,60.5
+Mar-1994,1994,Greater Hobart,62.8
+Mar-1994,1994,Greater Darwin,63.0
+Mar-1994,1994,Australian Capital Territory,61.8
+Jun-1994,1994,Australia,61.9
+Jun-1994,1994,Greater Sydney,61.4
+Jun-1994,1994,Greater Melbourne,63.3
+Jun-1994,1994,Greater Brisbane,60.3
+Jun-1994,1994,Greater Adelaide,62.3
+Jun-1994,1994,Greater Perth,60.8
+Jun-1994,1994,Greater Hobart,63.1
+Jun-1994,1994,Greater Darwin,63.5
+Jun-1994,1994,Australian Capital Territory,62.2
+Sep-1994,1994,Australia,62.3
+Sep-1994,1994,Greater Sydney,62.0
+Sep-1994,1994,Greater Melbourne,63.4
+Sep-1994,1994,Greater Brisbane,60.9
+Sep-1994,1994,Greater Adelaide,62.6
+Sep-1994,1994,Greater Perth,61.3
+Sep-1994,1994,Greater Hobart,63.6
+Sep-1994,1994,Greater Darwin,63.9
+Sep-1994,1994,Australian Capital Territory,62.5
+Dec-1994,1994,Australia,62.8
+Dec-1994,1994,Greater Sydney,62.4
+Dec-1994,1994,Greater Melbourne,63.9
+Dec-1994,1994,Greater Brisbane,61.5
+Dec-1994,1994,Greater Adelaide,63.2
+Dec-1994,1994,Greater Perth,61.8
+Dec-1994,1994,Greater Hobart,64.1
+Dec-1994,1994,Greater Darwin,64.3
+Dec-1994,1994,Australian Capital Territory,63.2
+Mar-1995,1995,Australia,63.8
+Mar-1995,1995,Greater Sydney,63.5
+Mar-1995,1995,Greater Melbourne,65.0
+Mar-1995,1995,Greater Brisbane,62.6
+Mar-1995,1995,Greater Adelaide,64.2
+Mar-1995,1995,Greater Perth,63.0
+Mar-1995,1995,Greater Hobart,65.2
+Mar-1995,1995,Greater Darwin,65.2
+Mar-1995,1995,Australian Capital Territory,64.5
+Jun-1995,1995,Australia,64.7
+Jun-1995,1995,Greater Sydney,64.4
+Jun-1995,1995,Greater Melbourne,65.6
+Jun-1995,1995,Greater Brisbane,63.2
+Jun-1995,1995,Greater Adelaide,64.7
+Jun-1995,1995,Greater Perth,64.0
+Jun-1995,1995,Greater Hobart,65.7
+Jun-1995,1995,Greater Darwin,66.0
+Jun-1995,1995,Australian Capital Territory,65.3
+Sep-1995,1995,Australia,65.5
+Sep-1995,1995,Greater Sydney,65.5
+Sep-1995,1995,Greater Melbourne,66.4
+Sep-1995,1995,Greater Brisbane,63.8
+Sep-1995,1995,Greater Adelaide,65.4
+Sep-1995,1995,Greater Perth,64.4
+Sep-1995,1995,Greater Hobart,66.5
+Sep-1995,1995,Greater Darwin,66.7
+Sep-1995,1995,Australian Capital Territory,66.1
+Dec-1995,1995,Australia,66.0
+Dec-1995,1995,Greater Sydney,66.1
+Dec-1995,1995,Greater Melbourne,66.9
+Dec-1995,1995,Greater Brisbane,64.2
+Dec-1995,1995,Greater Adelaide,66.0
+Dec-1995,1995,Greater Perth,64.8
+Dec-1995,1995,Greater Hobart,66.9
+Dec-1995,1995,Greater Darwin,67.4
+Dec-1995,1995,Australian Capital Territory,66.6
+Mar-1996,1996,Australia,66.2
+Mar-1996,1996,Greater Sydney,66.5
+Mar-1996,1996,Greater Melbourne,66.8
+Mar-1996,1996,Greater Brisbane,64.7
+Mar-1996,1996,Greater Adelaide,66.2
+Mar-1996,1996,Greater Perth,65.2
+Mar-1996,1996,Greater Hobart,67.4
+Mar-1996,1996,Greater Darwin,67.7
+Mar-1996,1996,Australian Capital Territory,67.0
+Jun-1996,1996,Australia,66.7
+Jun-1996,1996,Greater Sydney,67.0
+Jun-1996,1996,Greater Melbourne,67.3
+Jun-1996,1996,Greater Brisbane,65.1
+Jun-1996,1996,Greater Adelaide,66.5
+Jun-1996,1996,Greater Perth,65.7
+Jun-1996,1996,Greater Hobart,67.7
+Jun-1996,1996,Greater Darwin,68.3
+Jun-1996,1996,Australian Capital Territory,67.4
+Sep-1996,1996,Australia,66.9
+Sep-1996,1996,Greater Sydney,67.1
+Sep-1996,1996,Greater Melbourne,67.6
+Sep-1996,1996,Greater Brisbane,65.2
+Sep-1996,1996,Greater Adelaide,66.6
+Sep-1996,1996,Greater Perth,65.9
+Sep-1996,1996,Greater Hobart,68.0
+Sep-1996,1996,Greater Darwin,68.8
+Sep-1996,1996,Australian Capital Territory,67.4
+Dec-1996,1996,Australia,67.0
+Dec-1996,1996,Greater Sydney,67.2
+Dec-1996,1996,Greater Melbourne,67.7
+Dec-1996,1996,Greater Brisbane,65.3
+Dec-1996,1996,Greater Adelaide,66.8
+Dec-1996,1996,Greater Perth,66.0
+Dec-1996,1996,Greater Hobart,68.1
+Dec-1996,1996,Greater Darwin,68.8
+Dec-1996,1996,Australian Capital Territory,67.4
+Mar-1997,1997,Australia,67.1
+Mar-1997,1997,Greater Sydney,67.3
+Mar-1997,1997,Greater Melbourne,67.8
+Mar-1997,1997,Greater Brisbane,65.7
+Mar-1997,1997,Greater Adelaide,66.8
+Mar-1997,1997,Greater Perth,65.9
+Mar-1997,1997,Greater Hobart,68.4
+Mar-1997,1997,Greater Darwin,68.8
+Mar-1997,1997,Australian Capital Territory,67.4
+Jun-1997,1997,Australia,66.9
+Jun-1997,1997,Greater Sydney,67.1
+Jun-1997,1997,Greater Melbourne,67.7
+Jun-1997,1997,Greater Brisbane,65.5
+Jun-1997,1997,Greater Adelaide,66.4
+Jun-1997,1997,Greater Perth,65.8
+Jun-1997,1997,Greater Hobart,68.1
+Jun-1997,1997,Greater Darwin,68.7
+Jun-1997,1997,Australian Capital Territory,66.8
+Sep-1997,1997,Australia,66.6
+Sep-1997,1997,Greater Sydney,66.9
+Sep-1997,1997,Greater Melbourne,67.5
+Sep-1997,1997,Greater Brisbane,65.3
+Sep-1997,1997,Greater Adelaide,66.0
+Sep-1997,1997,Greater Perth,65.5
+Sep-1997,1997,Greater Hobart,67.7
+Sep-1997,1997,Greater Darwin,68.4
+Sep-1997,1997,Australian Capital Territory,66.5
+Dec-1997,1997,Australia,66.8
+Dec-1997,1997,Greater Sydney,67.1
+Dec-1997,1997,Greater Melbourne,67.7
+Dec-1997,1997,Greater Brisbane,65.7
+Dec-1997,1997,Greater Adelaide,66.0
+Dec-1997,1997,Greater Perth,65.5
+Dec-1997,1997,Greater Hobart,68.0
+Dec-1997,1997,Greater Darwin,68.3
+Dec-1997,1997,Australian Capital Territory,66.5
+Mar-1998,1998,Australia,67.0
+Mar-1998,1998,Greater Sydney,67.4
+Mar-1998,1998,Greater Melbourne,67.6
+Mar-1998,1998,Greater Brisbane,65.9
+Mar-1998,1998,Greater Adelaide,66.3
+Mar-1998,1998,Greater Perth,65.7
+Mar-1998,1998,Greater Hobart,68.2
+Mar-1998,1998,Greater Darwin,68.7
+Mar-1998,1998,Australian Capital Territory,66.9
+Jun-1998,1998,Australia,67.4
+Jun-1998,1998,Greater Sydney,67.8
+Jun-1998,1998,Greater Melbourne,68.0
+Jun-1998,1998,Greater Brisbane,66.2
+Jun-1998,1998,Greater Adelaide,66.7
+Jun-1998,1998,Greater Perth,66.2
+Jun-1998,1998,Greater Hobart,68.5
+Jun-1998,1998,Greater Darwin,68.9
+Jun-1998,1998,Australian Capital Territory,67.3
+Sep-1998,1998,Australia,67.5
+Sep-1998,1998,Greater Sydney,68.0
+Sep-1998,1998,Greater Melbourne,68.0
+Sep-1998,1998,Greater Brisbane,66.3
+Sep-1998,1998,Greater Adelaide,67.0
+Sep-1998,1998,Greater Perth,66.7
+Sep-1998,1998,Greater Hobart,68.9
+Sep-1998,1998,Greater Darwin,69.1
+Sep-1998,1998,Australian Capital Territory,67.3
+Dec-1998,1998,Australia,67.8
+Dec-1998,1998,Greater Sydney,68.4
+Dec-1998,1998,Greater Melbourne,68.3
+Dec-1998,1998,Greater Brisbane,66.5
+Dec-1998,1998,Greater Adelaide,67.3
+Dec-1998,1998,Greater Perth,67.0
+Dec-1998,1998,Greater Hobart,68.9
+Dec-1998,1998,Greater Darwin,69.3
+Dec-1998,1998,Australian Capital Territory,67.5
+Mar-1999,1999,Australia,67.8
+Mar-1999,1999,Greater Sydney,68.4
+Mar-1999,1999,Greater Melbourne,68.3
+Mar-1999,1999,Greater Brisbane,66.4
+Mar-1999,1999,Greater Adelaide,66.8
+Mar-1999,1999,Greater Perth,66.7
+Mar-1999,1999,Greater Hobart,68.6
+Mar-1999,1999,Greater Darwin,69.0
+Mar-1999,1999,Australian Capital Territory,67.4
+Jun-1999,1999,Australia,68.1
+Jun-1999,1999,Greater Sydney,68.7
+Jun-1999,1999,Greater Melbourne,68.6
+Jun-1999,1999,Greater Brisbane,66.6
+Jun-1999,1999,Greater Adelaide,67.3
+Jun-1999,1999,Greater Perth,67.3
+Jun-1999,1999,Greater Hobart,68.8
+Jun-1999,1999,Greater Darwin,69.4
+Jun-1999,1999,Australian Capital Territory,67.4
+Sep-1999,1999,Australia,68.7
+Sep-1999,1999,Greater Sydney,69.3
+Sep-1999,1999,Greater Melbourne,69.3
+Sep-1999,1999,Greater Brisbane,67.1
+Sep-1999,1999,Greater Adelaide,68.1
+Sep-1999,1999,Greater Perth,67.9
+Sep-1999,1999,Greater Hobart,69.2
+Sep-1999,1999,Greater Darwin,69.5
+Sep-1999,1999,Australian Capital Territory,68.0
+Dec-1999,1999,Australia,69.1
+Dec-1999,1999,Greater Sydney,69.7
+Dec-1999,1999,Greater Melbourne,69.7
+Dec-1999,1999,Greater Brisbane,67.1
+Dec-1999,1999,Greater Adelaide,68.5
+Dec-1999,1999,Greater Perth,68.3
+Dec-1999,1999,Greater Hobart,69.6
+Dec-1999,1999,Greater Darwin,69.9
+Dec-1999,1999,Australian Capital Territory,68.6
+Mar-2000,2000,Australia,69.7
+Mar-2000,2000,Greater Sydney,70.3
+Mar-2000,2000,Greater Melbourne,70.5
+Mar-2000,2000,Greater Brisbane,67.9
+Mar-2000,2000,Greater Adelaide,69.1
+Mar-2000,2000,Greater Perth,68.6
+Mar-2000,2000,Greater Hobart,70.3
+Mar-2000,2000,Greater Darwin,70.3
+Mar-2000,2000,Australian Capital Territory,69.3
+Jun-2000,2000,Australia,70.2
+Jun-2000,2000,Greater Sydney,70.9
+Jun-2000,2000,Greater Melbourne,70.9
+Jun-2000,2000,Greater Brisbane,68.3
+Jun-2000,2000,Greater Adelaide,69.5
+Jun-2000,2000,Greater Perth,69.1
+Jun-2000,2000,Greater Hobart,71.0
+Jun-2000,2000,Greater Darwin,71.1
+Jun-2000,2000,Australian Capital Territory,69.9
+Sep-2000,2000,Australia,72.9
+Sep-2000,2000,Greater Sydney,73.5
+Sep-2000,2000,Greater Melbourne,73.6
+Sep-2000,2000,Greater Brisbane,71.0
+Sep-2000,2000,Greater Adelaide,72.1
+Sep-2000,2000,Greater Perth,71.6
+Sep-2000,2000,Greater Hobart,73.7
+Sep-2000,2000,Greater Darwin,73.5
+Sep-2000,2000,Australian Capital Territory,72.5
+Dec-2000,2000,Australia,73.1
+Dec-2000,2000,Greater Sydney,73.8
+Dec-2000,2000,Greater Melbourne,73.9
+Dec-2000,2000,Greater Brisbane,71.2
+Dec-2000,2000,Greater Adelaide,72.2
+Dec-2000,2000,Greater Perth,71.8
+Dec-2000,2000,Greater Hobart,73.7
+Dec-2000,2000,Greater Darwin,73.9
+Dec-2000,2000,Australian Capital Territory,72.8
+Mar-2001,2001,Australia,73.9
+Mar-2001,2001,Greater Sydney,74.8
+Mar-2001,2001,Greater Melbourne,74.7
+Mar-2001,2001,Greater Brisbane,71.8
+Mar-2001,2001,Greater Adelaide,73.0
+Mar-2001,2001,Greater Perth,72.2
+Mar-2001,2001,Greater Hobart,74.2
+Mar-2001,2001,Greater Darwin,73.9
+Mar-2001,2001,Australian Capital Territory,73.3
+Jun-2001,2001,Australia,74.5
+Jun-2001,2001,Greater Sydney,75.4
+Jun-2001,2001,Greater Melbourne,75.1
+Jun-2001,2001,Greater Brisbane,72.5
+Jun-2001,2001,Greater Adelaide,73.6
+Jun-2001,2001,Greater Perth,73.2
+Jun-2001,2001,Greater Hobart,74.9
+Jun-2001,2001,Greater Darwin,74.7
+Jun-2001,2001,Australian Capital Territory,74.0
+Sep-2001,2001,Australia,74.7
+Sep-2001,2001,Greater Sydney,75.6
+Sep-2001,2001,Greater Melbourne,75.5
+Sep-2001,2001,Greater Brisbane,72.6
+Sep-2001,2001,Greater Adelaide,73.7
+Sep-2001,2001,Greater Perth,73.3
+Sep-2001,2001,Greater Hobart,74.6
+Sep-2001,2001,Greater Darwin,74.9
+Sep-2001,2001,Australian Capital Territory,74.0
+Dec-2001,2001,Australia,75.4
+Dec-2001,2001,Greater Sydney,76.3
+Dec-2001,2001,Greater Melbourne,76.1
+Dec-2001,2001,Greater Brisbane,73.5
+Dec-2001,2001,Greater Adelaide,74.4
+Dec-2001,2001,Greater Perth,73.9
+Dec-2001,2001,Greater Hobart,75.2
+Dec-2001,2001,Greater Darwin,75.5
+Dec-2001,2001,Australian Capital Territory,74.9
+Mar-2002,2002,Australia,76.1
+Mar-2002,2002,Greater Sydney,77.0
+Mar-2002,2002,Greater Melbourne,76.9
+Mar-2002,2002,Greater Brisbane,74.2
+Mar-2002,2002,Greater Adelaide,75.0
+Mar-2002,2002,Greater Perth,74.5
+Mar-2002,2002,Greater Hobart,75.9
+Mar-2002,2002,Greater Darwin,75.7
+Mar-2002,2002,Australian Capital Territory,75.3
+Jun-2002,2002,Australia,76.6
+Jun-2002,2002,Greater Sydney,77.5
+Jun-2002,2002,Greater Melbourne,77.3
+Jun-2002,2002,Greater Brisbane,74.7
+Jun-2002,2002,Greater Adelaide,75.7
+Jun-2002,2002,Greater Perth,75.0
+Jun-2002,2002,Greater Hobart,76.9
+Jun-2002,2002,Greater Darwin,76.3
+Jun-2002,2002,Australian Capital Territory,76.2
+Sep-2002,2002,Australia,77.1
+Sep-2002,2002,Greater Sydney,77.9
+Sep-2002,2002,Greater Melbourne,77.9
+Sep-2002,2002,Greater Brisbane,75.3
+Sep-2002,2002,Greater Adelaide,76.4
+Sep-2002,2002,Greater Perth,75.7
+Sep-2002,2002,Greater Hobart,77.2
+Sep-2002,2002,Greater Darwin,76.6
+Sep-2002,2002,Australian Capital Territory,76.6
+Dec-2002,2002,Australia,77.6
+Dec-2002,2002,Greater Sydney,78.4
+Dec-2002,2002,Greater Melbourne,78.5
+Dec-2002,2002,Greater Brisbane,75.7
+Dec-2002,2002,Greater Adelaide,77.1
+Dec-2002,2002,Greater Perth,76.0
+Dec-2002,2002,Greater Hobart,77.5
+Dec-2002,2002,Greater Darwin,77.0
+Dec-2002,2002,Australian Capital Territory,77.3
+Mar-2003,2003,Australia,78.6
+Mar-2003,2003,Greater Sydney,79.4
+Mar-2003,2003,Greater Melbourne,79.6
+Mar-2003,2003,Greater Brisbane,76.7
+Mar-2003,2003,Greater Adelaide,78.7
+Mar-2003,2003,Greater Perth,76.6
+Mar-2003,2003,Greater Hobart,78.6
+Mar-2003,2003,Greater Darwin,77.7
+Mar-2003,2003,Australian Capital Territory,78.1
+Jun-2003,2003,Australia,78.6
+Jun-2003,2003,Greater Sydney,79.4
+Jun-2003,2003,Greater Melbourne,79.6
+Jun-2003,2003,Greater Brisbane,76.7
+Jun-2003,2003,Greater Adelaide,78.6
+Jun-2003,2003,Greater Perth,76.5
+Jun-2003,2003,Greater Hobart,79.1
+Jun-2003,2003,Greater Darwin,78.0
+Jun-2003,2003,Australian Capital Territory,78.1
+Sep-2003,2003,Australia,79.1
+Sep-2003,2003,Greater Sydney,79.5
+Sep-2003,2003,Greater Melbourne,80.1
+Sep-2003,2003,Greater Brisbane,77.5
+Sep-2003,2003,Greater Adelaide,79.2
+Sep-2003,2003,Greater Perth,77.2
+Sep-2003,2003,Greater Hobart,79.2
+Sep-2003,2003,Greater Darwin,77.9
+Sep-2003,2003,Australian Capital Territory,78.8
+Dec-2003,2003,Australia,79.5
+Dec-2003,2003,Greater Sydney,80.2
+Dec-2003,2003,Greater Melbourne,80.3
+Dec-2003,2003,Greater Brisbane,78.0
+Dec-2003,2003,Greater Adelaide,79.6
+Dec-2003,2003,Greater Perth,77.5
+Dec-2003,2003,Greater Hobart,79.7
+Dec-2003,2003,Greater Darwin,78.3
+Dec-2003,2003,Australian Capital Territory,79.3
+Mar-2004,2004,Australia,80.2
+Mar-2004,2004,Greater Sydney,80.9
+Mar-2004,2004,Greater Melbourne,81.1
+Mar-2004,2004,Greater Brisbane,78.7
+Mar-2004,2004,Greater Adelaide,80.4
+Mar-2004,2004,Greater Perth,77.8
+Mar-2004,2004,Greater Hobart,80.3
+Mar-2004,2004,Greater Darwin,78.6
+Mar-2004,2004,Australian Capital Territory,79.9
+Jun-2004,2004,Australia,80.6
+Jun-2004,2004,Greater Sydney,81.2
+Jun-2004,2004,Greater Melbourne,81.3
+Jun-2004,2004,Greater Brisbane,79.1
+Jun-2004,2004,Greater Adelaide,80.9
+Jun-2004,2004,Greater Perth,78.6
+Jun-2004,2004,Greater Hobart,81.0
+Jun-2004,2004,Greater Darwin,78.9
+Jun-2004,2004,Australian Capital Territory,80.4
+Sep-2004,2004,Australia,80.9
+Sep-2004,2004,Greater Sydney,81.6
+Sep-2004,2004,Greater Melbourne,81.5
+Sep-2004,2004,Greater Brisbane,79.4
+Sep-2004,2004,Greater Adelaide,81.2
+Sep-2004,2004,Greater Perth,79.1
+Sep-2004,2004,Greater Hobart,81.4
+Sep-2004,2004,Greater Darwin,79.6
+Sep-2004,2004,Australian Capital Territory,80.8
+Dec-2004,2004,Australia,81.5
+Dec-2004,2004,Greater Sydney,82.3
+Dec-2004,2004,Greater Melbourne,82.1
+Dec-2004,2004,Greater Brisbane,80.0
+Dec-2004,2004,Greater Adelaide,81.7
+Dec-2004,2004,Greater Perth,79.8
+Dec-2004,2004,Greater Hobart,82.4
+Dec-2004,2004,Greater Darwin,79.8
+Dec-2004,2004,Australian Capital Territory,81.2
+Mar-2005,2005,Australia,82.1
+Mar-2005,2005,Greater Sydney,82.7
+Mar-2005,2005,Greater Melbourne,82.7
+Mar-2005,2005,Greater Brisbane,80.7
+Mar-2005,2005,Greater Adelaide,82.2
+Mar-2005,2005,Greater Perth,80.4
+Mar-2005,2005,Greater Hobart,83.1
+Mar-2005,2005,Greater Darwin,80.2
+Mar-2005,2005,Australian Capital Territory,81.6
+Jun-2005,2005,Australia,82.6
+Jun-2005,2005,Greater Sydney,83.2
+Jun-2005,2005,Greater Melbourne,83.0
+Jun-2005,2005,Greater Brisbane,81.1
+Jun-2005,2005,Greater Adelaide,82.7
+Jun-2005,2005,Greater Perth,81.5
+Jun-2005,2005,Greater Hobart,83.5
+Jun-2005,2005,Greater Darwin,80.9
+Jun-2005,2005,Australian Capital Territory,82.1
+Sep-2005,2005,Australia,83.4
+Sep-2005,2005,Greater Sydney,84.0
+Sep-2005,2005,Greater Melbourne,83.9
+Sep-2005,2005,Greater Brisbane,81.6
+Sep-2005,2005,Greater Adelaide,83.6
+Sep-2005,2005,Greater Perth,82.4
+Sep-2005,2005,Greater Hobart,84.3
+Sep-2005,2005,Greater Darwin,81.8
+Sep-2005,2005,Australian Capital Territory,83.1
+Dec-2005,2005,Australia,83.8
+Dec-2005,2005,Greater Sydney,84.3
+Dec-2005,2005,Greater Melbourne,84.3
+Dec-2005,2005,Greater Brisbane,82.3
+Dec-2005,2005,Greater Adelaide,83.9
+Dec-2005,2005,Greater Perth,83.0
+Dec-2005,2005,Greater Hobart,84.8
+Dec-2005,2005,Greater Darwin,82.2
+Dec-2005,2005,Australian Capital Territory,83.7
+Mar-2006,2006,Australia,84.5
+Mar-2006,2006,Greater Sydney,85.0
+Mar-2006,2006,Greater Melbourne,85.0
+Mar-2006,2006,Greater Brisbane,83.0
+Mar-2006,2006,Greater Adelaide,84.7
+Mar-2006,2006,Greater Perth,83.8
+Mar-2006,2006,Greater Hobart,85.4
+Mar-2006,2006,Greater Darwin,82.9
+Mar-2006,2006,Australian Capital Territory,84.5
+Jun-2006,2006,Australia,85.9
+Jun-2006,2006,Greater Sydney,86.4
+Jun-2006,2006,Greater Melbourne,86.2
+Jun-2006,2006,Greater Brisbane,84.5
+Jun-2006,2006,Greater Adelaide,85.8
+Jun-2006,2006,Greater Perth,85.4
+Jun-2006,2006,Greater Hobart,86.4
+Jun-2006,2006,Greater Darwin,84.4
+Jun-2006,2006,Australian Capital Territory,86.0
+Sep-2006,2006,Australia,86.7
+Sep-2006,2006,Greater Sydney,87.2
+Sep-2006,2006,Greater Melbourne,86.8
+Sep-2006,2006,Greater Brisbane,85.2
+Sep-2006,2006,Greater Adelaide,86.8
+Sep-2006,2006,Greater Perth,86.3
+Sep-2006,2006,Greater Hobart,87.1
+Sep-2006,2006,Greater Darwin,85.8
+Sep-2006,2006,Australian Capital Territory,86.6
+Dec-2006,2006,Australia,86.6
+Dec-2006,2006,Greater Sydney,87.0
+Dec-2006,2006,Greater Melbourne,86.7
+Dec-2006,2006,Greater Brisbane,85.1
+Dec-2006,2006,Greater Adelaide,86.5
+Dec-2006,2006,Greater Perth,86.6
+Dec-2006,2006,Greater Hobart,86.8
+Dec-2006,2006,Greater Darwin,86.3
+Dec-2006,2006,Australian Capital Territory,86.4
+Mar-2007,2007,Australia,86.6
+Mar-2007,2007,Greater Sydney,86.9
+Mar-2007,2007,Greater Melbourne,86.9
+Mar-2007,2007,Greater Brisbane,85.5
+Mar-2007,2007,Greater Adelaide,86.3
+Mar-2007,2007,Greater Perth,86.8
+Mar-2007,2007,Greater Hobart,87.3
+Mar-2007,2007,Greater Darwin,86.3
+Mar-2007,2007,Australian Capital Territory,86.5
+Jun-2007,2007,Australia,87.7
+Jun-2007,2007,Greater Sydney,87.9
+Jun-2007,2007,Greater Melbourne,87.9
+Jun-2007,2007,Greater Brisbane,86.7
+Jun-2007,2007,Greater Adelaide,87.3
+Jun-2007,2007,Greater Perth,88.0
+Jun-2007,2007,Greater Hobart,88.4
+Jun-2007,2007,Greater Darwin,87.5
+Jun-2007,2007,Australian Capital Territory,87.7
+Sep-2007,2007,Australia,88.3
+Sep-2007,2007,Greater Sydney,88.3
+Sep-2007,2007,Greater Melbourne,88.6
+Sep-2007,2007,Greater Brisbane,87.5
+Sep-2007,2007,Greater Adelaide,88.0
+Sep-2007,2007,Greater Perth,88.6
+Sep-2007,2007,Greater Hobart,88.6
+Sep-2007,2007,Greater Darwin,88.5
+Sep-2007,2007,Australian Capital Territory,88.4
+Dec-2007,2007,Australia,89.1
+Dec-2007,2007,Greater Sydney,89.1
+Dec-2007,2007,Greater Melbourne,89.5
+Dec-2007,2007,Greater Brisbane,88.4
+Dec-2007,2007,Greater Adelaide,88.9
+Dec-2007,2007,Greater Perth,89.3
+Dec-2007,2007,Greater Hobart,89.4
+Dec-2007,2007,Greater Darwin,88.8
+Dec-2007,2007,Australian Capital Territory,89.2
+Mar-2008,2008,Australia,90.3
+Mar-2008,2008,Greater Sydney,90.3
+Mar-2008,2008,Greater Melbourne,90.7
+Mar-2008,2008,Greater Brisbane,89.6
+Mar-2008,2008,Greater Adelaide,90.1
+Mar-2008,2008,Greater Perth,90.5
+Mar-2008,2008,Greater Hobart,90.5
+Mar-2008,2008,Greater Darwin,89.6
+Mar-2008,2008,Australian Capital Territory,90.5
+Jun-2008,2008,Australia,91.6
+Jun-2008,2008,Greater Sydney,91.7
+Jun-2008,2008,Greater Melbourne,91.8
+Jun-2008,2008,Greater Brisbane,91.1
+Jun-2008,2008,Greater Adelaide,91.3
+Jun-2008,2008,Greater Perth,92.0
+Jun-2008,2008,Greater Hobart,91.5
+Jun-2008,2008,Greater Darwin,90.9
+Jun-2008,2008,Australian Capital Territory,91.6
+Sep-2008,2008,Australia,92.7
+Sep-2008,2008,Greater Sydney,92.7
+Sep-2008,2008,Greater Melbourne,92.9
+Sep-2008,2008,Greater Brisbane,92.4
+Sep-2008,2008,Greater Adelaide,92.5
+Sep-2008,2008,Greater Perth,92.9
+Sep-2008,2008,Greater Hobart,92.5
+Sep-2008,2008,Greater Darwin,92.5
+Sep-2008,2008,Australian Capital Territory,93.0
+Dec-2008,2008,Australia,92.4
+Dec-2008,2008,Greater Sydney,92.4
+Dec-2008,2008,Greater Melbourne,92.3
+Dec-2008,2008,Greater Brisbane,92.2
+Dec-2008,2008,Greater Adelaide,92.2
+Dec-2008,2008,Greater Perth,92.6
+Dec-2008,2008,Greater Hobart,92.3
+Dec-2008,2008,Greater Darwin,92.1
+Dec-2008,2008,Australian Capital Territory,92.6
+Mar-2009,2009,Australia,92.5
+Mar-2009,2009,Greater Sydney,92.5
+Mar-2009,2009,Greater Melbourne,92.6
+Mar-2009,2009,Greater Brisbane,92.4
+Mar-2009,2009,Greater Adelaide,92.2
+Mar-2009,2009,Greater Perth,92.5
+Mar-2009,2009,Greater Hobart,92.5
+Mar-2009,2009,Greater Darwin,92.2
+Mar-2009,2009,Australian Capital Territory,92.9
+Jun-2009,2009,Australia,92.9
+Jun-2009,2009,Greater Sydney,92.9
+Jun-2009,2009,Greater Melbourne,92.9
+Jun-2009,2009,Greater Brisbane,92.9
+Jun-2009,2009,Greater Adelaide,92.7
+Jun-2009,2009,Greater Perth,93.3
+Jun-2009,2009,Greater Hobart,93.0
+Jun-2009,2009,Greater Darwin,93.2
+Jun-2009,2009,Australian Capital Territory,93.5
+Sep-2009,2009,Australia,93.8
+Sep-2009,2009,Greater Sydney,93.9
+Sep-2009,2009,Greater Melbourne,93.4
+Sep-2009,2009,Greater Brisbane,94.2
+Sep-2009,2009,Greater Adelaide,93.7
+Sep-2009,2009,Greater Perth,94.0
+Sep-2009,2009,Greater Hobart,94.1
+Sep-2009,2009,Greater Darwin,95.0
+Sep-2009,2009,Australian Capital Territory,94.3
+Dec-2009,2009,Australia,94.3
+Dec-2009,2009,Greater Sydney,94.4
+Dec-2009,2009,Greater Melbourne,94.0
+Dec-2009,2009,Greater Brisbane,94.5
+Dec-2009,2009,Greater Adelaide,94.1
+Dec-2009,2009,Greater Perth,94.5
+Dec-2009,2009,Greater Hobart,94.7
+Dec-2009,2009,Greater Darwin,94.9
+Dec-2009,2009,Australian Capital Territory,94.7
+Mar-2010,2010,Australia,95.2
+Mar-2010,2010,Greater Sydney,95.2
+Mar-2010,2010,Greater Melbourne,95.2
+Mar-2010,2010,Greater Brisbane,95.2
+Mar-2010,2010,Greater Adelaide,94.6
+Mar-2010,2010,Greater Perth,95.6
+Mar-2010,2010,Greater Hobart,95.4
+Mar-2010,2010,Greater Darwin,95.4
+Mar-2010,2010,Australian Capital Territory,95.3
+Jun-2010,2010,Australia,95.8
+Jun-2010,2010,Greater Sydney,95.6
+Jun-2010,2010,Greater Melbourne,95.8
+Jun-2010,2010,Greater Brisbane,95.9
+Jun-2010,2010,Greater Adelaide,95.3
+Jun-2010,2010,Greater Perth,96.5
+Jun-2010,2010,Greater Hobart,95.8
+Jun-2010,2010,Greater Darwin,96.2
+Jun-2010,2010,Australian Capital Territory,95.6
+Sep-2010,2010,Australia,96.5
+Sep-2010,2010,Greater Sydney,96.3
+Sep-2010,2010,Greater Melbourne,96.3
+Sep-2010,2010,Greater Brisbane,96.9
+Sep-2010,2010,Greater Adelaide,96.2
+Sep-2010,2010,Greater Perth,96.9
+Sep-2010,2010,Greater Hobart,96.8
+Sep-2010,2010,Greater Darwin,97.2
+Sep-2010,2010,Australian Capital Territory,96.3
+Dec-2010,2010,Australia,96.9
+Dec-2010,2010,Greater Sydney,96.7
+Dec-2010,2010,Greater Melbourne,96.9
+Dec-2010,2010,Greater Brisbane,97.4
+Dec-2010,2010,Greater Adelaide,96.5
+Dec-2010,2010,Greater Perth,97.0
+Dec-2010,2010,Greater Hobart,96.9
+Dec-2010,2010,Greater Darwin,97.1
+Dec-2010,2010,Australian Capital Territory,96.7
+Mar-2011,2011,Australia,98.3
+Mar-2011,2011,Greater Sydney,98.2
+Mar-2011,2011,Greater Melbourne,98.5
+Mar-2011,2011,Greater Brisbane,98.6
+Mar-2011,2011,Greater Adelaide,98.1
+Mar-2011,2011,Greater Perth,98.1
+Mar-2011,2011,Greater Hobart,98.2
+Mar-2011,2011,Greater Darwin,98.2
+Mar-2011,2011,Australian Capital Territory,98.1
+Jun-2011,2011,Australia,99.2
+Jun-2011,2011,Greater Sydney,99.2
+Jun-2011,2011,Greater Melbourne,99.2
+Jun-2011,2011,Greater Brisbane,99.6
+Jun-2011,2011,Greater Adelaide,99.0
+Jun-2011,2011,Greater Perth,99.4
+Jun-2011,2011,Greater Hobart,99.1
+Jun-2011,2011,Greater Darwin,99.2
+Jun-2011,2011,Australian Capital Territory,99.2
+Sep-2011,2011,Australia,99.8
+Sep-2011,2011,Greater Sydney,99.9
+Sep-2011,2011,Greater Melbourne,99.8
+Sep-2011,2011,Greater Brisbane,99.9
+Sep-2011,2011,Greater Adelaide,100.0
+Sep-2011,2011,Greater Perth,99.6
+Sep-2011,2011,Greater Hobart,99.9
+Sep-2011,2011,Greater Darwin,99.9
+Sep-2011,2011,Australian Capital Territory,99.8
+Dec-2011,2011,Australia,99.8
+Dec-2011,2011,Greater Sydney,99.8
+Dec-2011,2011,Greater Melbourne,99.9
+Dec-2011,2011,Greater Brisbane,99.7
+Dec-2011,2011,Greater Adelaide,100.0
+Dec-2011,2011,Greater Perth,99.8
+Dec-2011,2011,Greater Hobart,100.0
+Dec-2011,2011,Greater Darwin,99.5
+Dec-2011,2011,Australian Capital Territory,100.1
+Mar-2012,2012,Australia,99.9
+Mar-2012,2012,Greater Sydney,99.9
+Mar-2012,2012,Greater Melbourne,99.9
+Mar-2012,2012,Greater Brisbane,99.9
+Mar-2012,2012,Greater Adelaide,99.9
+Mar-2012,2012,Greater Perth,100.0
+Mar-2012,2012,Greater Hobart,100.3
+Mar-2012,2012,Greater Darwin,99.9
+Mar-2012,2012,Australian Capital Territory,99.7
+Jun-2012,2012,Australia,100.4
+Jun-2012,2012,Greater Sydney,100.5
+Jun-2012,2012,Greater Melbourne,100.4
+Jun-2012,2012,Greater Brisbane,100.5
+Jun-2012,2012,Greater Adelaide,100.2
+Jun-2012,2012,Greater Perth,100.5
+Jun-2012,2012,Greater Hobart,99.9
+Jun-2012,2012,Greater Darwin,100.7
+Jun-2012,2012,Australian Capital Territory,100.3
+Sep-2012,2012,Australia,101.8
+Sep-2012,2012,Greater Sydney,102.2
+Sep-2012,2012,Greater Melbourne,101.6
+Sep-2012,2012,Greater Brisbane,101.6
+Sep-2012,2012,Greater Adelaide,101.7
+Sep-2012,2012,Greater Perth,101.6
+Sep-2012,2012,Greater Hobart,100.6
+Sep-2012,2012,Greater Darwin,102.0
+Sep-2012,2012,Australian Capital Territory,101.4
+Dec-2012,2012,Australia,102.0
+Dec-2012,2012,Greater Sydney,102.3
+Dec-2012,2012,Greater Melbourne,102.0
+Dec-2012,2012,Greater Brisbane,101.9
+Dec-2012,2012,Greater Adelaide,102.1
+Dec-2012,2012,Greater Perth,101.9
+Dec-2012,2012,Greater Hobart,101.0
+Dec-2012,2012,Greater Darwin,102.0
+Dec-2012,2012,Australian Capital Territory,101.8
+Mar-2013,2013,Australia,102.4
+Mar-2013,2013,Greater Sydney,102.7
+Mar-2013,2013,Greater Melbourne,102.4
+Mar-2013,2013,Greater Brisbane,102.0
+Mar-2013,2013,Greater Adelaide,102.1
+Mar-2013,2013,Greater Perth,102.4
+Mar-2013,2013,Greater Hobart,101.3
+Mar-2013,2013,Greater Darwin,103.7
+Mar-2013,2013,Australian Capital Territory,101.9
+Jun-2013,2013,Australia,102.8
+Jun-2013,2013,Greater Sydney,103.1
+Jun-2013,2013,Greater Melbourne,102.6
+Jun-2013,2013,Greater Brisbane,102.5
+Jun-2013,2013,Greater Adelaide,102.3
+Jun-2013,2013,Greater Perth,103.0
+Jun-2013,2013,Greater Hobart,101.7
+Jun-2013,2013,Greater Darwin,104.6
+Jun-2013,2013,Australian Capital Territory,102.5
+Sep-2013,2013,Australia,104.0
+Sep-2013,2013,Greater Sydney,104.3
+Sep-2013,2013,Greater Melbourne,104.0
+Sep-2013,2013,Greater Brisbane,103.8
+Sep-2013,2013,Greater Adelaide,103.7
+Sep-2013,2013,Greater Perth,104.2
+Sep-2013,2013,Greater Hobart,102.6
+Sep-2013,2013,Greater Darwin,105.5
+Sep-2013,2013,Australian Capital Territory,103.1
+Dec-2013,2013,Australia,104.8
+Dec-2013,2013,Greater Sydney,105.0
+Dec-2013,2013,Greater Melbourne,104.8
+Dec-2013,2013,Greater Brisbane,104.6
+Dec-2013,2013,Greater Adelaide,104.4
+Dec-2013,2013,Greater Perth,104.9
+Dec-2013,2013,Greater Hobart,103.6
+Dec-2013,2013,Greater Darwin,106.5
+Dec-2013,2013,Australian Capital Territory,104.1
+Mar-2014,2014,Australia,105.4
+Mar-2014,2014,Greater Sydney,105.6
+Mar-2014,2014,Greater Melbourne,105.3
+Mar-2014,2014,Greater Brisbane,105.2
+Mar-2014,2014,Greater Adelaide,105.1
+Mar-2014,2014,Greater Perth,105.6
+Mar-2014,2014,Greater Hobart,104.1
+Mar-2014,2014,Greater Darwin,107.4
+Mar-2014,2014,Australian Capital Territory,104.6
+Jun-2014,2014,Australia,105.9
+Jun-2014,2014,Greater Sydney,106.0
+Jun-2014,2014,Greater Melbourne,105.9
+Jun-2014,2014,Greater Brisbane,105.8
+Jun-2014,2014,Greater Adelaide,105.5
+Jun-2014,2014,Greater Perth,106.4
+Jun-2014,2014,Greater Hobart,104.5
+Jun-2014,2014,Greater Darwin,108.1
+Jun-2014,2014,Australian Capital Territory,104.8
+Sep-2014,2014,Australia,106.4
+Sep-2014,2014,Greater Sydney,106.6
+Sep-2014,2014,Greater Melbourne,106.1
+Sep-2014,2014,Greater Brisbane,106.5
+Sep-2014,2014,Greater Adelaide,105.9
+Sep-2014,2014,Greater Perth,106.9
+Sep-2014,2014,Greater Hobart,104.6
+Sep-2014,2014,Greater Darwin,108.3
+Sep-2014,2014,Australian Capital Territory,105.2
+Dec-2014,2014,Australia,106.6
+Dec-2014,2014,Greater Sydney,106.8
+Dec-2014,2014,Greater Melbourne,106.3
+Dec-2014,2014,Greater Brisbane,106.7
+Dec-2014,2014,Greater Adelaide,106.2
+Dec-2014,2014,Greater Perth,107.0
+Dec-2014,2014,Greater Hobart,104.7
+Dec-2014,2014,Greater Darwin,108.5
+Dec-2014,2014,Australian Capital Territory,105.3
+Mar-2015,2015,Australia,106.8
+Mar-2015,2015,Greater Sydney,107.3
+Mar-2015,2015,Greater Melbourne,106.4
+Mar-2015,2015,Greater Brisbane,106.7
+Mar-2015,2015,Greater Adelaide,106.3
+Mar-2015,2015,Greater Perth,107.1
+Mar-2015,2015,Greater Hobart,105.0
+Mar-2015,2015,Greater Darwin,108.3
+Mar-2015,2015,Australian Capital Territory,105.2
+Jun-2015,2015,Australia,107.5
+Jun-2015,2015,Greater Sydney,108.3
+Jun-2015,2015,Greater Melbourne,107.1
+Jun-2015,2015,Greater Brisbane,107.4
+Jun-2015,2015,Greater Adelaide,106.8
+Jun-2015,2015,Greater Perth,107.7
+Jun-2015,2015,Greater Hobart,105.1
+Jun-2015,2015,Greater Darwin,108.3
+Jun-2015,2015,Australian Capital Territory,105.6
+Sep-2015,2015,Australia,108.0
+Sep-2015,2015,Greater Sydney,108.6
+Sep-2015,2015,Greater Melbourne,107.6
+Sep-2015,2015,Greater Brisbane,108.1
+Sep-2015,2015,Greater Adelaide,107.1
+Sep-2015,2015,Greater Perth,108.1
+Sep-2015,2015,Greater Hobart,105.7
+Sep-2015,2015,Greater Darwin,108.7
+Sep-2015,2015,Australian Capital Territory,105.8
+Dec-2015,2015,Australia,108.4
+Dec-2015,2015,Greater Sydney,108.9
+Dec-2015,2015,Greater Melbourne,108.3
+Dec-2015,2015,Greater Brisbane,108.5
+Dec-2015,2015,Greater Adelaide,107.3
+Dec-2015,2015,Greater Perth,108.6
+Dec-2015,2015,Greater Hobart,106.6
+Dec-2015,2015,Greater Darwin,109.0
+Dec-2015,2015,Australian Capital Territory,106.0
+Mar-2016,2016,Australia,108.2
+Mar-2016,2016,Greater Sydney,108.7
+Mar-2016,2016,Greater Melbourne,108.2
+Mar-2016,2016,Greater Brisbane,108.5
+Mar-2016,2016,Greater Adelaide,107.0
+Mar-2016,2016,Greater Perth,107.9
+Mar-2016,2016,Greater Hobart,106.4
+Mar-2016,2016,Greater Darwin,108.0
+Mar-2016,2016,Australian Capital Territory,106.2
+Jun-2016,2016,Australia,108.6
+Jun-2016,2016,Greater Sydney,109.3
+Jun-2016,2016,Greater Melbourne,108.6
+Jun-2016,2016,Greater Brisbane,109.0
+Jun-2016,2016,Greater Adelaide,107.5
+Jun-2016,2016,Greater Perth,108.2
+Jun-2016,2016,Greater Hobart,106.4
+Jun-2016,2016,Greater Darwin,108.3
+Jun-2016,2016,Australian Capital Territory,106.4
+Sep-2016,2016,Australia,109.4
+Sep-2016,2016,Greater Sydney,110.4
+Sep-2016,2016,Greater Melbourne,109.1
+Sep-2016,2016,Greater Brisbane,109.7
+Sep-2016,2016,Greater Adelaide,108.4
+Sep-2016,2016,Greater Perth,108.6
+Sep-2016,2016,Greater Hobart,107.1
+Sep-2016,2016,Greater Darwin,108.7
+Sep-2016,2016,Australian Capital Territory,107.3
+Dec-2016,2016,Australia,110.0
+Dec-2016,2016,Greater Sydney,110.9
+Dec-2016,2016,Greater Melbourne,109.9
+Dec-2016,2016,Greater Brisbane,110.2
+Dec-2016,2016,Greater Adelaide,108.7
+Dec-2016,2016,Greater Perth,109.0
+Dec-2016,2016,Greater Hobart,108.0
+Dec-2016,2016,Greater Darwin,108.6
+Dec-2016,2016,Australian Capital Territory,107.9
+Mar-2017,2017,Australia,110.5
+Mar-2017,2017,Greater Sydney,111.3
+Mar-2017,2017,Greater Melbourne,110.9
+Mar-2017,2017,Greater Brisbane,110.5
+Mar-2017,2017,Greater Adelaide,109.1
+Mar-2017,2017,Greater Perth,109.0
+Mar-2017,2017,Greater Hobart,108.9
+Mar-2017,2017,Greater Darwin,108.5
+Mar-2017,2017,Australian Capital Territory,108.6
+Jun-2017,2017,Australia,110.7
+Jun-2017,2017,Greater Sydney,111.7
+Jun-2017,2017,Greater Melbourne,111.0
+Jun-2017,2017,Greater Brisbane,111.0
+Jun-2017,2017,Greater Adelaide,109.2
+Jun-2017,2017,Greater Perth,109.0
+Jun-2017,2017,Greater Hobart,108.9
+Jun-2017,2017,Greater Darwin,108.8
+Jun-2017,2017,Australian Capital Territory,108.6
+Sep-2017,2017,Australia,111.4
+Sep-2017,2017,Greater Sydney,112.5
+Sep-2017,2017,Greater Melbourne,111.5
+Sep-2017,2017,Greater Brisbane,111.4
+Sep-2017,2017,Greater Adelaide,110.4
+Sep-2017,2017,Greater Perth,109.5
+Sep-2017,2017,Greater Hobart,109.2
+Sep-2017,2017,Greater Darwin,109.4
+Sep-2017,2017,Australian Capital Territory,109.6
+Dec-2017,2017,Australia,112.1
+Dec-2017,2017,Greater Sydney,113.3
+Dec-2017,2017,Greater Melbourne,112.3
+Dec-2017,2017,Greater Brisbane,112.3
+Dec-2017,2017,Greater Adelaide,111.2
+Dec-2017,2017,Greater Perth,109.9
+Dec-2017,2017,Greater Hobart,110.3
+Dec-2017,2017,Greater Darwin,109.7
+Dec-2017,2017,Australian Capital Territory,110.3
+Mar-2018,2018,Australia,112.6
+Mar-2018,2018,Greater Sydney,113.6
+Mar-2018,2018,Greater Melbourne,113.3
+Mar-2018,2018,Greater Brisbane,112.4
+Mar-2018,2018,Greater Adelaide,111.6
+Mar-2018,2018,Greater Perth,110.0
+Mar-2018,2018,Greater Hobart,111.1
+Mar-2018,2018,Greater Darwin,109.7
+Mar-2018,2018,Australian Capital Territory,111.2
+Jun-2018,2018,Australia,113.0
+Jun-2018,2018,Greater Sydney,114.0
+Jun-2018,2018,Greater Melbourne,113.8
+Jun-2018,2018,Greater Brisbane,112.9
+Jun-2018,2018,Greater Adelaide,112.1
+Jun-2018,2018,Greater Perth,110.2
+Jun-2018,2018,Greater Hobart,111.5
+Jun-2018,2018,Greater Darwin,110.1
+Jun-2018,2018,Australian Capital Territory,111.6
+Sep-2018,2018,Australia,113.5
+Sep-2018,2018,Greater Sydney,114.7
+Sep-2018,2018,Greater Melbourne,114.0
+Sep-2018,2018,Greater Brisbane,113.4
+Sep-2018,2018,Greater Adelaide,112.4
+Sep-2018,2018,Greater Perth,110.8
+Sep-2018,2018,Greater Hobart,112.2
+Sep-2018,2018,Greater Darwin,110.8
+Sep-2018,2018,Australian Capital Territory,112.3
+Dec-2018,2018,Australia,114.1
+Dec-2018,2018,Greater Sydney,115.2
+Dec-2018,2018,Greater Melbourne,114.6
+Dec-2018,2018,Greater Brisbane,114.0
+Dec-2018,2018,Greater Adelaide,113.0
+Dec-2018,2018,Greater Perth,111.3
+Dec-2018,2018,Greater Hobart,113.6
+Dec-2018,2018,Greater Darwin,111.0
+Dec-2018,2018,Australian Capital Territory,113.1
+Mar-2019,2019,Australia,114.1
+Mar-2019,2019,Greater Sydney,115.1
+Mar-2019,2019,Greater Melbourne,114.7
+Mar-2019,2019,Greater Brisbane,114.1
+Mar-2019,2019,Greater Adelaide,113.1
+Mar-2019,2019,Greater Perth,111.2
+Mar-2019,2019,Greater Hobart,113.4
+Mar-2019,2019,Greater Darwin,110.1
+Mar-2019,2019,Australian Capital Territory,113.2
+Jun-2019,2019,Australia,114.8
+Jun-2019,2019,Greater Sydney,115.9
+Jun-2019,2019,Greater Melbourne,115.3
+Jun-2019,2019,Greater Brisbane,114.8
+Jun-2019,2019,Greater Adelaide,113.7
+Jun-2019,2019,Greater Perth,112.0
+Jun-2019,2019,Greater Hobart,114.1
+Jun-2019,2019,Greater Darwin,111.0
+Jun-2019,2019,Australian Capital Territory,113.5
+Sep-2019,2019,Australia,115.4
+Sep-2019,2019,Greater Sydney,116.5
+Sep-2019,2019,Greater Melbourne,115.9
+Sep-2019,2019,Greater Brisbane,115.5
+Sep-2019,2019,Greater Adelaide,114.5
+Sep-2019,2019,Greater Perth,112.6
+Sep-2019,2019,Greater Hobart,114.7
+Sep-2019,2019,Greater Darwin,111.3
+Sep-2019,2019,Australian Capital Territory,114.3
+Dec-2019,2019,Australia,116.2
+Dec-2019,2019,Greater Sydney,117.1
+Dec-2019,2019,Greater Melbourne,116.9
+Dec-2019,2019,Greater Brisbane,116.3
+Dec-2019,2019,Greater Adelaide,115.4
+Dec-2019,2019,Greater Perth,113.1
+Dec-2019,2019,Greater Hobart,116.7
+Dec-2019,2019,Greater Darwin,111.5
+Dec-2019,2019,Australian Capital Territory,115.0
+Mar-2020,2020,Australia,116.6
+Mar-2020,2020,Greater Sydney,117.4
+Mar-2020,2020,Greater Melbourne,117.8
+Mar-2020,2020,Greater Brisbane,116.2
+Mar-2020,2020,Greater Adelaide,115.8
+Mar-2020,2020,Greater Perth,113.5
+Mar-2020,2020,Greater Hobart,117.2
+Mar-2020,2020,Greater Darwin,111.8
+Mar-2020,2020,Australian Capital Territory,115.5
+Jun-2020,2020,Australia,114.4
+Jun-2020,2020,Greater Sydney,114.7
+Jun-2020,2020,Greater Melbourne,115.7
+Jun-2020,2020,Greater Brisbane,113.6
+Jun-2020,2020,Greater Adelaide,114.6
+Jun-2020,2020,Greater Perth,112.1
+Jun-2020,2020,Greater Hobart,115.6
+Jun-2020,2020,Greater Darwin,109.0
+Jun-2020,2020,Australian Capital Territory,112.8
+Sep-2020,2020,Australia,116.2
+Sep-2020,2020,Greater Sydney,116.8
+Sep-2020,2020,Greater Melbourne,116.7
+Sep-2020,2020,Greater Brisbane,116.2
+Sep-2020,2020,Greater Adelaide,115.7
+Sep-2020,2020,Greater Perth,114.1
+Sep-2020,2020,Greater Hobart,116.7
+Sep-2020,2020,Greater Darwin,110.8
+Sep-2020,2020,Australian Capital Territory,115.4
+Dec-2020,2020,Australia,117.2
+Dec-2020,2020,Greater Sydney,118.0
+Dec-2020,2020,Greater Melbourne,118.4
+Dec-2020,2020,Greater Brisbane,117.5
+Dec-2020,2020,Greater Adelaide,116.5
+Dec-2020,2020,Greater Perth,113.0
+Dec-2020,2020,Greater Hobart,117.6
+Dec-2020,2020,Greater Darwin,111.5
+Dec-2020,2020,Australian Capital Territory,116.3
+Mar-2021,2021,Australia,117.9
+Mar-2021,2021,Greater Sydney,118.5
+Mar-2021,2021,Greater Melbourne,118.8
+Mar-2021,2021,Greater Brisbane,118.2
+Mar-2021,2021,Greater Adelaide,117.2
+Mar-2021,2021,Greater Perth,114.6
+Mar-2021,2021,Greater Hobart,118.5
+Mar-2021,2021,Greater Darwin,114.4
+Mar-2021,2021,Australian Capital Territory,117.3
+Jun-2021,2021,Australia,118.8
+Jun-2021,2021,Greater Sydney,119.4
+Jun-2021,2021,Greater Melbourne,119.1
+Jun-2021,2021,Greater Brisbane,119.2
+Jun-2021,2021,Greater Adelaide,117.8
+Jun-2021,2021,Greater Perth,116.8
+Jun-2021,2021,Greater Hobart,119.8
+Jun-2021,2021,Greater Darwin,115.6
+Jun-2021,2021,Australian Capital Territory,118.2
+Sep-2021,2021,Australia,119.7
+Sep-2021,2021,Greater Sydney,120.2
+Sep-2021,2021,Greater Melbourne,120.1
+Sep-2021,2021,Greater Brisbane,120.7
+Sep-2021,2021,Greater Adelaide,118.6
+Sep-2021,2021,Greater Perth,117.7
+Sep-2021,2021,Greater Hobart,120.2
+Sep-2021,2021,Greater Darwin,117.3
+Sep-2021,2021,Australian Capital Territory,119.7
+Dec-2021,2021,Australia,121.3
+Dec-2021,2021,Greater Sydney,121.6
+Dec-2021,2021,Greater Melbourne,121.4
+Dec-2021,2021,Greater Brisbane,122.6
+Dec-2021,2021,Greater Adelaide,120.4
+Dec-2021,2021,Greater Perth,119.4
+Dec-2021,2021,Greater Hobart,122.9
+Dec-2021,2021,Greater Darwin,118.2
+Dec-2021,2021,Australian Capital Territory,120.9
+Mar-2022,2022,Australia,123.9
+Mar-2022,2022,Greater Sydney,123.7
+Mar-2022,2022,Greater Melbourne,124.2
+Mar-2022,2022,Greater Brisbane,125.3
+Mar-2022,2022,Greater Adelaide,122.7
+Mar-2022,2022,Greater Perth,123.3
+Mar-2022,2022,Greater Hobart,125.4
+Mar-2022,2022,Greater Darwin,120.7
+Mar-2022,2022,Australian Capital Territory,123.6
+Jun-2022,2022,Australia,126.1
+Jun-2022,2022,Greater Sydney,125.7
+Jun-2022,2022,Greater Melbourne,126.4
+Jun-2022,2022,Greater Brisbane,127.9
+Jun-2022,2022,Greater Adelaide,125.3
+Jun-2022,2022,Greater Perth,125.4
+Jun-2022,2022,Greater Hobart,127.6
+Jun-2022,2022,Greater Darwin,123.2
+Jun-2022,2022,Australian Capital Territory,125.6
+Sep-2022,2022,Australia,128.4
+Sep-2022,2022,Greater Sydney,128.6
+Sep-2022,2022,Greater Melbourne,129.0
+Sep-2022,2022,Greater Brisbane,130.2
+Sep-2022,2022,Greater Adelaide,128.6
+Sep-2022,2022,Greater Perth,124.8
+Sep-2022,2022,Greater Hobart,130.5
+Sep-2022,2022,Greater Darwin,125.5
+Sep-2022,2022,Australian Capital Territory,128.0
+Dec-2022,2022,Australia,130.8
+Dec-2022,2022,Greater Sydney,130.9
+Dec-2022,2022,Greater Melbourne,131.1
+Dec-2022,2022,Greater Brisbane,132.1
+Dec-2022,2022,Greater Adelaide,130.8
+Dec-2022,2022,Greater Perth,129.3
+Dec-2022,2022,Greater Hobart,132.4
+Dec-2022,2022,Greater Darwin,126.6
+Dec-2022,2022,Australian Capital Territory,129.5
+Mar-2023,2023,Australia,132.6
+Mar-2023,2023,Greater Sydney,132.7
+Mar-2023,2023,Greater Melbourne,132.7
+Mar-2023,2023,Greater Brisbane,134.6
+Mar-2023,2023,Greater Adelaide,132.4
+Mar-2023,2023,Greater Perth,130.4
+Mar-2023,2023,Greater Hobart,134.0
+Mar-2023,2023,Greater Darwin,128.2
+Mar-2023,2023,Australian Capital Territory,131.3
+Jun-2023,2023,Australia,133.7
+Jun-2023,2023,Greater Sydney,134.0
+Jun-2023,2023,Greater Melbourne,133.5
+Jun-2023,2023,Greater Brisbane,136.0
+Jun-2023,2023,Greater Adelaide,133.9
+Jun-2023,2023,Greater Perth,131.5
+Jun-2023,2023,Greater Hobart,134.6
+Jun-2023,2023,Greater Darwin,129.7
+Jun-2023,2023,Australian Capital Territory,132.7
+Sep-2023,2023,Australia,135.3
+Sep-2023,2023,Greater Sydney,135.8
+Sep-2023,2023,Greater Melbourne,135.3
+Sep-2023,2023,Greater Brisbane,137.0
+Sep-2023,2023,Greater Adelaide,136.2
+Sep-2023,2023,Greater Perth,132.0
+Sep-2023,2023,Greater Hobart,135.8
+Sep-2023,2023,Greater Darwin,130.9
+Sep-2023,2023,Australian Capital Territory,133.7
+Dec-2023,2023,Australia,136.1
+Dec-2023,2023,Greater Sydney,136.4
+Dec-2023,2023,Greater Melbourne,136.1
+Dec-2023,2023,Greater Brisbane,137.7
+Dec-2023,2023,Greater Adelaide,137.1
+Dec-2023,2023,Greater Perth,134.0
+Dec-2023,2023,Greater Hobart,136.8
+Dec-2023,2023,Greater Darwin,131.5
+Dec-2023,2023,Australian Capital Territory,134.3
+Mar-2024,2024,Australia,137.4
+Mar-2024,2024,Greater Sydney,137.7
+Mar-2024,2024,Greater Melbourne,137.5
+Mar-2024,2024,Greater Brisbane,139.2
+Mar-2024,2024,Greater Adelaide,138.1
+Mar-2024,2024,Greater Perth,134.8
+Mar-2024,2024,Greater Hobart,138.1
+Mar-2024,2024,Greater Darwin,132.4
+Mar-2024,2024,Australian Capital Territory,135.6
+Jun-2024,2024,Australia,138.8
+Jun-2024,2024,Greater Sydney,139.1
+Jun-2024,2024,Greater Melbourne,138.4
+Jun-2024,2024,Greater Brisbane,140.6
+Jun-2024,2024,Greater Adelaide,139.9
+Jun-2024,2024,Greater Perth,137.6
+Jun-2024,2024,Greater Hobart,138.3
+Jun-2024,2024,Greater Darwin,133.6
+Jun-2024,2024,Australian Capital Territory,136.8
+Sep-2024,2024,Australia,139.1
+Sep-2024,2024,Greater Sydney,139.8
+Sep-2024,2024,Greater Melbourne,139.3
+Sep-2024,2024,Greater Brisbane,139.4
+Sep-2024,2024,Greater Adelaide,140.6
+Sep-2024,2024,Greater Perth,137.0
+Sep-2024,2024,Greater Hobart,136.8
+Sep-2024,2024,Greater Darwin,133.8
+Sep-2024,2024,Australian Capital Territory,137.2
+Dec-2024,2024,Australia,139.4
+Dec-2024,2024,Greater Sydney,139.7
+Dec-2024,2024,Greater Melbourne,139.5
+Dec-2024,2024,Greater Brisbane,140.2
+Dec-2024,2024,Greater Adelaide,140.5
+Dec-2024,2024,Greater Perth,137.9
+Dec-2024,2024,Greater Hobart,138.9
+Dec-2024,2024,Greater Darwin,133.7
+Dec-2024,2024,Australian Capital Territory,137.3
+Mar-2025,2025,Australia,140.7
+Mar-2025,2025,Greater Sydney,140.9
+Mar-2025,2025,Greater Melbourne,140.7
+Mar-2025,2025,Greater Brisbane,142.9
+Mar-2025,2025,Greater Adelaide,141.2
+Mar-2025,2025,Greater Perth,138.6
+Mar-2025,2025,Greater Hobart,140.0
+Mar-2025,2025,Greater Darwin,134.6
+Mar-2025,2025,Australian Capital Territory,138.6
+Jun-2025,2025,Australia,141.7
+Jun-2025,2025,Greater Sydney,141.8
+Jun-2025,2025,Greater Melbourne,141.2
+Jun-2025,2025,Greater Brisbane,144.1
+Jun-2025,2025,Greater Adelaide,142.4
+Jun-2025,2025,Greater Perth,141.3
+Jun-2025,2025,Greater Hobart,140.7
+Jun-2025,2025,Greater Darwin,135.7
+Jun-2025,2025,Australian Capital Territory,139.0

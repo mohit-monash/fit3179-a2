@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Australian Affordability | Data Story</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.24.0"></script>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <h1>Australian Affordability</h1>
+        <p class="lead">
+          How quickly have housing costs outrun incomes across Australia? We
+          combine tax, wage and price indicators to track the purchasing power
+          of households nationally, across capital cities and down to SA3
+          communities.
+        </p>
+      </header>
+
+      <div class="annotation">
+        <strong>How to read this page.</strong> Use the controls below to pick a
+        city, affordability metric and financial year (ending in June). Every
+        chart updates in sync, so selections stay consistent as you move through
+        the story.
+      </div>
+
+      <section class="vis-section" id="controls-section">
+        <div class="controls" id="global-controls">
+          <label>
+            City
+            <select id="city-select">
+              <option value="Australia">All (Australia)</option>
+              <option value="Greater Sydney">Sydney</option>
+              <option value="Greater Melbourne">Melbourne</option>
+              <option value="Greater Brisbane">Brisbane</option>
+              <option value="Greater Adelaide">Adelaide</option>
+              <option value="Greater Perth">Perth</option>
+              <option value="Greater Hobart">Hobart</option>
+              <option value="Australian Capital Territory">Canberra</option>
+              <option value="Greater Darwin">Darwin</option>
+            </select>
+          </label>
+          <label>
+            Metric
+            <select id="metric-select">
+              <option value="price_to_income">Price-to-income ratio</option>
+              <option value="average_income">Average taxable income ($)</option>
+              <option value="median_income">Median taxable income ($)</option>
+              <option value="salary_share">
+                Salary &amp; wage share of residents (%)
+              </option>
+            </select>
+          </label>
+          <label>
+            Financial year
+            <select id="year-select">
+              <option value="2018">2017–18</option>
+              <option value="2019">2018–19</option>
+              <option value="2020">2019–20</option>
+              <option value="2021">2020–21</option>
+              <option value="2022" selected>2021–22</option>
+            </select>
+          </label>
+          <label id="sa3-search-wrapper">
+            SA3 search
+            <input
+              id="sa3-search"
+              type="search"
+              placeholder="Type a suburb or SA3 name"
+            />
+          </label>
+        </div>
+
+        <div class="vis-wrapper">
+          <div id="kpi-vis" class="vis-container"></div>
+        </div>
+      </section>
+
+      <section class="vis-section" id="national-overview">
+        <h2>National overview: buying a home takes more years of income</h2>
+        <p>
+          The price-to-income ratio compares the mean dwelling price in each
+          state and territory to the average taxable income earned by residents
+          in the same year. Ratios above the national benchmark mean buyers
+          require more years of income than the Australian average.
+        </p>
+        <div class="vis-wrapper">
+          <div id="overview-vis" class="vis-container"></div>
+        </div>
+      </section>
+
+      <section class="vis-section" id="city-focus">
+        <h2>Capital city focus: property prices versus household earnings</h2>
+        <p>
+          Large cities show the widest gap between what people earn and the cost
+          of a typical dwelling. Here we plot the mean dwelling price alongside
+          the average taxable income for each capital, both expressed in
+          thousands of dollars.
+        </p>
+        <div class="vis-wrapper">
+          <div id="city-vis" class="vis-container"></div>
+        </div>
+      </section>
+
+      <section class="vis-section" id="sa3-drilldown">
+        <h2>SA3 drill-down: affordability varies sharply within each city</h2>
+        <p>
+          Select a city to see how neighbourhoods compare. The choropleth maps
+          each SA3 by the chosen metric. Click an area or bar to highlight the
+          pair. Use the search box to jump to a specific SA3.
+        </p>
+        <div class="vis-wrapper vis-wide">
+          <div id="sa3-vis" class="vis-container"></div>
+        </div>
+      </section>
+
+      <section class="vis-section" id="time-series">
+        <h2>Change over time: the affordability squeeze keeps building</h2>
+        <p>
+          We index each series to 100 at the start of 2011. Property prices grow
+          far faster than household earnings, while CPI indicates broader cost
+          pressures. The selected year is marked to align with the snapshot
+          views above.
+        </p>
+        <div class="vis-wrapper">
+          <div id="timeseries-vis" class="vis-container"></div>
+        </div>
+      </section>
+
+      <section class="vis-section" id="distribution">
+        <h2>Distribution: where affordability pressure concentrates</h2>
+        <p>
+          The histogram shows the spread of the selected metric across SA3s in
+          the chosen city. Long tails to the right signal pockets of high
+          pressure—areas where prices stretch far beyond local incomes.
+        </p>
+        <div class="vis-wrapper">
+          <div id="distribution-vis" class="vis-container"></div>
+        </div>
+      </section>
+
+      <section class="vis-section" id="wrap-up">
+        <h2>Key takeaways, sources and caveats</h2>
+        <div class="two-column">
+          <div>
+            <h3>What we learned</h3>
+            <ul>
+              <li>
+                Sydney and Melbourne remain the least affordable markets, with
+                a typical dwelling costing 18–19 years of taxable income versus
+                14 nationally.
+              </li>
+              <li>
+                Within every capital city there are pockets where the ratio
+                exceeds 22, even when using state-level dwelling prices—
+                indicating severe income shortfalls relative to housing costs.
+              </li>
+              <li>
+                Wage growth has lagged both CPI and property price growth since
+                2011, eroding real purchasing power despite recent income gains.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Methodology &amp; sources</h3>
+            <p>
+              Incomes from the ATO individual tax dataset (financial years
+              2017–18 to 2021–22) are aggregated to SA3, state and national
+              levels. Property prices come from the ABS mean dwelling price
+              series (quarterly, aggregated here to the June quarter for each
+              year). CPI and average weekly earnings are ABS capital city
+              series. Price-to-income ratios divide mean dwelling price (dollar
+              value) by average taxable income for the same geography and year.
+              Salary &amp; wage share is the proportion of tax filers receiving
+              wage income.
+            </p>
+            <p class="footnote">
+              Geographic boundaries: ASGS 2021 SA3 and GCCSA regions. Time axis:
+              financial years end in June. Ratios rely on state-level property
+              prices; intra-city variation reflects differences in income only.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

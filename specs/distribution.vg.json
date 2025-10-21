@@ -1,0 +1,197 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 780,
+  "height": 300,
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "labelColor": "#314155",
+      "titleColor": "#1f2d3d"
+    },
+    "legend": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro"
+    },
+    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
+  },
+  "params": [
+    { "name": "cityParam", "value": "Australia" },
+    { "name": "yearParam", "value": 2022 },
+    { "name": "metricParam", "value": "price_to_income" }
+  ],
+  "data": {
+    "url": "data/sa3/income_by_geography_tidy.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "average_taxable_income": "number",
+        "median_taxable_income": "number",
+        "salary_wage_share": "number",
+        "total_income": "number",
+        "individuals": "number",
+        "end_year": "number"
+      }
+    }
+  },
+  "transform": [
+    { "filter": "datum.region_category == 'SA3'" },
+    { "filter": "datum.end_year == yearParam" },
+    {
+      "lookup": "region_code",
+      "from": {
+        "data": {
+          "url": "geo/SA3.json",
+          "format": { "type": "json", "property": "features" }
+        },
+        "key": "properties.SA3_CODE21",
+        "fields": [
+          "properties.GCC_NAME21",
+          "properties.STE_NAME21"
+        ]
+      }
+    },
+    {
+      "calculate": "datum['properties.GCC_NAME21']",
+      "as": "gcc_name"
+    },
+    {
+      "calculate": "datum['properties.STE_NAME21']",
+      "as": "state_name"
+    },
+    {
+      "filter": "indexof(datum.gcc_name, 'Migratory') < 0 && indexof(datum.gcc_name, 'No usual address') < 0 && indexof(datum.gcc_name, 'Outside') < 0"
+    },
+    {
+      "filter": "cityParam == 'Australia' ? true : datum.gcc_name == cityParam"
+    },
+    {
+      "lookup": "state_name",
+      "from": {
+        "data": {
+          "url": "data/state/property_prices_tidy.csv",
+          "format": {
+            "type": "csv",
+            "parse": {
+              "year": "number",
+              "mean_price_thousand": "number"
+            }
+          }
+        },
+        "key": "state",
+        "fields": ["mean_price_thousand"],
+        "transform": [
+          { "filter": "datum.year == yearParam" },
+          { "filter": "datum.quarter == concat('Jun-', yearParam)" }
+        ]
+      },
+      "as": ["mean_price_thousand"]
+    },
+    {
+      "calculate": "datum.mean_price_thousand * 1000",
+      "as": "mean_price_value"
+    },
+    {
+      "calculate": "datum.mean_price_value / datum.average_taxable_income",
+      "as": "price_to_income"
+    },
+    {
+      "calculate": "metricParam == 'price_to_income' ? datum.price_to_income : metricParam == 'average_income' ? datum.average_taxable_income : metricParam == 'median_income' ? datum.median_taxable_income : datum.salary_wage_share",
+      "as": "metric_value"
+    },
+    {
+      "calculate": "metricParam == 'price_to_income' ? 'Years of income needed' : metricParam == 'average_income' ? 'Average taxable income ($)' : metricParam == 'median_income' ? 'Median taxable income ($)' : 'Residents with salary/wage income (%)'",
+      "as": "metric_title"
+    },
+    {
+      "joinaggregate": [
+        { "op": "mean", "field": "metric_value", "as": "metric_mean" },
+        { "op": "median", "field": "metric_value", "as": "metric_median" }
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "mark": { "type": "bar", "opacity": 0.75, "clip": true },
+      "encoding": {
+        "x": {
+          "field": "metric_value",
+          "type": "quantitative",
+          "bin": { "maxbins": 24 },
+          "title": { "signal": "metric_title" }
+        },
+        "y": {
+          "aggregate": "count",
+          "type": "quantitative",
+          "title": "SA3 count"
+        },
+        "color": { "value": "#1f77b4" },
+        "tooltip": [
+          {
+            "aggregate": "count",
+            "title": "SA3 count"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#d62728",
+        "strokeDash": [6, 3],
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": { "field": "metric_mean", "type": "quantitative" },
+        "color": { "value": null }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "dy": -6,
+        "fontSize": 12,
+        "fill": "#d62728"
+      },
+      "encoding": {
+        "x": { "field": "metric_mean", "type": "quantitative" },
+        "y": { "value": 0 },
+        "text": {
+          "signal": "'Mean'"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#9467bd",
+        "strokeDash": [2, 4],
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": { "field": "metric_median", "type": "quantitative" },
+        "color": { "value": null }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "dy": 12,
+        "fontSize": 12,
+        "fill": "#9467bd"
+      },
+      "encoding": {
+        "x": { "field": "metric_median", "type": "quantitative" },
+        "y": { "value": 0 },
+        "text": {
+          "signal": "'Median'"
+        }
+      }
+    }
+  ]
+}

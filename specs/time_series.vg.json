@@ -1,0 +1,304 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 780,
+  "height": 340,
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "labelColor": "#314155",
+      "titleColor": "#1f2d3d"
+    },
+    "legend": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "orient": "bottom"
+    },
+    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
+  },
+  "params": [
+    { "name": "cityParam", "value": "Australia" },
+    { "name": "stateParam", "value": "Australia" },
+    { "name": "yearParam", "value": 2022 }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "data/state/property_prices_tidy.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "year": "number",
+            "mean_price_thousand": "number"
+          }
+        }
+      },
+      "transform": [
+        { "filter": "datum.state == stateParam" },
+        { "filter": "datum.year >= 2011" },
+        { "calculate": "timeParse(datum.quarter, '%b-%Y')", "as": "date" },
+        { "calculate": "'Mean dwelling price'", "as": "series" },
+        {
+          "window": [
+            {
+              "op": "first_value",
+              "field": "mean_price_thousand",
+              "as": "base_value"
+            }
+          ],
+          "sort": [{ "field": "date", "order": "ascending" }]
+        },
+        {
+          "calculate": "(datum.mean_price_thousand / datum.base_value) * 100",
+          "as": "index_value"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "title": "Quarter",
+          "axis": { "format": "%Y" }
+        },
+        "y": {
+          "field": "index_value",
+          "type": "quantitative",
+          "title": "Indexed (2011 = 100)",
+          "axis": { "format": ".0f" }
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Mean dwelling price",
+              "Average weekly earnings",
+              "CPI (All groups)"
+            ],
+            "range": ["#ff7f0e", "#1f77b4", "#2ca02c"]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "series",
+            "title": "Series"
+          },
+          {
+            "field": "date",
+            "title": "Quarter",
+            "type": "temporal",
+            "format": "%b %Y"
+          },
+          {
+            "field": "index_value",
+            "title": "Index",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/avg_weekly_earnings_tidy.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "value": "number"
+          }
+        }
+      },
+      "transform": [
+        { "filter": "datum.series == 'Persons total'" },
+        { "calculate": "timeParse(datum.period, '%b-%Y')", "as": "date" },
+        { "filter": "year(datum.date) >= 2011" },
+        { "calculate": "'Average weekly earnings'", "as": "series" },
+        {
+          "window": [
+            {
+              "op": "first_value",
+              "field": "value",
+              "as": "base_value"
+            }
+          ],
+          "sort": [{ "field": "date", "order": "ascending" }]
+        },
+        {
+          "calculate": "(datum.value / datum.base_value) * 100",
+          "as": "index_value"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "strokeDash": [6, 3],
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "index_value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Mean dwelling price",
+              "Average weekly earnings",
+              "CPI (All groups)"
+            ],
+            "range": ["#ff7f0e", "#1f77b4", "#2ca02c"]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "series",
+            "title": "Series"
+          },
+          {
+            "field": "date",
+            "title": "Period",
+            "type": "temporal",
+            "format": "%b %Y"
+          },
+          {
+            "field": "index_value",
+            "title": "Index",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/cities/cpi_overall_tidy.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "cpi_index": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "cityParam == 'Australia' ? datum.city == 'Australia' : datum.city == cityParam"
+        },
+        { "calculate": "timeParse(datum.quarter, '%b-%Y')", "as": "date" },
+        { "filter": "year(datum.date) >= 2011" },
+        { "calculate": "'CPI (All groups)'", "as": "series" },
+        {
+          "window": [
+            {
+              "op": "first_value",
+              "field": "cpi_index",
+              "as": "base_value"
+            }
+          ],
+          "sort": [{ "field": "date", "order": "ascending" }]
+        },
+        {
+          "calculate": "(datum.cpi_index / datum.base_value) * 100",
+          "as": "index_value"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "index_value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Mean dwelling price",
+              "Average weekly earnings",
+              "CPI (All groups)"
+            ],
+            "range": ["#ff7f0e", "#1f77b4", "#2ca02c"]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "series",
+            "title": "Series"
+          },
+          {
+            "field": "date",
+            "title": "Quarter",
+            "type": "temporal",
+            "format": "%b %Y"
+          },
+          {
+            "field": "index_value",
+            "title": "Index",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": { "values": [1] },
+      "transform": [
+        {
+          "calculate": "timeParse('Jun-' + yearParam, '%b-%Y')",
+          "as": "selected_date"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "stroke": "#d62728",
+        "strokeDash": [6, 3],
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": { "field": "selected_date", "type": "temporal" },
+        "color": { "value": null }
+      }
+    },
+    {
+      "data": { "values": [1] },
+      "transform": [
+        {
+          "calculate": "timeParse('Jun-' + yearParam, '%b-%Y')",
+          "as": "selected_date"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "dy": -6,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "fill": "#d62728"
+      },
+      "encoding": {
+        "x": { "field": "selected_date", "type": "temporal" },
+        "y": { "value": 0 },
+        "text": {
+          "signal": "'Selected year'"
+        }
+      }
+    }
+  ]
+}

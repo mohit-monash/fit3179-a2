@@ -1,0 +1,247 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 780,
+  "height": 360,
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "labelColor": "#314155",
+      "titleColor": "#1f2d3d"
+    },
+    "legend": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "orient": "bottom",
+      "symbolType": "circle"
+    },
+    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
+  },
+  "params": [
+    { "name": "cityParam", "value": "Australia" },
+    { "name": "yearParam", "value": 2022 }
+  ],
+  "data": {
+    "url": "data/sa3/income_by_geography_tidy.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "total_income": "number",
+        "average_taxable_income": "number",
+        "individuals": "number",
+        "end_year": "number"
+      }
+    }
+  },
+  "transform": [
+    { "filter": "datum.region_category == 'SA3'" },
+    { "filter": "datum.end_year == yearParam" },
+    {
+      "lookup": "region_code",
+      "from": {
+        "data": {
+          "url": "geo/SA3.json",
+          "format": { "type": "json", "property": "features" }
+        },
+        "key": "properties.SA3_CODE21",
+        "fields": [
+          "properties.GCC_NAME21",
+          "properties.STE_NAME21"
+        ]
+      }
+    },
+    {
+      "calculate": "datum['properties.GCC_NAME21']",
+      "as": "gcc_name"
+    },
+    {
+      "calculate": "datum['properties.STE_NAME21']",
+      "as": "state_name"
+    },
+    {
+      "filter": "indexof(datum.gcc_name, 'Migratory') < 0 && indexof(datum.gcc_name, 'Outside') < 0 && indexof(datum.gcc_name, 'No usual address') < 0"
+    },
+    {
+      "aggregate": [
+        { "op": "sum", "field": "total_income", "as": "total_income_sum" },
+        { "op": "sum", "field": "individuals", "as": "individuals_sum" }
+      ],
+      "groupby": ["gcc_name", "state_name"]
+    },
+    {
+      "calculate": "datum.total_income_sum / datum.individuals_sum",
+      "as": "average_income"
+    },
+    {
+      "lookup": "state_name",
+      "from": {
+        "data": {
+          "url": "data/state/property_prices_tidy.csv",
+          "format": {
+            "type": "csv",
+            "parse": {
+              "year": "number",
+              "mean_price_thousand": "number"
+            }
+          }
+        },
+        "key": "state",
+        "fields": ["mean_price_thousand"],
+        "transform": [
+          { "filter": "datum.year == yearParam" },
+          { "filter": "datum.quarter == concat('Jun-', yearParam)" }
+        ]
+      },
+      "as": ["mean_price_thousand"]
+    },
+    {
+      "calculate": "datum.mean_price_thousand * 1000",
+      "as": "mean_price_value"
+    },
+    {
+      "calculate": "datum.mean_price_value / datum.average_income",
+      "as": "price_to_income"
+    },
+    {
+      "calculate": "datum.gcc_name == 'Australian Capital Territory' ? 'Canberra' : replace(datum.gcc_name, 'Greater ', '')",
+      "as": "city_label"
+    },
+    {
+      "calculate": "datum.average_income / 1000",
+      "as": "average_income_thousand"
+    },
+    {
+      "calculate": "datum.mean_price_value / 1000",
+      "as": "mean_price_thousand_value"
+    },
+    {
+      "calculate": "cityParam == datum.gcc_name",
+      "as": "is_selected"
+    }
+  ],
+  "layer": [
+    {
+      "mark": { "type": "rule", "stroke": "#c0ccd8", "strokeWidth": 2 },
+      "encoding": {
+        "y": {
+          "field": "city_label",
+          "type": "nominal",
+          "title": "Capital city",
+          "sort": { "field": "price_to_income", "order": "descending" }
+        },
+        "x": {
+          "field": "average_income_thousand",
+          "type": "quantitative"
+        },
+        "x2": { "field": "mean_price_thousand_value" }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 180,
+        "stroke": "white",
+        "strokeWidth": 1.4
+      },
+      "encoding": {
+        "y": {
+          "field": "city_label",
+          "type": "nominal",
+          "sort": { "field": "price_to_income", "order": "descending" }
+        },
+        "x": {
+          "field": "average_income_thousand",
+          "type": "quantitative",
+          "title": "Value (thousand dollars)"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.is_selected",
+            "value": "#1f77b4"
+          },
+          "value": "#6baed6"
+        },
+        "tooltip": [
+          { "field": "city_label", "title": "City" },
+          {
+            "field": "average_income",
+            "title": "Average taxable income",
+            "format": "$,.0f"
+          },
+          {
+            "field": "price_to_income",
+            "title": "Price-to-income ratio",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 180,
+        "stroke": "white",
+        "strokeWidth": 1.4,
+        "shape": "triangle-up"
+      },
+      "encoding": {
+        "y": {
+          "field": "city_label",
+          "type": "nominal",
+          "sort": { "field": "price_to_income", "order": "descending" }
+        },
+        "x": {
+          "field": "mean_price_thousand_value",
+          "type": "quantitative"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.is_selected",
+            "value": "#ff7f0e"
+          },
+          "value": "#ffb360"
+        },
+        "tooltip": [
+          { "field": "city_label", "title": "City" },
+          {
+            "field": "mean_price_value",
+            "title": "Mean dwelling price",
+            "format": "$,.0f"
+          },
+          {
+            "field": "price_to_income",
+            "title": "Price-to-income ratio",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "font": "Source Sans Pro",
+        "fontSize": 11,
+        "fill": "#314155",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8
+      },
+      "encoding": {
+        "y": {
+          "field": "city_label",
+          "type": "nominal",
+          "sort": { "field": "price_to_income", "order": "descending" }
+        },
+        "x": { "field": "mean_price_thousand_value" },
+        "text": {
+          "field": "price_to_income",
+          "format": ".1f"
+        }
+      }
+    }
+  ],
+  "resolve": { "scale": { "y": "shared" } }
+}
