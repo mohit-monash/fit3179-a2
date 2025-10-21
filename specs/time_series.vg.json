@@ -1,0 +1,284 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "grid": true,
+      "gridColor": "#e8edf2",
+      "gridOpacity": 1,
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "labelColor": "#314155",
+      "titleColor": "#1f2d3d",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "format": ".0f"
+    },
+    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 },
+    "legend": {
+      "orient": "bottom",
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "symbolSize": 110
+    }
+  },
+  "description": "Brush controls x-domain of Australia indices (price, AWE, CPI) and state price indices. All series indexed to 2011 = 100.",
+
+  "vconcat": [
+    {
+      "title": "Brush — drag to filter the time window below",
+      "width": 1100,
+      "height": 70,
+      "data": {
+        "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/cities/cpi_overall_tidy.csv",
+        "format": { "type": "csv", "parse": { "cpi_index": "number" } }
+      },
+      "transform": [
+        { "filter": "datum.city == 'Australia'" },
+        { "calculate": "timeParse(datum.quarter, '%b-%Y')", "as": "date" },
+        { "filter": "year(datum.date) >= 2011" },
+        {
+          "window": [{ "op": "first_value", "field": "cpi_index", "as": "base_value" }],
+          "sort": [{ "field": "date", "order": "ascending" }]
+        },
+        { "calculate": "(datum.cpi_index / datum.base_value) * 100", "as": "index_value" }
+      ],
+      "params": [{ "name": "brush", "select": { "type": "interval", "encodings": ["x"] } }],
+      "mark": { "type": "area", "opacity": 0.5 },
+      "encoding": {
+        "x": { "field": "date", "type": "temporal", "axis": { "title": null, "format": "%Y" } },
+        "y": {
+          "field": "index_value",
+          "type": "quantitative",
+          "axis": { "tickCount": 3, "grid": false, "title": null, "format": ".0f" }
+        },
+        "color": { "value": "#7570b3" }
+      }
+    },
+
+    {
+      "title": "Australia — Mean dwelling price, Average weekly earnings, CPI (indexed to 2011 = 100)",
+      "width": 1100,
+      "height": 280,
+      "layer": [
+        {
+          "data": { "values": [{}] },
+          "mark": { "type": "rule", "stroke": "#c7d3df", "strokeWidth": 1 },
+          "encoding": {
+            "y": { "datum": 100, "type": "quantitative", "title": "Index (2011 = 100)" }
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
+            "format": { "type": "csv", "parse": { "year": "number", "mean_price_thousand": "number" } }
+          },
+          "transform": [
+            { "filter": "datum.state == 'Australia'" },
+            { "filter": "datum.year >= 2011" },
+            { "calculate": "timeParse(datum.quarter, '%b-%Y')", "as": "date" },
+            { "calculate": "'Mean dwelling price'", "as": "series" },
+            {
+              "window": [{ "op": "first_value", "field": "mean_price_thousand", "as": "base_value" }],
+              "sort": [{ "field": "date", "order": "ascending" }]
+            },
+            { "calculate": "(datum.mean_price_thousand / datum.base_value) * 100", "as": "index_value" }
+          ],
+          "mark": { "type": "line", "interpolate": "monotone", "strokeWidth": 2.2 },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "scale": { "domain": { "param": "brush" } },
+              "axis": { "format": "%Y", "title": null }
+            },
+            "y": {
+              "field": "index_value",
+              "type": "quantitative",
+              "axis": { "format": ".0f", "title": "Index (2011 = 100)" }
+            },
+            "color": {
+              "field": "series",
+              "type": "nominal",
+              "scale": {
+                "domain": ["Mean dwelling price", "Average weekly earnings", "CPI (All groups)"],
+                "range": ["#d95f02", "#1b9e77", "#7570b3"]
+              },
+              "legend": { "title": "Series" }
+            },
+            "tooltip": [
+              { "field": "series", "title": "Series" },
+              { "field": "date", "title": "Quarter", "type": "temporal", "format": "%b %Y" },
+              { "field": "index_value", "title": "Index", "format": ".0f" },
+              { "field": "mean_price_thousand", "title": "Mean price ($k)", "format": ".0f" }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/avg_weekly_earnings_tidy.csv",
+            "format": { "type": "csv", "parse": { "value": "number" } }
+          },
+          "transform": [
+            { "filter": "datum.series == 'Persons total'" },
+            { "calculate": "timeParse(datum.period, '%b-%Y')", "as": "date" },
+            { "filter": "year(datum.date) >= 2011" },
+            { "calculate": "'Average weekly earnings'", "as": "series" },
+            {
+              "window": [{ "op": "first_value", "field": "value", "as": "base_value" }],
+              "sort": [{ "field": "date", "order": "ascending" }]
+            },
+            { "calculate": "(datum.value / datum.base_value) * 100", "as": "index_value" }
+          ],
+          "mark": { "type": "line", "interpolate": "monotone", "strokeDash": [6, 3], "strokeWidth": 2 },
+          "encoding": {
+            "x": { "field": "date", "type": "temporal", "scale": { "domain": { "param": "brush" } } },
+            "y": {
+              "field": "index_value",
+              "type": "quantitative",
+              "axis": { "format": ".0f" }
+            },
+            "color": {
+              "field": "series",
+              "type": "nominal",
+              "scale": {
+                "domain": ["Mean dwelling price", "Average weekly earnings", "CPI (All groups)"],
+                "range": ["#d95f02", "#1b9e77", "#7570b3"]
+              }
+            },
+            "tooltip": [
+              { "field": "series", "title": "Series" },
+              { "field": "date", "title": "Period", "type": "temporal", "format": "%b %Y" },
+              { "field": "index_value", "title": "Index", "format": ".0f" },
+              { "field": "value", "title": "Weekly earnings ($)", "format": "$,.0f" }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/cities/cpi_overall_tidy.csv",
+            "format": { "type": "csv", "parse": { "cpi_index": "number" } }
+          },
+          "transform": [
+            { "filter": "datum.city == 'Australia'" },
+            { "calculate": "timeParse(datum.quarter, '%b-%Y')", "as": "date" },
+            { "filter": "year(datum.date) >= 2011" },
+            { "calculate": "'CPI (All groups)'", "as": "series" },
+            {
+              "window": [{ "op": "first_value", "field": "cpi_index", "as": "base_value" }],
+              "sort": [{ "field": "date", "order": "ascending" }]
+            },
+            { "calculate": "(datum.cpi_index / datum.base_value) * 100", "as": "index_value" }
+          ],
+          "mark": { "type": "line", "interpolate": "monotone", "strokeWidth": 2 },
+          "encoding": {
+            "x": { "field": "date", "type": "temporal", "scale": { "domain": { "param": "brush" } } },
+            "y": {
+              "field": "index_value",
+              "type": "quantitative",
+              "axis": { "format": ".0f" }
+            },
+            "color": {
+              "field": "series",
+              "type": "nominal",
+              "scale": {
+                "domain": ["Mean dwelling price", "Average weekly earnings", "CPI (All groups)"],
+                "range": ["#d95f02", "#1b9e77", "#7570b3"]
+              }
+            },
+            "tooltip": [
+              { "field": "series", "title": "Series" },
+              { "field": "date", "title": "Quarter", "type": "temporal", "format": "%b %Y" },
+              { "field": "index_value", "title": "Index", "format": ".0f" },
+              { "field": "cpi_index", "title": "CPI (raw)", "format": ".1f" }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Mean dwelling price — all states & territories (indexed to 2011 = 100)",
+      "width": 1100,
+      "height": 380,
+      "data": {
+        "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
+        "format": { "type": "csv", "parse": { "year": "number", "mean_price_thousand": "number" } }
+      },
+      "transform": [
+        { "filter": "datum.year >= 2011" },
+        { "calculate": "timeParse(datum.quarter, '%b-%Y')", "as": "date" },
+        { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+        {
+          "window": [{ "op": "first_value", "field": "mean_price_thousand", "as": "base_value" }],
+          "sort": [{ "field": "date", "order": "ascending" }],
+          "groupby": ["state"]
+        },
+        { "calculate": "(datum.mean_price_thousand / datum.base_value) * 100", "as": "index_price" }
+      ],
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "scale": { "domain": { "param": "brush" } },
+          "axis": { "format": "%Y", "title": null }
+        },
+        "y": {
+          "field": "index_price",
+          "type": "quantitative",
+          "axis": { "format": ".0f", "title": "Index (2011 = 100)" }
+        }
+      },
+      "layer": [
+        {
+          "data": { "values": [{}] },
+          "mark": { "type": "rule", "stroke": "#c7d3df", "strokeWidth": 1 },
+          "encoding": { "y": { "datum": 100, "type": "quantitative" } }
+        },
+        {
+          "transform": [{ "filter": "datum.state != 'Australia'" }],
+          "mark": { "type": "line", "interpolate": "monotone", "strokeWidth": 1.6, "opacity": 0.8 },
+          "encoding": {
+            "color": {
+              "field": "state",
+              "type": "nominal",
+              "title": "State/Territory",
+              "domain": [
+                "New South Wales",
+                "Victoria",
+                "Queensland",
+                "South Australia",
+                "Western Australia",
+                "Tasmania",
+                "Northern Territory",
+                "Australian Capital Territory"
+              ],
+              "range": [
+                "#1f77b4",
+                "#d62728",
+                "#ff7f0e",
+                "#9467bd",
+                "#2ca02c",
+                "#8c564b",
+                "#e377c2",
+                "#17becf"
+              ]
+            },
+            "tooltip": [
+              { "field": "state", "title": "State/Territory" },
+              { "field": "date", "title": "Quarter", "type": "temporal", "format": "%b %Y" },
+              { "field": "index_price", "title": "Price index", "format": ".0f" },
+              { "field": "mean_price_value", "title": "Mean dwelling price", "format": "$,.0f" }
+            ]
+          }
+        },
+        {
+          "transform": [{ "filter": "datum.state == 'Australia'" }],
+          "mark": { "type": "line", "interpolate": "monotone", "strokeWidth": 3, "color": "#d95f02" },
+          "encoding": { "detail": { "field": "state" } }
+        }
+      ],
+      "resolve": { "scale": { "color": "independent" } }
+    }
+  ]
+}

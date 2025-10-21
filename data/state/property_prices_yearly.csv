@@ -1,0 +1,136 @@
+state_year,state,year,mean_price_thousand
+Australia|2011,Australia,2011,488.85
+Australia|2012,Australia,2012,490.29999999999995
+Australia|2013,Australia,2013,514.35
+Australia|2014,Australia,2014,552.25
+Australia|2015,Australia,2015,600.5
+Australia|2016,Australia,2016,627.25
+Australia|2017,Australia,2017,677.4749999999999
+Australia|2018,Australia,2018,675.55
+Australia|2019,Australia,2019,662.7249999999999
+Australia|2020,Australia,2020,707.4250000000001
+Australia|2021,Australia,2021,843.675
+Australia|2022,Australia,2022,908.325
+Australia|2023,Australia,2023,920.1
+Australia|2024,Australia,2024,982.6250000000001
+Australia|2025,Australia,2025,1009.6500000000001
+Australian Capital Territory|2011,Australian Capital Territory,2011,554.5
+Australian Capital Territory|2012,Australian Capital Territory,2012,553.0
+Australian Capital Territory|2013,Australian Capital Territory,2013,557.875
+Australian Capital Territory|2014,Australian Capital Territory,2014,570.975
+Australian Capital Territory|2015,Australian Capital Territory,2015,595.8999999999999
+Australian Capital Territory|2016,Australian Capital Territory,2016,615.15
+Australian Capital Territory|2017,Australian Capital Territory,2017,652.8249999999999
+Australian Capital Territory|2018,Australian Capital Territory,2018,676.675
+Australian Capital Territory|2019,Australian Capital Territory,2019,680.0250000000001
+Australian Capital Territory|2020,Australian Capital Territory,2020,729.0
+Australian Capital Territory|2021,Australian Capital Territory,2021,902.5
+Australian Capital Territory|2022,Australian Capital Territory,2022,973.25
+Australian Capital Territory|2023,Australian Capital Territory,2023,944.1
+Australian Capital Territory|2024,Australian Capital Territory,2024,956.075
+Australian Capital Territory|2025,Australian Capital Territory,2025,944.75
+New South Wales|2011,New South Wales,2011,538.05
+New South Wales|2012,New South Wales,2012,551.45
+New South Wales|2013,New South Wales,2013,590.975
+New South Wales|2014,New South Wales,2014,660.275
+New South Wales|2015,New South Wales,2015,762.25
+New South Wales|2016,New South Wales,2016,815.925
+New South Wales|2017,New South Wales,2017,899.325
+New South Wales|2018,New South Wales,2018,874.925
+New South Wales|2019,New South Wales,2019,850.175
+New South Wales|2020,New South Wales,2020,912.3249999999999
+New South Wales|2021,New South Wales,2021,1101.9
+New South Wales|2022,New South Wales,2022,1170.525
+New South Wales|2023,New South Wales,2023,1174.25
+New South Wales|2024,New South Wales,2024,1235.4
+New South Wales|2025,New South Wales,2025,1249.5
+Northern Territory|2011,Northern Territory,2011,497.6
+Northern Territory|2012,Northern Territory,2012,472.32500000000005
+Northern Territory|2013,Northern Territory,2013,500.25
+Northern Territory|2014,Northern Territory,2014,514.5749999999999
+Northern Territory|2015,Northern Territory,2015,497.725
+Northern Territory|2016,Northern Territory,2016,473.975
+Northern Territory|2017,Northern Territory,2017,450.725
+Northern Territory|2018,Northern Territory,2018,438.7
+Northern Territory|2019,Northern Territory,2019,430.6
+Northern Territory|2020,Northern Territory,2020,430.27500000000003
+Northern Territory|2021,Northern Territory,2021,476.175
+Northern Territory|2022,Northern Territory,2022,509.29999999999995
+Northern Territory|2023,Northern Territory,2023,508.175
+Northern Territory|2024,Northern Territory,2024,518.05
+Northern Territory|2025,Northern Territory,2025,512.85
+Queensland|2011,Queensland,2011,427.25
+Queensland|2012,Queensland,2012,424.44999999999993
+Queensland|2013,Queensland,2013,431.95
+Queensland|2014,Queensland,2014,453.225
+Queensland|2015,Queensland,2015,470.25
+Queensland|2016,Queensland,2016,482.65
+Queensland|2017,Queensland,2017,499.7
+Queensland|2018,Queensland,2018,511.825
+Queensland|2019,Queensland,2019,510.6
+Queensland|2020,Queensland,2020,538.4
+Queensland|2021,Queensland,2021,659.65
+Queensland|2022,Queensland,2022,764.0999999999999
+Queensland|2023,Queensland,2023,792.6500000000001
+Queensland|2024,Queensland,2024,901.7
+Queensland|2025,Queensland,2025,966.8
+South Australia|2011,South Australia,2011,382.1
+South Australia|2012,South Australia,2012,376.65
+South Australia|2013,South Australia,2013,384.84999999999997
+South Australia|2014,South Australia,2014,405.025
+South Australia|2015,South Australia,2015,416.79999999999995
+South Australia|2016,South Australia,2016,426.775
+South Australia|2017,South Australia,2017,442.275
+South Australia|2018,South Australia,2018,453.27500000000003
+South Australia|2019,South Australia,2019,458.92499999999995
+South Australia|2020,South Australia,2020,479.5
+South Australia|2021,South Australia,2021,563.95
+South Australia|2022,South Australia,2022,652.2249999999999
+South Australia|2023,South Australia,2023,701.0500000000001
+South Australia|2024,South Australia,2024,805.025
+South Australia|2025,South Australia,2025,849.8
+Tasmania|2011,Tasmania,2011,307.55
+Tasmania|2012,Tasmania,2012,297.2
+Tasmania|2013,Tasmania,2013,298.85
+Tasmania|2014,Tasmania,2014,308.92499999999995
+Tasmania|2015,Tasmania,2015,320.925
+Tasmania|2016,Tasmania,2016,336.35
+Tasmania|2017,Tasmania,2017,369.15
+Tasmania|2018,Tasmania,2018,406.79999999999995
+Tasmania|2019,Tasmania,2019,425.625
+Tasmania|2020,Tasmania,2020,470.7
+Tasmania|2021,Tasmania,2021,604.2
+Tasmania|2022,Tasmania,2022,681.0
+Tasmania|2023,Tasmania,2023,663.7
+Tasmania|2024,Tasmania,2024,661.675
+Tasmania|2025,Tasmania,2025,670.55
+Victoria|2011,Victoria,2011,509.6
+Victoria|2012,Victoria,2012,498.40000000000003
+Victoria|2013,Victoria,2013,519.9
+Victoria|2014,Victoria,2014,552.3000000000001
+Victoria|2015,Victoria,2015,606.825
+Victoria|2016,Victoria,2016,645.25
+Victoria|2017,Victoria,2017,720.975
+Victoria|2018,Victoria,2018,726.85
+Victoria|2019,Victoria,2019,709.625
+Victoria|2020,Victoria,2020,764.8750000000001
+Victoria|2021,Victoria,2021,887.3499999999999
+Victoria|2022,Victoria,2022,918.25
+Victoria|2023,Victoria,2023,906.575
+Victoria|2024,Victoria,2024,904.0250000000001
+Victoria|2025,Victoria,2025,904.3
+Western Australia|2011,Western Australia,2011,523.0999999999999
+Western Australia|2012,Western Australia,2012,537.7
+Western Australia|2013,Western Australia,2013,573.0
+Western Australia|2014,Western Australia,2014,588.2249999999999
+Western Australia|2015,Western Australia,2015,566.525
+Western Australia|2016,Western Australia,2016,533.525
+Western Australia|2017,Western Australia,2017,524.2750000000001
+Western Australia|2018,Western Australia,2018,518.5749999999999
+Western Australia|2019,Western Australia,2019,502.375
+Western Australia|2020,Western Australia,2020,519.1500000000001
+Western Australia|2021,Western Australia,2021,595.325
+Western Australia|2022,Western Australia,2022,636.45
+Western Australia|2023,Western Australia,2023,686.95
+Western Australia|2024,Western Australia,2024,826.1999999999999
+Western Australia|2025,Western Australia,2025,887.4

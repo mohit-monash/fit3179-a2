@@ -1,0 +1,181 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "padding": 10,
+
+  "config": {
+    "background": null,
+    "view": { "stroke": null },
+    "axis": { "labelFont": "Source Sans Pro", "titleFont": "Source Sans Pro" },
+    "legend": { "labelFont": "Source Sans Pro", "titleFont": "Source Sans Pro" },
+    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 700 },
+    "facet": { "columns": 2, "spacing": 14 },
+    "header": { "labels": false, "title": null, "labelExpr": "''" }
+  },
+
+  "title": {
+    "text": { "signal": "'Key affordability metrics — ' + cityLabelParam + ' (' + yearLabelParam + ')'" },
+    "subtitle": "SA3-weighted figures. Price-to-income = mean dwelling price ÷ average taxable income."
+  },
+
+  "params": [
+    { "name": "cityParam", "value": "Australia" },
+    { "name": "cityLabelParam", "value": "Australia" },
+    { "name": "yearParam", "value": 2022 },
+    { "name": "yearLabelParam", "value": "2021–22" }
+  ],
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "individuals": "number",
+        "total_income": "number",
+        "median_taxable_income": "number",
+        "average_taxable_income": "number",
+        "salary_wage_share": "number",
+        "end_year": "number"
+      }
+    }
+  },
+
+  "transform": [
+    { "filter": "datum.region_category == 'SA3'" },
+
+    {
+      "lookup": "region_code",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
+          "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" }
+        },
+        "key": "properties.SA3_CODE21",
+        "fields": ["properties.GCC_NAME21", "properties.STE_NAME21"]
+      }
+    },
+    { "calculate": "datum['properties.GCC_NAME21']", "as": "gcc_name" },
+    { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+
+    {
+      "filter": "cityParam == 'Australia' ? indexof(datum.gcc_name, 'Migratory') < 0 && indexof(datum.gcc_name, 'Outside') < 0 && indexof(datum.gcc_name, 'No usual address') < 0 : datum.gcc_name == cityParam"
+    },
+    { "filter": "datum.end_year == yearParam" },
+
+    { "calculate": "datum.median_taxable_income * datum.individuals", "as": "median_weighted" },
+    { "calculate": "datum.salary_wage_share * datum.individuals", "as": "salary_weighted" },
+
+    { "calculate": "cityParam == 'Australia' ? 'Australia' : datum.state_name", "as": "state_key" },
+    { "calculate": "datum.state_key + '|' + yearParam", "as": "state_year_key" },
+
+    {
+      "aggregate": [
+        { "op": "sum", "field": "total_income", "as": "total_income_sum" },
+        { "op": "sum", "field": "individuals", "as": "individuals_sum" },
+        { "op": "sum", "field": "median_weighted", "as": "median_weighted_sum" },
+        { "op": "sum", "field": "salary_weighted", "as": "salary_weighted_sum" }
+      ],
+      "groupby": ["state_key", "state_year_key"]
+    },
+
+    { "calculate": "datum.total_income_sum / max(datum.individuals_sum,1)", "as": "average_income" },
+    { "calculate": "datum.median_weighted_sum / max(datum.individuals_sum,1)", "as": "median_income" },
+
+    { "calculate": "datum.salary_weighted_sum / max(datum.individuals_sum,1)", "as": "salary_share_level" },
+    { "calculate": "datum.salary_share_level > 1 ? datum.salary_share_level/100 : datum.salary_share_level", "as": "salary_share_frac" },
+
+    {
+      "lookup": "state_year_key",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
+          "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } }
+        },
+        "key": "state_year",
+        "fields": ["mean_price_thousand"]
+      },
+      "as": ["mean_price_thousand_pp"]
+    },
+    { "calculate": "datum.mean_price_thousand_pp * 1000", "as": "mean_price_value" },
+    { "calculate": "datum.mean_price_value / datum.average_income", "as": "price_to_income" },
+
+    { "calculate": "cityParam == 'Australia' ? 'Australia' : cityLabelParam", "as": "city_display" },
+
+    {
+      "fold": ["average_income", "mean_price_value", "price_to_income", "salary_share_frac"],
+      "as": ["metric", "value"]
+    },
+    {
+      "calculate": "datum.metric == 'average_income' ? 'Average taxable income' : datum.metric == 'mean_price_value' ? 'Mean dwelling price' : datum.metric == 'price_to_income' ? 'Price-to-income ratio' : 'Salary & wages share'",
+      "as": "metric_label"
+    },
+    {
+      "calculate": "datum.metric == 'price_to_income' ? format(datum.value, '.1f') + ' yrs' : datum.metric == 'salary_share_frac' ? format(datum.value, '.1%') : (datum.metric == 'mean_price_value' ? ('$' + format(datum.value/1000000, ',.2f') + 'm') : ('$' + format(datum.value/1000, ',.0f') + 'k'))",
+      "as": "value_display"
+    }
+  ],
+
+  "facet": {
+    "field": "metric",
+    "type": "nominal",
+    "sort": ["average_income", "mean_price_value", "price_to_income", "salary_share_frac"],
+    "header": { "title": null, "labels": false, "labelExpr": "''" }
+  },
+
+  "spec": {
+    "width": 550,
+    "height": 170,
+    "layer": [
+      {
+        "mark": {
+          "type": "rect",
+          "cornerRadius": 16,
+          "stroke": "#ffffff",
+          "strokeWidth": 1.5,
+          "tooltip": true
+        },
+        "encoding": {
+          "color": {
+            "field": "metric",
+            "type": "nominal",
+            "scale": {
+              "domain": ["average_income", "mean_price_value", "price_to_income", "salary_share_frac"],
+              "range": ["#1b9e77", "#d95f02", "#7570b3", "#66a61e"]
+            },
+            "legend": null
+          },
+          "tooltip": [
+            { "field": "metric_label", "title": "Metric" },
+            { "field": "city_display", "title": "Area" },
+            { "field": "yearLabelParam", "type": "nominal", "title": "Year" },
+            { "field": "value_display", "title": "Value" }
+          ]
+        }
+      },
+      {
+        "mark": { "type": "text", "color": "white", "align": "left", "fontSize": 13 },
+        "encoding": {
+          "text": { "field": "metric_label" },
+          "x": { "value": 18 },
+          "y": { "value": 30 }
+        }
+      },
+      {
+        "mark": { "type": "text", "color": "white", "align": "left", "fontSize": 28, "fontWeight": "bold" },
+        "encoding": {
+          "text": { "field": "value_display" },
+          "x": { "value": 18 },
+          "y": { "value": 78 }
+        }
+      },
+      {
+        "transform": [{ "calculate": "datum.city_display + ' · ' + yearLabelParam", "as": "display_text" }],
+        "mark": { "type": "text", "color": "white", "align": "left", "fontSize": 12, "opacity": 0.9 },
+        "encoding": {
+          "text": { "field": "display_text" },
+          "x": { "value": 18 },
+          "y": { "value": 112 }
+        }
+      }
+    ]
+  }
+}

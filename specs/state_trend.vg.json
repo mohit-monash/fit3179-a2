@@ -1,0 +1,214 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1100,
+  "height": 380,
+
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "labelColor": "#314155",
+      "titleColor": "#1f2d3d",
+      "grid": true
+    },
+    "legend": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "orient": "bottom",
+      "columns": 4,
+      "labelColor": "#314155",
+      "titleColor": "#1f2d3d"
+    },
+    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 700 }
+  },
+
+  "title": {
+    "text": "Price-to-income ratio by state (2018–2022)",
+    "subtitle": "Mean dwelling price ÷ average taxable income. Use the dropdown to highlight a state."
+  },
+
+  "params": [
+    {
+      "name": "focusState",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "name": "Highlight: ",
+        "options": [
+          "All",
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ]
+      }
+    }
+  ],
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "total_income": "number",
+        "average_taxable_income": "number",
+        "individuals": "number",
+        "end_year": "number"
+      }
+    }
+  },
+
+  "transform": [
+    { "filter": "datum.region_category == 'State'" },
+    { "filter": "datum.end_year >= 2011" },
+
+    { "calculate": "datum.region_name + '|' + datum.end_year", "as": "state_year_key" },
+
+    {
+      "lookup": "state_year_key",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
+          "format": {
+            "type": "csv",
+            "parse": { "mean_price_thousand": "number", "year": "number" }
+          }
+        },
+        "key": "state_year",
+        "fields": ["mean_price_thousand"]
+      },
+      "as": ["mean_price_thousand"]
+    },
+
+    { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+    { "calculate": "datum.mean_price_value / max(datum.average_taxable_income, 1)", "as": "price_to_income" },
+
+    { "calculate": "timeParse(datum.end_year + '-06-30', '%Y-%m-%d')", "as": "year_date" },
+
+    {
+      "window": [{ "op": "rank", "as": "rank_last" }],
+      "sort": [{ "field": "year_date", "order": "descending" }],
+      "groupby": ["region_name"]
+    }
+  ],
+
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "strokeCap": "round",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "x": {
+          "field": "year_date",
+          "type": "temporal",
+          "title": "Financial year",
+          "axis": {
+            "format": "%Y",
+            "labelFlush": false,
+            "values": [
+              "2018-06-30",
+              "2019-06-30",
+              "2020-06-30",
+              "2021-06-30",
+              "2022-06-30"
+            ]
+          }
+        },
+        "y": {
+          "field": "price_to_income",
+          "type": "quantitative",
+          "title": "Price-to-income ratio (years)",
+          "axis": { "format": ".1f" }
+        },
+        "color": {
+          "field": "region_name",
+          "type": "nominal",
+          "title": "State / territory",
+          "domain": [
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory"
+          ],
+          "range": [
+            "#1f77b4",
+            "#d62728",
+            "#ff7f0e",
+            "#9467bd",
+            "#2ca02c",
+            "#8c564b",
+            "#e377c2",
+            "#17becf"
+          ],
+          "legend": { "orient": "bottom", "columns": 4 }
+        },
+        "size": {
+          "condition": { "test": "focusState == 'All' || datum.region_name == focusState", "value": 3 },
+          "value": 1.3
+        },
+        "opacity": {
+          "condition": { "test": "focusState == 'All' || datum.region_name == focusState", "value": 1 },
+          "value": 0.25
+        },
+        "tooltip": [
+          { "field": "region_name", "title": "State" },
+          { "field": "end_year", "title": "Year" },
+          { "field": "price_to_income", "title": "Price-to-income", "format": ".2f" }
+        ]
+      }
+    },
+
+    {
+      "mark": { "type": "point", "filled": true, "size": 36, "stroke": "white", "strokeWidth": 1 },
+      "encoding": {
+        "x": { "field": "year_date", "type": "temporal" },
+        "y": { "field": "price_to_income", "type": "quantitative" },
+        "color": { "field": "region_name", "type": "nominal", "legend": null },
+        "opacity": {
+          "condition": { "test": "focusState == 'All' || datum.region_name == focusState", "value": 0.8 },
+          "value": 0
+        },
+        "tooltip": [
+          { "field": "region_name", "title": "State" },
+          { "field": "end_year", "title": "Year" },
+          { "field": "price_to_income", "title": "Price-to-income", "format": ".2f" }
+        ]
+      }
+    },
+
+    {
+      "transform": [{ "filter": "datum.rank_last == 1" }],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#314155"
+      },
+      "encoding": {
+        "x": { "field": "year_date", "type": "temporal" },
+        "y": { "field": "price_to_income", "type": "quantitative" },
+        "text": { "field": "price_to_income", "format": ".1f" },
+        "color": { "field": "region_name", "type": "nominal", "legend": null },
+        "opacity": {
+          "condition": { "test": "focusState == 'All' || datum.region_name == focusState", "value": 1 },
+          "value": 0.7
+        }
+      }
+    }
+  ]
+}

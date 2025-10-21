@@ -1,0 +1,112 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Two income maps, filtered by GCCSA and year (no 'All Australia' option).",
+  "config": { "background": "#eef2f7", "view": { "stroke": null } },
+  "title": "SA3 income — GCCSA view",
+
+  "params": [
+    {
+      "name": "yearParam",
+      "value": 2018
+    },
+    {
+      "name": "cityParam",
+      "value": "Greater Melbourne"
+    }
+  ],
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/sa3_price_income_combined.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "end_year": "number",
+        "individuals": "number",
+        "total_income": "number",
+        "median_taxable_income": "number",
+        "average_taxable_income": "number",
+        "salary_share_pct": "number",
+        "price_to_income": "number",
+        "price_to_income_rank_city": "number",
+        "area_sq_km": "number"
+      }
+    }
+  },
+
+  "transform": [
+    { "filter": "datum.end_year == yearParam" },
+    {
+      "filter": "cityParam == 'Australia' ? indexof(datum.gcc_name, 'Migratory') < 0 && indexof(datum.gcc_name, 'Outside') < 0 && indexof(datum.gcc_name, 'No usual address') < 0 : datum.gcc_name == cityParam"
+    },
+    { "calculate": "toString(datum.region_code)", "as": "region_code" },
+    { "calculate": "datum.average_taxable_income / datum.median_taxable_income", "as": "income_skew_ratio" },
+    {
+      "lookup": "region_code",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
+          "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" }
+        },
+        "key": "properties.SA3_CODE21"
+      },
+      "as": "feature"
+    },
+    { "filter": "datum.feature != null" }
+  ],
+
+  "hconcat": [
+    {
+      "title": "Average taxable income",
+      "width": 450,
+      "height": 540,
+      "projection": { "type": "mercator" },
+      "mark": { "type": "geoshape" },
+      "encoding": {
+        "shape": { "field": "feature", "type": "geojson" },
+        "color": {
+          "field": "average_taxable_income",
+          "type": "quantitative",
+          "scale": { "scheme": "greens" },
+          "legend": { "format": "$,.0f", "title": "Average taxable income" }
+        },
+        "stroke": { "value": "#ffffff" },
+        "strokeWidth": { "value": 0.6 },
+        "opacity": { "value": 0.95 },
+        "tooltip": [
+          { "field": "sa3_name", "title": "SA3" },
+          { "field": "gcc_name", "title": "GCCSA" },
+          { "field": "state_name", "title": "State/Territory" },
+          { "field": "average_taxable_income", "title": "Average taxable income", "format": "$,.0f" },
+          { "field": "median_taxable_income", "title": "Median taxable income", "format": "$,.0f" }
+        ]
+      }
+    },
+    {
+      "title": "Income skew (mean ÷ median)",
+      "width": 450,
+      "height": 540,
+      "projection": { "type": "mercator" },
+      "mark": { "type": "geoshape" },
+      "encoding": {
+        "shape": { "field": "feature", "type": "geojson" },
+        "color": {
+          "field": "income_skew_ratio",
+          "type": "quantitative",
+          "scale": { "scheme": "oranges" },
+          "legend": { "format": ".2f", "title": "Mean ÷ Median" }
+        },
+        "stroke": { "value": "#ffffff" },
+        "strokeWidth": { "value": 0.6 },
+        "opacity": { "value": 0.95 },
+        "tooltip": [
+          { "field": "sa3_name", "title": "SA3" },
+          { "field": "gcc_name", "title": "GCCSA" },
+          { "field": "state_name", "title": "State/Territory" },
+          { "field": "income_skew_ratio", "title": "Mean ÷ Median", "format": ".2f" }
+        ]
+      }
+    }
+  ],
+
+  "resolve": { "scale": { "color": "independent" } }
+}

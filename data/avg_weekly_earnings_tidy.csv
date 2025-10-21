@@ -1,0 +1,559 @@
+period,year,series,value
+Nov-1994,1994,Males FT ordinary,669.20
+Nov-1994,1994,Males FT total,727.70
+Nov-1994,1994,Males total,644.80
+Nov-1994,1994,Females FT ordinary,561.10
+Nov-1994,1994,Females FT total,575.40
+Nov-1994,1994,Females total,425.60
+Nov-1994,1994,Persons FT ordinary,630.10
+Nov-1994,1994,Persons FT total,672.60
+Nov-1994,1994,Persons total,542.40
+May-1995,1995,Males FT ordinary,689.20
+May-1995,1995,Males FT total,744.60
+May-1995,1995,Males total,654.30
+May-1995,1995,Females FT ordinary,576.10
+May-1995,1995,Females FT total,590.50
+May-1995,1995,Females total,430.80
+May-1995,1995,Persons FT ordinary,648.20
+May-1995,1995,Persons FT total,688.80
+May-1995,1995,Persons total,548.90
+Nov-1995,1995,Males FT ordinary,705.20
+Nov-1995,1995,Males FT total,763.70
+Nov-1995,1995,Males total,664.80
+Nov-1995,1995,Females FT ordinary,581.60
+Nov-1995,1995,Females FT total,597.00
+Nov-1995,1995,Females total,430.90
+Nov-1995,1995,Persons FT ordinary,661.20
+Nov-1995,1995,Persons FT total,704.40
+Nov-1995,1995,Persons total,555.40
+May-1996,1996,Males FT ordinary,717.50
+May-1996,1996,Males FT total,776.20
+May-1996,1996,Males total,673.40
+May-1996,1996,Females FT ordinary,594.80
+May-1996,1996,Females FT total,608.80
+May-1996,1996,Females total,442.10
+May-1996,1996,Persons FT ordinary,673.80
+May-1996,1996,Persons FT total,716.50
+May-1996,1996,Persons total,565.50
+Nov-1996,1996,Males FT ordinary,727.80
+Nov-1996,1996,Males FT total,789.00
+Nov-1996,1996,Males total,681.00
+Nov-1996,1996,Females FT ordinary,612.30
+Nov-1996,1996,Females FT total,628.10
+Nov-1996,1996,Females total,447.70
+Nov-1996,1996,Persons FT ordinary,686.10
+Nov-1996,1996,Persons FT total,730.90
+Nov-1996,1996,Persons total,570.60
+May-1997,1997,Males FT ordinary,740.70
+May-1997,1997,Males FT total,796.10
+May-1997,1997,Males total,687.80
+May-1997,1997,Females FT ordinary,620.20
+May-1997,1997,Females FT total,634.70
+May-1997,1997,Females total,457.70
+May-1997,1997,Persons FT ordinary,696.30
+May-1997,1997,Persons FT total,736.70
+May-1997,1997,Persons total,578.10
+Nov-1997,1997,Males FT ordinary,757.10
+Nov-1997,1997,Males FT total,815.30
+Nov-1997,1997,Males total,709.50
+Nov-1997,1997,Females FT ordinary,632.60
+Nov-1997,1997,Females FT total,647.70
+Nov-1997,1997,Females total,466.10
+Nov-1997,1997,Persons FT ordinary,710.60
+Nov-1997,1997,Persons FT total,752.70
+Nov-1997,1997,Persons total,592.60
+May-1998,1998,Males FT ordinary,772.20
+May-1998,1998,Males FT total,829.50
+May-1998,1998,Males total,715.00
+May-1998,1998,Females FT ordinary,645.60
+May-1998,1998,Females FT total,659.30
+May-1998,1998,Females total,467.70
+May-1998,1998,Persons FT ordinary,725.70
+May-1998,1998,Persons FT total,766.90
+May-1998,1998,Persons total,596.00
+Nov-1998,1998,Males FT ordinary,786.50
+Nov-1998,1998,Males FT total,847.60
+Nov-1998,1998,Males total,723.20
+Nov-1998,1998,Females FT ordinary,660.00
+Nov-1998,1998,Females FT total,675.10
+Nov-1998,1998,Females total,475.40
+Nov-1998,1998,Persons FT ordinary,739.50
+Nov-1998,1998,Persons FT total,783.50
+Nov-1998,1998,Persons total,603.40
+May-1999,1999,Males FT ordinary,795.90
+May-1999,1999,Males FT total,851.60
+May-1999,1999,Males total,732.90
+May-1999,1999,Females FT ordinary,667.90
+May-1999,1999,Females FT total,681.60
+May-1999,1999,Females total,482.00
+May-1999,1999,Persons FT ordinary,748.50
+May-1999,1999,Persons FT total,788.60
+May-1999,1999,Persons total,610.40
+Nov-1999,1999,Males FT ordinary,807.50
+Nov-1999,1999,Males FT total,865.60
+Nov-1999,1999,Males total,741.40
+Nov-1999,1999,Females FT ordinary,681.70
+Nov-1999,1999,Females FT total,696.90
+Nov-1999,1999,Females total,481.70
+Nov-1999,1999,Persons FT ordinary,760.80
+Nov-1999,1999,Persons FT total,802.90
+Nov-1999,1999,Persons total,613.00
+May-2000,2000,Males FT ordinary,829.10
+May-2000,2000,Males FT total,882.00
+May-2000,2000,Males total,757.60
+May-2000,2000,Females FT ordinary,694.90
+May-2000,2000,Females FT total,711.10
+May-2000,2000,Females total,503.00
+May-2000,2000,Persons FT ordinary,779.10
+May-2000,2000,Persons FT total,818.40
+May-2000,2000,Persons total,633.80
+Nov-2000,2000,Males FT ordinary,845.20
+Nov-2000,2000,Males FT total,894.40
+Nov-2000,2000,Males total,768.00
+Nov-2000,2000,Females FT ordinary,715.70
+Nov-2000,2000,Females FT total,730.30
+Nov-2000,2000,Females total,510.20
+Nov-2000,2000,Persons FT ordinary,798.10
+Nov-2000,2000,Persons FT total,834.70
+Nov-2000,2000,Persons total,643.10
+May-2001,2001,Males FT ordinary,867.40
+May-2001,2001,Males FT total,918.20
+May-2001,2001,Males total,787.40
+May-2001,2001,Females FT ordinary,732.90
+May-2001,2001,Females FT total,746.10
+May-2001,2001,Females total,522.00
+May-2001,2001,Persons FT ordinary,818.80
+May-2001,2001,Persons FT total,856.10
+May-2001,2001,Persons total,660.30
+Nov-2001,2001,Males FT ordinary,891.00
+Nov-2001,2001,Males FT total,941.60
+Nov-2001,2001,Males total,808.90
+Nov-2001,2001,Females FT ordinary,754.80
+Nov-2001,2001,Females FT total,767.50
+Nov-2001,2001,Females total,528.40
+Nov-2001,2001,Persons FT ordinary,842.60
+Nov-2001,2001,Persons FT total,879.60
+Nov-2001,2001,Persons total,673.60
+May-2002,2002,Males FT ordinary,910.40
+May-2002,2002,Males FT total,965.40
+May-2002,2002,Males total,823.60
+May-2002,2002,Females FT ordinary,770.30
+May-2002,2002,Females FT total,781.80
+May-2002,2002,Females total,536.00
+May-2002,2002,Persons FT ordinary,860.10
+May-2002,2002,Persons FT total,899.50
+May-2002,2002,Persons total,683.80
+Nov-2002,2002,Males FT ordinary,933.90
+Nov-2002,2002,Males FT total,993.00
+Nov-2002,2002,Males total,845.30
+Nov-2002,2002,Females FT ordinary,789.70
+Nov-2002,2002,Females FT total,802.80
+Nov-2002,2002,Females total,545.70
+Nov-2002,2002,Persons FT ordinary,882.10
+Nov-2002,2002,Persons FT total,924.70
+Nov-2002,2002,Persons total,699.40
+May-2003,2003,Males FT ordinary,968.00
+May-2003,2003,Males FT total,1026.00
+May-2003,2003,Males total,869.30
+May-2003,2003,Females FT ordinary,814.20
+May-2003,2003,Females FT total,826.40
+May-2003,2003,Females total,562.20
+May-2003,2003,Persons FT ordinary,912.80
+May-2003,2003,Persons FT total,954.30
+May-2003,2003,Persons total,721.40
+Nov-2003,2003,Males FT ordinary,983.50
+Nov-2003,2003,Males FT total,1053.10
+Nov-2003,2003,Males total,891.80
+Nov-2003,2003,Females FT ordinary,829.60
+Nov-2003,2003,Females FT total,843.80
+Nov-2003,2003,Females total,572.90
+Nov-2003,2003,Persons FT ordinary,929.10
+Nov-2003,2003,Persons FT total,979.20
+Nov-2003,2003,Persons total,740.30
+May-2004,2004,Males FT ordinary,993.20
+May-2004,2004,Males FT total,1055.30
+May-2004,2004,Males total,886.90
+May-2004,2004,Females FT ordinary,842.00
+May-2004,2004,Females FT total,856.40
+May-2004,2004,Females total,582.00
+May-2004,2004,Persons FT ordinary,939.00
+May-2004,2004,Persons FT total,984.00
+May-2004,2004,Persons total,741.40
+Nov-2004,2004,Males FT ordinary,1019.50
+Nov-2004,2004,Males FT total,1092.10
+Nov-2004,2004,Males total,908.00
+Nov-2004,2004,Females FT ordinary,865.30
+Nov-2004,2004,Females FT total,880.00
+Nov-2004,2004,Females total,597.10
+Nov-2004,2004,Persons FT ordinary,965.00
+Nov-2004,2004,Persons FT total,1017.20
+Nov-2004,2004,Persons total,761.70
+May-2005,2005,Males FT ordinary,1049.70
+May-2005,2005,Males FT total,1125.00
+May-2005,2005,Males total,938.40
+May-2005,2005,Females FT ordinary,892.30
+May-2005,2005,Females FT total,905.50
+May-2005,2005,Females total,612.20
+May-2005,2005,Persons FT ordinary,993.80
+May-2005,2005,Persons FT total,1047.10
+May-2005,2005,Persons total,784.20
+Nov-2005,2005,Males FT ordinary,1068.00
+Nov-2005,2005,Males FT total,1143.50
+Nov-2005,2005,Males total,958.50
+Nov-2005,2005,Females FT ordinary,908.30
+Nov-2005,2005,Females FT total,922.90
+Nov-2005,2005,Females total,624.90
+Nov-2005,2005,Persons FT ordinary,1011.80
+Nov-2005,2005,Persons FT total,1066.00
+Nov-2005,2005,Persons total,800.60
+May-2006,2006,Males FT ordinary,1083.80
+May-2006,2006,Males FT total,1149.80
+May-2006,2006,Males total,978.50
+May-2006,2006,Females FT ordinary,919.10
+May-2006,2006,Females FT total,933.30
+May-2006,2006,Females total,641.60
+May-2006,2006,Persons FT ordinary,1025.80
+May-2006,2006,Persons FT total,1073.60
+May-2006,2006,Persons total,819.70
+Nov-2006,2006,Males FT ordinary,1109.20
+Nov-2006,2006,Males FT total,1178.60
+Nov-2006,2006,Males total,1007.70
+Nov-2006,2006,Females FT ordinary,928.20
+Nov-2006,2006,Females FT total,942.60
+Nov-2006,2006,Females total,654.70
+Nov-2006,2006,Persons FT ordinary,1044.10
+Nov-2006,2006,Persons FT total,1093.80
+Nov-2006,2006,Persons total,837.40
+May-2007,2007,Males FT ordinary,1142.30
+May-2007,2007,Males FT total,1207.70
+May-2007,2007,Males total,1033.00
+May-2007,2007,Females FT ordinary,958.10
+May-2007,2007,Females FT total,972.60
+May-2007,2007,Females total,670.10
+May-2007,2007,Persons FT ordinary,1076.80
+May-2007,2007,Persons FT total,1124.10
+May-2007,2007,Persons total,858.50
+Nov-2007,2007,Males FT ordinary,1162.70
+Nov-2007,2007,Males FT total,1235.20
+Nov-2007,2007,Males total,1051.70
+Nov-2007,2007,Females FT ordinary,982.80
+Nov-2007,2007,Females FT total,999.00
+Nov-2007,2007,Females total,683.40
+Nov-2007,2007,Persons FT ordinary,1098.60
+Nov-2007,2007,Persons FT total,1151.00
+Nov-2007,2007,Persons total,873.20
+May-2008,2008,Males FT ordinary,1188.40
+May-2008,2008,Males FT total,1261.20
+May-2008,2008,Males total,1069.10
+May-2008,2008,Females FT ordinary,1000.10
+May-2008,2008,Females FT total,1015.60
+May-2008,2008,Females total,693.70
+May-2008,2008,Persons FT ordinary,1119.60
+May-2008,2008,Persons FT total,1171.50
+May-2008,2008,Persons total,885.00
+Nov-2008,2008,Males FT ordinary,1232.30
+Nov-2008,2008,Males FT total,1306.10
+Nov-2008,2008,Males total,1101.10
+Nov-2008,2008,Females FT ordinary,1030.30
+Nov-2008,2008,Females FT total,1047.10
+Nov-2008,2008,Females total,715.30
+Nov-2008,2008,Persons FT ordinary,1158.00
+Nov-2008,2008,Persons FT total,1210.80
+Nov-2008,2008,Persons total,909.50
+May-2009,2009,Males FT ordinary,1267.70
+May-2009,2009,Males FT total,1334.30
+May-2009,2009,Males total,1110.30
+May-2009,2009,Females FT ordinary,1053.70
+May-2009,2009,Females FT total,1068.10
+May-2009,2009,Females total,726.60
+May-2009,2009,Persons FT ordinary,1187.80
+May-2009,2009,Persons FT total,1234.90
+May-2009,2009,Persons total,918.60
+Nov-2009,2009,Males FT ordinary,1311.20
+Nov-2009,2009,Males FT total,1380.90
+Nov-2009,2009,Males total,1162.70
+Nov-2009,2009,Females FT ordinary,1081.30
+Nov-2009,2009,Females FT total,1096.80
+Nov-2009,2009,Females total,744.20
+Nov-2009,2009,Persons FT ordinary,1226.80
+Nov-2009,2009,Persons FT total,1276.70
+Nov-2009,2009,Persons total,955.00
+May-2010,2010,Males FT ordinary,1334.40
+May-2010,2010,Males FT total,1404.60
+May-2010,2010,Males total,1183.40
+May-2010,2010,Females FT ordinary,1104.50
+May-2010,2010,Females FT total,1120.00
+May-2010,2010,Females total,765.30
+May-2010,2010,Persons FT ordinary,1250.10
+May-2010,2010,Persons FT total,1300.30
+May-2010,2010,Persons total,977.10
+Nov-2010,2010,Males FT ordinary,1361.50
+Nov-2010,2010,Males FT total,1436.00
+Nov-2010,2010,Males total,1210.90
+Nov-2010,2010,Females FT ordinary,1130.90
+Nov-2010,2010,Females FT total,1148.50
+Nov-2010,2010,Females total,783.80
+Nov-2010,2010,Persons FT ordinary,1275.20
+Nov-2010,2010,Persons FT total,1328.50
+Nov-2010,2010,Persons total,996.10
+May-2011,2011,Males FT ordinary,1397.70
+May-2011,2011,Males FT total,1472.80
+May-2011,2011,Males total,1236.50
+May-2011,2011,Females FT ordinary,1150.20
+May-2011,2011,Females FT total,1167.10
+May-2011,2011,Females total,795.90
+May-2011,2011,Persons FT ordinary,1304.70
+May-2011,2011,Persons FT total,1357.90
+May-2011,2011,Persons total,1015.20
+Nov-2011,2011,Males FT ordinary,1420.20
+Nov-2011,2011,Males FT total,1505.50
+Nov-2011,2011,Males total,1255.00
+Nov-2011,2011,Females FT ordinary,1174.10
+Nov-2011,2011,Females FT total,1191.30
+Nov-2011,2011,Females total,808.10
+Nov-2011,2011,Persons FT ordinary,1330.10
+Nov-2011,2011,Persons FT total,1390.50
+Nov-2011,2011,Persons total,1033.70
+May-2012,2012,Males FT ordinary,1443.50
+May-2012,2012,Males FT total,1534.80
+May-2012,2012,Males total,1285.10
+May-2012,2012,Females FT ordinary,1189.60
+May-2012,2012,Females FT total,1207.20
+May-2012,2012,Females total,821.90
+May-2012,2012,Persons FT ordinary,1349.20
+May-2012,2012,Persons FT total,1413.10
+May-2012,2012,Persons total,1053.20
+Nov-2012,2012,Males FT ordinary,1491.80
+Nov-2012,2012,Males FT total,1580.30
+Nov-2012,2012,Males total,1324.30
+Nov-2012,2012,Females FT ordinary,1230.10
+Nov-2012,2012,Females FT total,1246.30
+Nov-2012,2012,Females total,840.00
+Nov-2012,2012,Persons FT ordinary,1396.00
+Nov-2012,2012,Persons FT total,1458.00
+Nov-2012,2012,Persons total,1081.30
+May-2013,2013,Males FT ordinary,1516.40
+May-2013,2013,Males FT total,1603.10
+May-2013,2013,Males total,1356.70
+May-2013,2013,Females FT ordinary,1250.50
+May-2013,2013,Females FT total,1267.40
+May-2013,2013,Females total,849.90
+May-2013,2013,Persons FT ordinary,1420.90
+May-2013,2013,Persons FT total,1482.50
+May-2013,2013,Persons total,1105.00
+Nov-2013,2013,Males FT ordinary,1532.10
+Nov-2013,2013,Males FT total,1621.50
+Nov-2013,2013,Males total,1347.90
+Nov-2013,2013,Females FT ordinary,1270.50
+Nov-2013,2013,Females FT total,1287.30
+Nov-2013,2013,Females total,872.60
+Nov-2013,2013,Persons FT ordinary,1437.00
+Nov-2013,2013,Persons FT total,1500.10
+Nov-2013,2013,Persons total,1114.20
+May-2014,2014,Males FT ordinary,1560.50
+May-2014,2014,Males FT total,1648.20
+May-2014,2014,Males total,1364.60
+May-2014,2014,Females FT ordinary,1274.40
+May-2014,2014,Females FT total,1292.10
+May-2014,2014,Females total,881.30
+May-2014,2014,Persons FT ordinary,1454.10
+May-2014,2014,Persons FT total,1515.80
+May-2014,2014,Persons total,1123.00
+Nov-2014,2014,Males FT ordinary,1587.50
+Nov-2014,2014,Males FT total,1681.20
+Nov-2014,2014,Males total,1371.50
+Nov-2014,2014,Females FT ordinary,1292.70
+Nov-2014,2014,Females FT total,1311.00
+Nov-2014,2014,Females total,887.90
+Nov-2014,2014,Persons FT ordinary,1477.00
+Nov-2014,2014,Persons FT total,1542.40
+Nov-2014,2014,Persons total,1128.70
+May-2015,2015,Males FT ordinary,1591.60
+May-2015,2015,Males FT total,1674.80
+May-2015,2015,Males total,1369.50
+May-2015,2015,Females FT ordinary,1307.40
+May-2015,2015,Females FT total,1325.50
+May-2015,2015,Females total,907.80
+May-2015,2015,Persons FT ordinary,1483.10
+May-2015,2015,Persons FT total,1541.50
+May-2015,2015,Persons total,1136.90
+Nov-2015,2015,Males FT ordinary,1603.60
+Nov-2015,2015,Males FT total,1688.60
+Nov-2015,2015,Males total,1374.80
+Nov-2015,2015,Females FT ordinary,1327.60
+Nov-2015,2015,Females FT total,1345.80
+Nov-2015,2015,Females total,914.80
+Nov-2015,2015,Persons FT ordinary,1500.50
+Nov-2015,2015,Persons FT total,1560.50
+Nov-2015,2015,Persons total,1145.70
+May-2016,2016,Males FT ordinary,1613.50
+May-2016,2016,Males FT total,1694.50
+May-2016,2016,Males total,1395.10
+May-2016,2016,Females FT ordinary,1352.10
+May-2016,2016,Females FT total,1369.60
+May-2016,2016,Females total,925.80
+May-2016,2016,Persons FT ordinary,1516.00
+May-2016,2016,Persons FT total,1573.30
+May-2016,2016,Persons total,1160.90
+Nov-2016,2016,Males FT ordinary,1631.90
+Nov-2016,2016,Males FT total,1719.90
+Nov-2016,2016,Males total,1397.90
+Nov-2016,2016,Females FT ordinary,1370.30
+Nov-2016,2016,Females FT total,1389.60
+Nov-2016,2016,Females total,932.40
+Nov-2016,2016,Persons FT ordinary,1533.40
+Nov-2016,2016,Persons FT total,1595.50
+Nov-2016,2016,Persons total,1163.50
+May-2017,2017,Males FT ordinary,1637.20
+May-2017,2017,Males FT total,1725.80
+May-2017,2017,Males total,1417.20
+May-2017,2017,Females FT ordinary,1386.60
+May-2017,2017,Females FT total,1405.50
+May-2017,2017,Females total,946.80
+May-2017,2017,Persons FT ordinary,1543.20
+May-2017,2017,Persons FT total,1605.60
+May-2017,2017,Persons total,1179.00
+Nov-2017,2017,Males FT ordinary,1665.00
+Nov-2017,2017,Males FT total,1753.50
+Nov-2017,2017,Males total,1427.80
+Nov-2017,2017,Females FT ordinary,1410.80
+Nov-2017,2017,Females FT total,1429.80
+Nov-2017,2017,Females total,959.50
+Nov-2017,2017,Persons FT ordinary,1569.60
+Nov-2017,2017,Persons FT total,1632.10
+Nov-2017,2017,Persons total,1191.50
+May-2018,2018,Males FT ordinary,1677.10
+May-2018,2018,Males FT total,1769.80
+May-2018,2018,Males total,1445.30
+May-2018,2018,Females FT ordinary,1433.40
+May-2018,2018,Females FT total,1453.10
+May-2018,2018,Females total,976.30
+May-2018,2018,Persons FT ordinary,1585.30
+May-2018,2018,Persons FT total,1650.60
+May-2018,2018,Persons total,1207.40
+Nov-2018,2018,Males FT ordinary,1696.50
+Nov-2018,2018,Males FT total,1784.40
+Nov-2018,2018,Males total,1460.50
+Nov-2018,2018,Females FT ordinary,1456.50
+Nov-2018,2018,Females FT total,1477.70
+Nov-2018,2018,Females total,996.30
+Nov-2018,2018,Persons FT ordinary,1605.50
+Nov-2018,2018,Persons FT total,1668.10
+Nov-2018,2018,Persons total,1225.30
+May-2019,2019,Males FT ordinary,1727.70
+May-2019,2019,Males FT total,1811.90
+May-2019,2019,Males total,1475.60
+May-2019,2019,Females FT ordinary,1485.50
+May-2019,2019,Females FT total,1507.20
+May-2019,2019,Females total,1010.80
+May-2019,2019,Persons FT ordinary,1634.80
+May-2019,2019,Persons FT total,1695.10
+May-2019,2019,Persons total,1237.90
+Nov-2019,2019,Males FT ordinary,1750.80
+Nov-2019,2019,Males FT total,1842.20
+Nov-2019,2019,Males total,1498.20
+Nov-2019,2019,Females FT ordinary,1508.30
+Nov-2019,2019,Females FT total,1528.90
+Nov-2019,2019,Females total,1027.80
+Nov-2019,2019,Persons FT ordinary,1658.40
+Nov-2019,2019,Persons FT total,1722.80
+Nov-2019,2019,Persons total,1257.00
+May-2020,2020,Males FT ordinary,1812.00
+May-2020,2020,Males FT total,1889.70
+May-2020,2020,Males total,1537.70
+May-2020,2020,Females FT ordinary,1558.40
+May-2020,2020,Females FT total,1577.30
+May-2020,2020,Females total,1083.00
+May-2020,2020,Persons FT ordinary,1713.90
+May-2020,2020,Persons FT total,1768.90
+May-2020,2020,Persons total,1304.70
+Nov-2020,2020,Males FT ordinary,1804.20
+Nov-2020,2020,Males FT total,1886.00
+Nov-2020,2020,Males total,1526.60
+Nov-2020,2020,Females FT ordinary,1562.00
+Nov-2020,2020,Females FT total,1582.30
+Nov-2020,2020,Females total,1050.60
+Nov-2020,2020,Persons FT ordinary,1711.60
+Nov-2020,2020,Persons FT total,1769.90
+Nov-2020,2020,Persons total,1280.30
+May-2021,2021,Males FT ordinary,1837.00
+May-2021,2021,Males FT total,1919.50
+May-2021,2021,Males total,1555.30
+May-2021,2021,Females FT ordinary,1575.50
+May-2021,2021,Females FT total,1598.60
+May-2021,2021,Females total,1068.90
+May-2021,2021,Persons FT ordinary,1737.10
+May-2021,2021,Persons FT total,1797.00
+May-2021,2021,Persons total,1305.80
+Nov-2021,2021,Males FT ordinary,1846.50
+Nov-2021,2021,Males FT total,1935.70
+Nov-2021,2021,Males total,1577.10
+Nov-2021,2021,Females FT ordinary,1591.20
+Nov-2021,2021,Females FT total,1616.60
+Nov-2021,2021,Females total,1093.80
+Nov-2021,2021,Persons FT ordinary,1748.40
+Nov-2021,2021,Persons FT total,1813.00
+Nov-2021,2021,Persons total,1328.90
+May-2022,2022,Males FT ordinary,1872.90
+May-2022,2022,Males FT total,1962.10
+May-2022,2022,Males total,1587.00
+May-2022,2022,Females FT ordinary,1609.00
+May-2022,2022,Females FT total,1637.90
+May-2022,2022,Females total,1114.90
+May-2022,2022,Persons FT ordinary,1769.80
+May-2022,2022,Persons FT total,1835.30
+May-2022,2022,Persons total,1344.70
+Nov-2022,2022,Males FT ordinary,1907.10
+Nov-2022,2022,Males FT total,2004.90
+Nov-2022,2022,Males total,1621.20
+Nov-2022,2022,Females FT ordinary,1653.60
+Nov-2022,2022,Females FT total,1682.80
+Nov-2022,2022,Females total,1146.10
+Nov-2022,2022,Persons FT ordinary,1807.70
+Nov-2022,2022,Persons FT total,1878.50
+Nov-2022,2022,Persons total,1378.60
+May-2023,2023,Males FT ordinary,1938.30
+May-2023,2023,Males FT total,2033.70
+May-2023,2023,Males total,1640.90
+May-2023,2023,Females FT ordinary,1686.00
+May-2023,2023,Females FT total,1713.50
+May-2023,2023,Females total,1168.80
+May-2023,2023,Persons FT ordinary,1838.10
+May-2023,2023,Persons FT total,1906.60
+May-2023,2023,Persons total,1399.10
+Nov-2023,2023,Males FT ordinary,1982.80
+Nov-2023,2023,Males FT total,2079.50
+Nov-2023,2023,Males total,1672.70
+Nov-2023,2023,Females FT ordinary,1744.80
+Nov-2023,2023,Females FT total,1772.00
+Nov-2023,2023,Females total,1204.40
+Nov-2023,2023,Persons FT ordinary,1888.80
+Nov-2023,2023,Persons FT total,1958.00
+Nov-2023,2023,Persons total,1432.60
+May-2024,2024,Males FT ordinary,2014.30
+May-2024,2024,Males FT total,2112.90
+May-2024,2024,Males total,1723.80
+May-2024,2024,Females FT ordinary,1782.80
+May-2024,2024,Females FT total,1811.00
+May-2024,2024,Females total,1246.40
+May-2024,2024,Persons FT ordinary,1923.40
+May-2024,2024,Persons FT total,1994.30
+May-2024,2024,Persons total,1480.90
+Nov-2024,2024,Males FT ordinary,2072.70
+Nov-2024,2024,Males FT total,2172.30
+Nov-2024,2024,Males total,1759.70
+Nov-2024,2024,Females FT ordinary,1826.40
+Nov-2024,2024,Females FT total,1853.80
+Nov-2024,2024,Females total,1270.70
+Nov-2024,2024,Persons FT ordinary,1975.80
+Nov-2024,2024,Persons FT total,2047.00
+Nov-2024,2024,Persons total,1510.90
+May-2025,2025,Males FT ordinary,2106.40
+May-2025,2025,Males FT total,2208.30
+May-2025,2025,Males total,1790.90
+May-2025,2025,Females FT ordinary,1864.10
+May-2025,2025,Females FT total,1893.80
+May-2025,2025,Females total,1304.30
+May-2025,2025,Persons FT ordinary,2010.00
+May-2025,2025,Persons FT total,2083.20
+May-2025,2025,Persons total,1542.30

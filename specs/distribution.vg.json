@@ -1,0 +1,401 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "labelColor": "#314155",
+      "titleColor": "#1f2d3d",
+      "grid": true
+    },
+    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
+  },
+
+  "title": {
+    "text": "Price-to-income distribution across SA3s — 3×3 grid (normalised)",
+    "subtitle": "Australia (national) plus each state/territory. Year selector below. True histograms with common bin step; rules show Mean (orange) and Median (purple)."
+  },
+
+  "params": [
+    {
+      "name": "yearParam",
+      "value": 2022,
+      "bind": {
+        "input": "select",
+        "name": "Year: ",
+        "options": [2018, 2019, 2020, 2021, 2022],
+        "labels": ["2018", "2019", "2020", "2021", "2022"]
+      }
+    }
+  ],
+
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "width": 350,
+          "height": 180,
+          "title": "Australia (national)",
+          "data": {
+            "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
+            "format": {
+              "type": "csv",
+              "parse": {
+                "average_taxable_income": "number",
+                "total_income": "number",
+                "individuals": "number",
+                "end_year": "number"
+              }
+            }
+          },
+          "transform": [
+            { "filter": "datum.region_category == 'SA3' && datum.end_year == yearParam" },
+            {
+              "lookup": "region_code",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
+                  "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" }
+                },
+                "key": "properties.SA3_CODE21",
+                "fields": ["properties.STE_NAME21"]
+              }
+            },
+            { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+            { "calculate": "datum.average_taxable_income", "as": "avg_income" },
+            { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+            {
+              "lookup": "state_year_key",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
+                  "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } }
+                },
+                "key": "state_year",
+                "fields": ["mean_price_thousand"]
+              }
+            },
+            { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+            { "calculate": "datum.mean_price_value / datum.avg_income", "as": "price_to_income" },
+            {
+              "joinaggregate": [
+                { "op": "mean", "field": "price_to_income", "as": "metric_mean" },
+                { "op": "median", "field": "price_to_income", "as": "metric_median" },
+                { "op": "count", "as": "n_sa3" }
+              ]
+            },
+            { "bin": { "step": 0.5 }, "field": "price_to_income", "as": ["bin_start", "bin_end"] },
+            {
+              "aggregate": [{ "op": "count", "as": "sa3_count" }],
+              "groupby": ["bin_start", "bin_end", "metric_mean", "metric_median", "n_sa3"]
+            },
+            { "calculate": "datum.sa3_count / datum.n_sa3", "as": "proportion" }
+          ],
+          "layer": [
+            {
+              "mark": { "type": "bar", "opacity": 1, "clip": true },
+              "encoding": {
+                "x": {
+                  "field": "bin_start",
+                  "type": "quantitative",
+                  "bin": "binned",
+                  "title": "Price-to-income ratio (years)",
+                  "axis": { "format": ".1f" },
+                  "scale": { "domain": [5, 24], "nice": false }
+                },
+                "x2": { "field": "bin_end" },
+                "y": {
+                  "field": "proportion",
+                  "type": "quantitative",
+                  "title": "Share of SA3s",
+                  "axis": { "format": ".0%" }
+                },
+                "y2": { "value": 0 },
+                "color": { "value": "#4aa3a1" }
+              }
+            },
+            { "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6,3], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_mean", "type": "quantitative" } } },
+            { "mark": { "type": "rule", "stroke": "#7570b3", "strokeDash": [2,4], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_median", "type": "quantitative" } } }
+          ]
+        },
+
+        {
+          "width": 350,
+          "height": 180,
+          "title": "NSW",
+          "data": {
+            "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
+            "format": {
+              "type": "csv",
+              "parse": {
+                "average_taxable_income": "number",
+                "total_income": "number",
+                "individuals": "number",
+                "end_year": "number"
+              }
+            }
+          },
+          "transform": [
+            { "filter": "datum.region_category == 'SA3' && datum.end_year == yearParam" },
+            {
+              "lookup": "region_code",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
+                  "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" }
+                },
+                "key": "properties.SA3_CODE21",
+                "fields": ["properties.STE_NAME21"]
+              }
+            },
+            { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+            { "filter": "datum.state_name == 'New South Wales'" },
+            { "calculate": "datum.average_taxable_income", "as": "avg_income" },
+            { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+            {
+              "lookup": "state_year_key",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
+                  "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } }
+                },
+                "key": "state_year",
+                "fields": ["mean_price_thousand"]
+              }
+            },
+            { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+            { "calculate": "datum.mean_price_value / datum.avg_income", "as": "price_to_income" },
+            {
+              "joinaggregate": [
+                { "op": "mean", "field": "price_to_income", "as": "metric_mean" },
+                { "op": "median", "field": "price_to_income", "as": "metric_median" },
+                { "op": "count", "as": "n_sa3" }
+              ]
+            },
+            { "bin": { "step": 0.5 }, "field": "price_to_income", "as": ["bin_start", "bin_end"] },
+            {
+              "aggregate": [{ "op": "count", "as": "sa3_count" }],
+              "groupby": ["bin_start", "bin_end", "metric_mean", "metric_median", "n_sa3"]
+            },
+            { "calculate": "datum.sa3_count / datum.n_sa3", "as": "proportion" }
+          ],
+          "layer": [
+            {
+              "mark": { "type": "bar", "opacity": 1, "clip": true },
+              "encoding": {
+                "x": { "field": "bin_start", "type": "quantitative", "bin": "binned", "title": "Price-to-income ratio (years)", "axis": { "format": ".1f" }, "scale": { "domain": [5, 24], "nice": false } },
+                "x2": { "field": "bin_end" },
+                "y": { "field": "proportion", "type": "quantitative", "title": "Share of SA3s", "axis": { "format": ".0%" } },
+                "y2": { "value": 0 },
+                "color": { "value": "#4aa3a1" }
+              }
+            },
+            { "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6,3], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_mean", "type": "quantitative" } } },
+            { "mark": { "type": "rule", "stroke": "#7570b3", "strokeDash": [2,4], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_median", "type": "quantitative" } } }
+          ]
+        },
+
+        {
+          "width": 350,
+          "height": 180,
+          "title": "VIC",
+          "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv", "format": { "type": "csv", "parse": { "average_taxable_income": "number", "total_income": "number", "individuals": "number", "end_year": "number" } } },
+          "transform": [
+            { "filter": "datum.region_category == 'SA3' && datum.end_year == yearParam" },
+            { "lookup": "region_code", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json", "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" } }, "key": "properties.SA3_CODE21", "fields": ["properties.STE_NAME21"] } },
+            { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+            { "filter": "datum.state_name == 'Victoria'" },
+            { "calculate": "datum.average_taxable_income", "as": "avg_income" },
+            { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+            { "lookup": "state_year_key", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv", "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } } }, "key": "state_year", "fields": ["mean_price_thousand"] } },
+            { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+            { "calculate": "datum.mean_price_value / datum.avg_income", "as": "price_to_income" },
+            { "joinaggregate": [ { "op": "mean", "field": "price_to_income", "as": "metric_mean" }, { "op": "median", "field": "price_to_income", "as": "metric_median" }, { "op": "count", "as": "n_sa3" } ] },
+            { "bin": { "step": 0.5 }, "field": "price_to_income", "as": ["bin_start", "bin_end"] },
+            { "aggregate": [ { "op": "count", "as": "sa3_count" } ], "groupby": ["bin_start", "bin_end", "metric_mean", "metric_median", "n_sa3"] },
+            { "calculate": "datum.sa3_count / datum.n_sa3", "as": "proportion" }
+          ],
+          "layer": [
+            { "mark": { "type": "bar", "opacity": 1, "clip": true }, "encoding": { "x": { "field": "bin_start", "type": "quantitative", "bin": "binned", "title": "Price-to-income ratio (years)", "axis": { "format": ".1f" }, "scale": { "domain": [5, 24], "nice": false } }, "x2": { "field": "bin_end" }, "y": { "field": "proportion", "type": "quantitative", "title": "Share of SA3s", "axis": { "format": ".0%" } }, "y2": { "value": 0 }, "color": { "value": "#4aa3a1" } } },
+            { "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6,3], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_mean", "type": "quantitative" } } },
+            { "mark": { "type": "rule", "stroke": "#7570b3", "strokeDash": [2,4], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_median", "type": "quantitative" } } }
+          ]
+        }
+      ]
+    },
+
+    {
+      "hconcat": [
+        {
+          "width": 350,
+          "height": 180,
+          "title": "QLD",
+          "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv", "format": { "type": "csv", "parse": { "average_taxable_income": "number", "total_income": "number", "individuals": "number", "end_year": "number" } } },
+          "transform": [
+            { "filter": "datum.region_category == 'SA3' && datum.end_year == yearParam" },
+            { "lookup": "region_code", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json", "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" } }, "key": "properties.SA3_CODE21", "fields": ["properties.STE_NAME21"] } },
+            { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+            { "filter": "datum.state_name == 'Queensland'" },
+            { "calculate": "datum.average_taxable_income", "as": "avg_income" },
+            { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+            { "lookup": "state_year_key", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv", "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } } }, "key": "state_year", "fields": ["mean_price_thousand"] } },
+            { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+            { "calculate": "datum.mean_price_value / datum.avg_income", "as": "price_to_income" },
+            { "joinaggregate": [ { "op": "mean", "field": "price_to_income", "as": "metric_mean" }, { "op": "median", "field": "price_to_income", "as": "metric_median" }, { "op": "count", "as": "n_sa3" } ] },
+            { "bin": { "step": 0.5 }, "field": "price_to_income", "as": ["bin_start", "bin_end"] },
+            { "aggregate": [ { "op": "count", "as": "sa3_count" } ], "groupby": ["bin_start", "bin_end", "metric_mean", "metric_median", "n_sa3"] },
+            { "calculate": "datum.sa3_count / datum.n_sa3", "as": "proportion" }
+          ],
+          "layer": [
+            { "mark": { "type": "bar", "opacity": 1, "clip": true }, "encoding": { "x": { "field": "bin_start", "type": "quantitative", "bin": "binned", "title": "Price-to-income ratio (years)", "axis": { "format": ".1f" }, "scale": { "domain": [5, 24], "nice": false } }, "x2": { "field": "bin_end" }, "y": { "field": "proportion", "type": "quantitative", "title": "Share of SA3s", "axis": { "format": ".0%" } }, "y2": { "value": 0 }, "color": { "value": "#4aa3a1" } } },
+            { "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6,3], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_mean", "type": "quantitative" } } },
+            { "mark": { "type": "rule", "stroke": "#7570b3", "strokeDash": [2,4], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_median", "type": "quantitative" } } }
+          ]
+        },
+
+        {
+          "width": 350,
+          "height": 180,
+          "title": "SA",
+          "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv", "format": { "type": "csv", "parse": { "average_taxable_income": "number", "total_income": "number", "individuals": "number", "end_year": "number" } } },
+          "transform": [
+            { "filter": "datum.region_category == 'SA3' && datum.end_year == yearParam" },
+            { "lookup": "region_code", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json", "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" } }, "key": "properties.SA3_CODE21", "fields": ["properties.STE_NAME21"] } },
+            { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+            { "filter": "datum.state_name == 'South Australia'" },
+            { "calculate": "datum.average_taxable_income", "as": "avg_income" },
+            { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+            { "lookup": "state_year_key", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv", "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } } }, "key": "state_year", "fields": ["mean_price_thousand"] } },
+            { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+            { "calculate": "datum.mean_price_value / datum.avg_income", "as": "price_to_income" },
+            { "joinaggregate": [ { "op": "mean", "field": "price_to_income", "as": "metric_mean" }, { "op": "median", "field": "price_to_income", "as": "metric_median" }, { "op": "count", "as": "n_sa3" } ] },
+            { "bin": { "step": 0.5 }, "field": "price_to_income", "as": ["bin_start", "bin_end"] },
+            { "aggregate": [ { "op": "count", "as": "sa3_count" } ], "groupby": ["bin_start", "bin_end", "metric_mean", "metric_median", "n_sa3"] },
+            { "calculate": "datum.sa3_count / datum.n_sa3", "as": "proportion" }
+          ],
+          "layer": [
+            { "mark": { "type": "bar", "opacity": 1, "clip": true }, "encoding": { "x": { "field": "bin_start", "type": "quantitative", "bin": "binned", "title": "Price-to-income ratio (years)", "axis": { "format": ".1f" }, "scale": { "domain": [5, 24], "nice": false } }, "x2": { "field": "bin_end" }, "y": { "field": "proportion", "type": "quantitative", "title": "Share of SA3s", "axis": { "format": ".0%" } }, "y2": { "value": 0 }, "color": { "value": "#4aa3a1" } } },
+            { "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6,3], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_mean", "type": "quantitative" } } },
+            { "mark": { "type": "rule", "stroke": "#7570b3", "strokeDash": [2,4], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_median", "type": "quantitative" } } }
+          ]
+        },
+
+        {
+          "width": 350,
+          "height": 180,
+          "title": "WA",
+          "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv", "format": { "type": "csv", "parse": { "average_taxable_income": "number", "total_income": "number", "individuals": "number", "end_year": "number" } } },
+          "transform": [
+            { "filter": "datum.region_category == 'SA3' && datum.end_year == yearParam" },
+            { "lookup": "region_code", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json", "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" } }, "key": "properties.SA3_CODE21", "fields": ["properties.STE_NAME21"] } },
+            { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+            { "filter": "datum.state_name == 'Western Australia'" },
+            { "calculate": "datum.average_taxable_income", "as": "avg_income" },
+            { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+            { "lookup": "state_year_key", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv", "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } } }, "key": "state_year", "fields": ["mean_price_thousand"] } },
+            { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+            { "calculate": "datum.mean_price_value / datum.avg_income", "as": "price_to_income" },
+            { "joinaggregate": [ { "op": "mean", "field": "price_to_income", "as": "metric_mean" }, { "op": "median", "field": "price_to_income", "as": "metric_median" }, { "op": "count", "as": "n_sa3" } ] },
+            { "bin": { "step": 0.5 }, "field": "price_to_income", "as": ["bin_start", "bin_end"] },
+            { "aggregate": [ { "op": "count", "as": "sa3_count" } ], "groupby": ["bin_start", "bin_end", "metric_mean", "metric_median", "n_sa3"] },
+            { "calculate": "datum.sa3_count / datum.n_sa3", "as": "proportion" }
+          ],
+          "layer": [
+            { "mark": { "type": "bar", "opacity": 1, "clip": true }, "encoding": { "x": { "field": "bin_start", "type": "quantitative", "bin": "binned", "title": "Price-to-income ratio (years)", "axis": { "format": ".1f" }, "scale": { "domain": [5, 24], "nice": false } }, "x2": { "field": "bin_end" }, "y": { "field": "proportion", "type": "quantitative", "title": "Share of SA3s", "axis": { "format": ".0%" } }, "y2": { "value": 0 }, "color": { "value": "#4aa3a1" } } },
+            { "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6,3], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_mean", "type": "quantitative" } } },
+            { "mark": { "type": "rule", "stroke": "#7570b3", "strokeDash": [2,4], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_median", "type": "quantitative" } } }
+          ]
+        }
+      ]
+    },
+
+    {
+      "hconcat": [
+        {
+          "width": 350,
+          "height": 180,
+          "title": "TAS",
+          "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv", "format": { "type": "csv", "parse": { "average_taxable_income": "number", "total_income": "number", "individuals": "number", "end_year": "number" } } },
+          "transform": [
+            { "filter": "datum.region_category == 'SA3' && datum.end_year == yearParam" },
+            { "lookup": "region_code", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json", "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" } }, "key": "properties.SA3_CODE21", "fields": ["properties.STE_NAME21"] } },
+            { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+            { "filter": "datum.state_name == 'Tasmania'" },
+            { "calculate": "datum.average_taxable_income", "as": "avg_income" },
+            { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+            { "lookup": "state_year_key", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv", "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } } }, "key": "state_year", "fields": ["mean_price_thousand"] } },
+            { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+            { "calculate": "datum.mean_price_value / datum.avg_income", "as": "price_to_income" },
+            { "joinaggregate": [ { "op": "mean", "field": "price_to_income", "as": "metric_mean" }, { "op": "median", "field": "price_to_income", "as": "metric_median" }, { "op": "count", "as": "n_sa3" } ] },
+            { "bin": { "step": 0.5 }, "field": "price_to_income", "as": ["bin_start", "bin_end"] },
+            { "aggregate": [ { "op": "count", "as": "sa3_count" } ], "groupby": ["bin_start", "bin_end", "metric_mean", "metric_median", "n_sa3"] },
+            { "calculate": "datum.sa3_count / datum.n_sa3", "as": "proportion" }
+          ],
+          "layer": [
+            { "mark": { "type": "bar", "opacity": 1, "clip": true }, "encoding": { "x": { "field": "bin_start", "type": "quantitative", "bin": "binned", "title": "Price-to-income ratio (years)", "axis": { "format": ".1f" }, "scale": { "domain": [5, 24], "nice": false } }, "x2": { "field": "bin_end" }, "y": { "field": "proportion", "type": "quantitative", "title": "Share of SA3s", "axis": { "format": ".0%" } }, "y2": { "value": 0 }, "color": { "value": "#4aa3a1" } } },
+            { "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6,3], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_mean", "type": "quantitative" } } },
+            { "mark": { "type": "rule", "stroke": "#7570b3", "strokeDash": [2,4], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_median", "type": "quantitative" } } }
+          ]
+        },
+
+        {
+          "width": 350,
+          "height": 180,
+          "title": "NT",
+          "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv", "format": { "type": "csv", "parse": { "average_taxable_income": "number", "total_income": "number", "individuals": "number", "end_year": "number" } } },
+          "transform": [
+            { "filter": "datum.region_category == 'SA3' && datum.end_year == yearParam" },
+            { "lookup": "region_code", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json", "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" } }, "key": "properties.SA3_CODE21", "fields": ["properties.STE_NAME21"] } },
+            { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+            { "filter": "datum.state_name == 'Northern Territory'" },
+            { "calculate": "datum.average_taxable_income", "as": "avg_income" },
+            { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+            { "lookup": "state_year_key", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv", "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } } }, "key": "state_year", "fields": ["mean_price_thousand"] } },
+            { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+            { "calculate": "datum.mean_price_value / datum.avg_income", "as": "price_to_income" },
+            { "joinaggregate": [ { "op": "mean", "field": "price_to_income", "as": "metric_mean" }, { "op": "median", "field": "price_to_income", "as": "metric_median" }, { "op": "count", "as": "n_sa3" } ] },
+            { "bin": { "step": 0.5 }, "field": "price_to_income", "as": ["bin_start", "bin_end"] },
+            { "aggregate": [ { "op": "count", "as": "sa3_count" } ], "groupby": ["bin_start", "bin_end", "metric_mean", "metric_median", "n_sa3"] },
+            { "calculate": "datum.sa3_count / datum.n_sa3", "as": "proportion" }
+          ],
+          "layer": [
+            { "mark": { "type": "bar", "opacity": 1, "clip": true }, "encoding": { "x": { "field": "bin_start", "type": "quantitative", "bin": "binned", "title": "Price-to-income ratio (years)", "axis": { "format": ".1f" }, "scale": { "domain": [5, 24], "nice": false } }, "x2": { "field": "bin_end" }, "y": { "field": "proportion", "type": "quantitative", "title": "Share of SA3s", "axis": { "format": ".0%" } }, "y2": { "value": 0 }, "color": { "value": "#4aa3a1" } } },
+            { "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6,3], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_mean", "type": "quantitative" } } },
+            { "mark": { "type": "rule", "stroke": "#7570b3", "strokeDash": [2,4], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_median", "type": "quantitative" } } }
+          ]
+        },
+
+        {
+          "width": 350,
+          "height": 180,
+          "title": "ACT",
+          "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv", "format": { "type": "csv", "parse": { "average_taxable_income": "number", "total_income": "number", "individuals": "number", "end_year": "number" } } },
+          "transform": [
+            { "filter": "datum.region_category == 'SA3' && datum.end_year == yearParam" },
+            { "lookup": "region_code", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json", "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" } }, "key": "properties.SA3_CODE21", "fields": ["properties.STE_NAME21"] } },
+            { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+            { "filter": "datum.state_name == 'Australian Capital Territory'" },
+            { "calculate": "datum.average_taxable_income", "as": "avg_income" },
+            { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+            { "lookup": "state_year_key", "from": { "data": { "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv", "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } } }, "key": "state_year", "fields": ["mean_price_thousand"] } },
+            { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+            { "calculate": "datum.mean_price_value / datum.avg_income", "as": "price_to_income" },
+            { "joinaggregate": [ { "op": "mean", "field": "price_to_income", "as": "metric_mean" }, { "op": "median", "field": "price_to_income", "as": "metric_median" }, { "op": "count", "as": "n_sa3" } ] },
+            { "bin": { "step": 0.5 }, "field": "price_to_income", "as": ["bin_start", "bin_end"] },
+            { "aggregate": [ { "op": "count", "as": "sa3_count" } ], "groupby": ["bin_start", "bin_end", "metric_mean", "metric_median", "n_sa3"] },
+            { "calculate": "datum.sa3_count / datum.n_sa3", "as": "proportion" }
+          ],
+          "layer": [
+            { "mark": { "type": "bar", "opacity": 1, "clip": true }, "encoding": { "x": { "field": "bin_start", "type": "quantitative", "bin": "binned", "title": "Price-to-income ratio (years)", "axis": { "format": ".1f" }, "scale": { "domain": [5, 24], "nice": false } }, "x2": { "field": "bin_end" }, "y": { "field": "proportion", "type": "quantitative", "title": "Share of SA3s", "axis": { "format": ".0%" } }, "y2": { "value": 0 }, "color": { "value": "#4aa3a1" } } },
+            { "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6,3], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_mean", "type": "quantitative" } } },
+            { "mark": { "type": "rule", "stroke": "#7570b3", "strokeDash": [2,4], "strokeWidth": 2 }, "encoding": { "x": { "field": "metric_median", "type": "quantitative" } } }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "resolve": { "scale": { "x": "shared", "y": "independent" } }
+}

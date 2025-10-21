@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Australian Affordability | Data Story</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Vega & Vega-Lite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <!-- pure.css -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+      integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="hero">
+        <h1>Australian Affordability</h1>
+        <p class="lead">
+          Housing affordability has tightened nationwide as dwelling prices stretch further away from household incomes. This dashboard traces the price–to–income ratio from long-run context to local labour markets to show where pressure is most acute.
+        </p>
+      </header>
+
+      <section class="vis-section" id="long-run-context">
+        <div class="section-header">
+          <h2 id="long-run-context-heading">Long-run context</h2>
+        </div>
+        <p class="section-intro">
+          Indexing prices, wages and inflation to 2011 reveals how property values have accelerated faster than earnings and the consumer price index throughout the 2010s and early 2020s.
+        </p>
+        <div class="pure-g section-grid">
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div class="vis-panel" role="figure" aria-labelledby="long-run-context-heading">
+              <div
+                id="timeseries-vis"
+                class="vis-container"
+                aria-label="Line chart showing indexed dwelling prices, wages, and CPI relative to 2011"
+              ></div>
+            </div>
+            <div class="annotation-block">
+              <h3>Why this matters</h3>
+              <ul>
+                <li>Dwelling prices almost double (index ≈210) by 2025, outstripping wages near 150 and CPI near 140.</li>
+                <li>The widening gap sets the baseline for price–to–income ratios in later sections.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="pure-u-1 pure-u-md-1-3 info-panel">
+            <h3>How to read</h3>
+            <p>The indexed lines use 2011 = 100 so changes show relative growth rather than absolute price levels.</p>
+            <p class="small-print">Hover to inspect specific financial years and note the turning points that align with policy or economic shocks.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="vis-section" id="snapshot">
+        <div class="section-header">
+          <h2 id="snapshot-heading">National snapshot</h2>
+          <div class="controls" role="group" aria-label="National affordability controls">
+            <div class="control-group">
+              <label for="global-year-select">Financial year</label>
+              <select
+                id="global-year-select"
+                aria-label="Select financial year to update affordability indicators"
+              >
+                <option value="2018">2017–18</option>
+                <option value="2019">2018–19</option>
+                <option value="2020">2019–20</option>
+                <option value="2021">2020–21</option>
+                <option value="2022" selected>2021–22</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="snapshot-city-select">Region</label>
+              <select id="snapshot-city-select" aria-label="Select capital city or national view for the scoreboard">
+                <option value="Greater Melbourne" selected>Melbourne</option>
+                <option value="Greater Sydney">Sydney</option>
+                <option value="Greater Brisbane">Brisbane</option>
+                <option value="Greater Adelaide">Adelaide</option>
+                <option value="Greater Perth">Perth</option>
+                <option value="Greater Hobart">Hobart</option>
+                <option value="Greater Darwin">Darwin</option>
+                <option value="Australian Capital Territory">Canberra</option>
+                <option value="Australia">Australia</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p class="section-intro">
+          The scoreboard summarises four affordability markers for the selected area. These controls affect the cards only, letting you compare cities independently of the other charts.
+        </p>
+        <div class="pure-g section-grid">
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div class="vis-panel" role="figure" aria-labelledby="snapshot-heading">
+              <div id="kpi-vis" class="vis-container" aria-label="Scoreboard showing average taxable income, dwelling prices, price–to–income ratio, and salary share"></div>
+            </div>
+            <div class="annotation-block">
+              <h3>Key signals</h3>
+              <ul>
+                <li>Price–to–income ratios exceed 13 years nationally in 2021–22, with Sydney extending beyond 14 years.</li>
+                <li>Mean dwelling values sit roughly 6× average taxable income, underscoring the reliance on credit and accumulated wealth.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="pure-u-1 pure-u-md-1-3 info-panel">
+            <h3>How to read</h3>
+            <p>Cards update instantly as you switch the city selector. Ratios use financial-year tax data to align incomes with price benchmarks.</p>
+            <p class="small-print">Salary share captures the proportion of income drawn from wages, signalling sensitivity to labour market shocks.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="vis-section" id="distribution">
+        <div class="section-header">
+          <h2 id="distribution-heading">Distribution of price–to–income ratios</h2>
+          <div class="controls" role="group" aria-label="Distribution year control">
+            <div class="control-group">
+              <label for="distribution-year-select">Financial year</label>
+              <select id="distribution-year-select" aria-label="Select financial year for distribution charts">
+                <option value="2018">2017–18</option>
+                <option value="2019">2018–19</option>
+                <option value="2020">2019–20</option>
+                <option value="2021">2020–21</option>
+                <option value="2022" selected>2021–22</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p class="section-intro">
+          Histograms show how affordability varies across Statistical Area Level 3 (SA3) regions. Each panel normalises counts to highlight the spread within and across states.
+        </p>
+        <div class="pure-g section-grid">
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div class="vis-panel" role="figure" aria-labelledby="distribution-heading">
+              <div
+                id="distribution-vis"
+                class="vis-container"
+                aria-label="Histogram grid comparing price–to–income ratios across Australia and states"
+              ></div>
+            </div>
+            <div class="annotation-block">
+              <h3>What stands out</h3>
+              <ul>
+                <li>By 2021–22 most NSW and Victorian SA3s cluster above 12 years, while Western Australia retains a broader spread below 10.</li>
+                <li>Median ratios (purple rules) lag the mean, showing high-price outliers stretching the distribution tails.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="pure-u-1 pure-u-md-1-3 info-panel">
+            <h3>How to read</h3>
+            <p>Each bar shows the share of SA3s in a half-year band. Orange and purple rules mark the mean and median respectively.</p>
+            <p class="small-print">Use this chart’s year dropdown to explore different periods independently.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="vis-section" id="city-focus">
+        <div class="section-header">
+          <h2 id="city-focus-heading">Capital city comparison</h2>
+          <div class="controls" role="group" aria-label="Capital city comparison controls">
+            <div class="control-group">
+              <label for="city-year-select">Financial year</label>
+              <select
+                id="city-year-select"
+                aria-label="Select financial year for capital city prices and incomes"
+              >
+                <option value="2018">2017–18</option>
+                <option value="2019">2018–19</option>
+                <option value="2020">2019–20</option>
+                <option value="2021">2020–21</option>
+                <option value="2022" selected>2021–22</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p class="section-intro">
+          Average taxable incomes (●) and mean dwelling prices (▲) are plotted for each capital. Labels show the resulting price–to–income ratio in years.
+        </p>
+        <div class="pure-g section-grid">
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div class="vis-panel" role="figure" aria-labelledby="city-focus-heading">
+              <div id="city-vis" class="vis-container" aria-label="Scatter plot comparing capital city incomes and dwelling prices with ratio labels"></div>
+            </div>
+            <div class="annotation-block">
+              <h3>Why this matters</h3>
+              <ul>
+                <li>Sydney remains the least affordable capital with ratios beyond 14 years even after the pandemic peak.</li>
+                <li>Darwin and Perth cluster nearer to 9 years, reflecting stronger income growth relative to prices.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="pure-u-1 pure-u-md-1-3 info-panel">
+            <h3>How to read</h3>
+            <p>The line between the ● and ▲ markers indicates the wedge between income and price. Shorter lines signal more manageable ratios.</p>
+            <p class="small-print">Use the national region selector above to align notes with a specific capital.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="vis-section" id="state-trend">
+        <div class="section-header">
+          <h2 id="state-trend-heading">States and territories over time</h2>
+          <div class="controls" role="group" aria-label="Highlight a state or territory">
+            <div class="control-group">
+              <label for="state-highlight-select">Highlight focus</label>
+              <select id="state-highlight-select" aria-label="Select a state or territory to highlight">
+                <option value="All">All states</option>
+                <option value="New South Wales">New South Wales</option>
+                <option value="Victoria">Victoria</option>
+                <option value="Queensland">Queensland</option>
+                <option value="South Australia">South Australia</option>
+                <option value="Western Australia">Western Australia</option>
+                <option value="Tasmania">Tasmania</option>
+                <option value="Northern Territory">Northern Territory</option>
+                <option value="Australian Capital Territory">Australian Capital Territory</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p class="section-intro">
+          Tracking price–to–income ratios from 2018–2022 shows how each jurisdiction has diverged. The shared palette helps match state colours across charts.
+        </p>
+        <div class="pure-g section-grid">
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div class="vis-panel" role="figure" aria-labelledby="state-trend-heading">
+              <div
+                id="state-trend-vis"
+                class="vis-container"
+                aria-label="Line chart showing price–to–income ratios by state"
+              ></div>
+            </div>
+            <div class="annotation-block">
+              <h3>Key movements</h3>
+              <ul>
+                <li>New South Wales and Victoria remain in the high band above 12 years across the period.</li>
+                <li>Queensland and South Australia accelerate sharply post-2020, mirroring internal migration flows.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="pure-u-1 pure-u-md-1-3 info-panel">
+            <h3>How to read</h3>
+            <p>Lines use the same state colours as the map and histogram annotations to support cross-reference.</p>
+            <p class="small-print">Select a capital in the snapshot to contextualise its state trajectory.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="vis-section" id="sa3-drilldown">
+        <div class="section-header">
+          <h2 id="sa3-heading">Local patterns</h2>
+          <div class="controls" role="group" aria-label="Local affordability controls">
+            <div class="control-group">
+              <label for="sa3-year-select">Financial year</label>
+              <select id="sa3-year-select" aria-label="Select financial year for local affordability map">
+                <option value="2018">2017–18</option>
+                <option value="2019">2018–19</option>
+                <option value="2020">2019–20</option>
+                <option value="2021">2020–21</option>
+                <option value="2022" selected>2021–22</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="sa3-city-select">Region</label>
+              <select id="sa3-city-select" aria-label="Select capital city or national view for the SA3 map">
+                <option value="Greater Melbourne" selected>Melbourne</option>
+                <option value="Greater Sydney">Sydney</option>
+                <option value="Greater Brisbane">Brisbane</option>
+                <option value="Greater Adelaide">Adelaide</option>
+                <option value="Greater Perth">Perth</option>
+                <option value="Greater Hobart">Hobart</option>
+                <option value="Greater Darwin">Darwin</option>
+                <option value="Australian Capital Territory">Canberra</option>
+                <option value="Australia">Australia</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p class="section-intro">
+          Mapping SA3 price–to–income ratios highlights the geographic skew within selected capitals. The ranking table alongside shows where incomes are most stretched.
+        </p>
+        <div class="pure-g section-grid">
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div class="vis-panel vis-wide" role="figure" aria-labelledby="sa3-heading">
+              <div
+                id="sa3-vis"
+                class="vis-container"
+                aria-label="Map of SA3 price–to–income ratios with ranked table"
+              ></div>
+            </div>
+            <div class="annotation-block">
+              <h3>Local insight</h3>
+              <ul>
+                <li>Inner-city and coastal SA3s register the highest ratios, signalling intense competition for limited stock.</li>
+                <li>Outer suburban zones remain below 10 years yet face slower income growth, constraining future resilience.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="pure-u-1 pure-u-md-1-3 info-panel">
+            <h3>How to read</h3>
+            <p>The map uses a ranked scale tied to the state palette to compare suburbs within the chosen capital or nationally.</p>
+            <p class="small-print">Use the region selector to toggle between national and capital city views before drilling into the map.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="vis-section" id="income-mix">
+        <div class="section-header">
+          <h2 id="income-mix-heading">Income mix and resilience</h2>
+          <div class="controls" role="group" aria-label="Income mix year control">
+            <div class="control-group">
+              <label for="income-year-select">Financial year</label>
+              <select
+                id="income-year-select"
+                aria-label="Select financial year for salary and wage share"
+              >
+                <option value="2018">2017–18</option>
+                <option value="2019">2018–19</option>
+                <option value="2020">2019–20</option>
+                <option value="2021">2020–21</option>
+                <option value="2022" selected>2021–22</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p class="section-intro">
+          The share of income derived from wages and salaries signals how exposed households are to shifts in the labour market when servicing housing costs.
+        </p>
+        <div class="pure-g section-grid">
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div class="vis-panel" role="figure" aria-labelledby="income-mix-heading">
+              <div id="salary-share-vis" class="vis-container" aria-label="Bar chart showing salary and wage share of income by state"></div>
+            </div>
+            <div class="annotation-block">
+              <h3>Why this matters</h3>
+              <ul>
+                <li>States with higher wage reliance, such as the Northern Territory, are more sensitive to employment cycles.</li>
+                <li>South Australia’s lower wage share aligns with slower income growth, compounding affordability strain.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="pure-u-1 pure-u-md-1-3 info-panel">
+            <h3>How to read</h3>
+            <p>Bars show the proportion of taxable income sourced from wages. Compare with price–to–income levels to assess resilience.</p>
+            <p class="small-print">Use this section’s year dropdown to align the salary mix with other views when needed.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="vis-section" id="wrap-up">
+        <div class="section-header">
+          <h2 id="wrap-heading">Key findings and sources</h2>
+        </div>
+        <div class="pure-g wrap-grid">
+          <div class="pure-u-1 pure-u-md-1-2">
+            <div class="summary-panel">
+              <h3>Headline messages</h3>
+              <ul>
+                <li>Price–to–income ratios remain above 12 years in NSW and Victoria, with Sydney still topping 14 years.</li>
+                <li>Western Australia and the Northern Territory stay closer to 9 years thanks to stronger wage growth.</li>
+                <li>Income reliance on wages leaves many households exposed to labour market shocks when rates rise.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pure-u-1 pure-u-md-1-2">
+            <div class="summary-panel">
+              <h3>Sources &amp; method</h3>
+              <p>
+                <strong>Data:</strong> Australian Taxation Office individual tax statistics (2017–18 to 2021–22); Australian Bureau of Statistics Mean Dwelling Price (cat. 6416.0) and Average Weekly Earnings (cat. 6302.0); ABS Consumer Price Index capital city series (cat. 6401.0).
+              </p>
+              <p>
+                <strong>Method:</strong> Price–to–income ratio divides mean dwelling price by average taxable income for matching regions. Salary share reflects wages as a share of taxable income. Indexed series use 2011 = 100. All values are in nominal dollars.
+              </p>
+              <p>
+                <strong>Author:</strong> Mohit Singh (33143536). <strong>Caveats:</strong> Tax data uses individuals lodging returns and may understate informal income; property prices use mean values that are sensitive to high-end transactions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

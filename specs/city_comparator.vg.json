@@ -1,0 +1,250 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1100,
+  "height": 380,
+
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "labelColor": "#314155",
+      "titleColor": "#1f2d3d",
+      "grid": true,
+      "tickSize": 3
+    },
+    "legend": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "orient": "bottom",
+      "symbolType": "circle"
+    },
+    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
+  },
+
+  "title": {
+    "text": "Capital city housing vs income",
+    "subtitle": "Income (●) to mean dwelling price (▲). Labels show price-to-income ratio. Highest and lowest are highlighted in the legend."
+  },
+
+  "params": [
+    {
+      "name": "yearParam",
+      "value": 2022,
+      "bind": {
+        "input": "select",
+        "options": [2018, 2019, 2020, 2021, 2022],
+        "labels": ["2018", "2019", "2020", "2021", "2022"],
+        "name": "Year: "
+      }
+    }
+  ],
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "total_income": "number",
+        "average_taxable_income": "number",
+        "individuals": "number",
+        "end_year": "number"
+      }
+    }
+  },
+
+  "transform": [
+    { "filter": "datum.region_category == 'SA3'" },
+    { "filter": "datum.end_year >= 2018 && datum.end_year <= 2022" },
+    { "filter": "datum.end_year == yearParam" },
+
+    {
+      "lookup": "region_code",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
+          "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" }
+        },
+        "key": "properties.SA3_CODE21",
+        "fields": ["properties.GCC_NAME21", "properties.STE_NAME21"]
+      }
+    },
+    { "calculate": "datum['properties.GCC_NAME21']", "as": "gcc_name" },
+    { "calculate": "datum['properties.STE_NAME21']", "as": "state_name" },
+
+    {
+      "filter": "indexof(datum.gcc_name, 'Migratory') < 0 && indexof(datum.gcc_name, 'Outside') < 0 && indexof(datum.gcc_name, 'No usual address') < 0"
+    },
+    { "filter": "datum.gcc_name == 'Australian Capital Territory' || indexof(datum.gcc_name, 'Greater ') == 0" },
+
+    {
+      "aggregate": [
+        { "op": "sum", "field": "total_income", "as": "total_income_sum" },
+        { "op": "sum", "field": "individuals", "as": "individuals_sum" }
+      ],
+      "groupby": ["gcc_name", "state_name"]
+    },
+    { "calculate": "datum.total_income_sum / max(datum.individuals_sum, 1)", "as": "average_income" },
+
+    { "calculate": "datum.state_name + '|' + yearParam", "as": "state_year_key" },
+    {
+      "lookup": "state_year_key",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
+          "format": { "type": "csv", "parse": { "mean_price_thousand": "number", "year": "number" } }
+        },
+        "key": "state_year",
+        "fields": ["mean_price_thousand"]
+      }
+    },
+
+    { "calculate": "datum.mean_price_thousand * 1000", "as": "mean_price_value" },
+    { "calculate": "datum.mean_price_value / datum.average_income", "as": "price_to_income" },
+
+    { "calculate": "datum.gcc_name == 'Australian Capital Territory' ? 'Canberra' : replace(datum.gcc_name, 'Greater ', '')", "as": "city_label" },
+
+    { "calculate": "round((datum.average_income/1000)*10)/10", "as": "average_income_thousand_r" },
+    { "calculate": "round((datum.mean_price_value/1000)*10)/10", "as": "mean_price_thousand_value_r" },
+
+    {
+      "window": [{ "op": "rank", "as": "rank_desc" }],
+      "sort": [{ "field": "price_to_income", "order": "descending" }]
+    },
+    { "calculate": "datum.rank_desc == 1", "as": "is_max_ratio" },
+    {
+      "window": [{ "op": "rank", "as": "rank_low" }],
+      "sort": [{ "field": "price_to_income", "order": "ascending" }]
+    },
+    { "calculate": "datum.rank_low == 1", "as": "is_min_ratio" },
+
+    {
+      "calculate": "datum.is_max_ratio ? 'Highest ratio' : (datum.is_min_ratio ? 'Lowest ratio' : 'Other')",
+      "as": "ratio_category"
+    }
+  ],
+
+  "encoding": {
+    "y": {
+      "field": "city_label",
+      "type": "nominal",
+      "title": "Capital city",
+      "sort": { "field": "city_label", "order": "ascending" }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": { "type": "rule", "stroke": "#d9e2ec", "strokeWidth": 3.5 },
+      "encoding": {
+        "x": {
+          "field": "average_income_thousand_r",
+          "type": "quantitative",
+          "title": "Value (thousand dollars)",
+          "axis": { "format": ".1f" }
+        },
+        "x2": { "field": "mean_price_thousand_value_r" }
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 190, "stroke": "white", "strokeWidth": 1.4 },
+      "encoding": {
+        "x": { "field": "average_income_thousand_r", "type": "quantitative", "axis": null },
+        "color": {
+          "field": "city_label",
+          "type": "nominal",
+          "title": "Capital city",
+          "domain": [
+            "Sydney",
+            "Melbourne",
+            "Brisbane",
+            "Adelaide",
+            "Perth",
+            "Hobart",
+            "Darwin",
+            "Canberra"
+          ],
+          "range": [
+            "#1f77b4",
+            "#d62728",
+            "#ff7f0e",
+            "#9467bd",
+            "#2ca02c",
+            "#8c564b",
+            "#e377c2",
+            "#17becf"
+          ]
+        },
+        "opacity": {
+          "field": "ratio_category",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Highest ratio", "Lowest ratio", "Other"],
+            "range": [1, 1, 0.6]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          { "field": "city_label", "title": "City" },
+          { "field": "average_income", "title": "Average taxable income", "format": "$,.0f" },
+          { "field": "individuals_sum", "title": "Individuals", "format": ",.0f" },
+          { "field": "price_to_income", "title": "Price-to-income ratio", "format": ".1f" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 190, "stroke": "white", "strokeWidth": 1.4, "shape": "triangle-up" },
+      "encoding": {
+        "x": { "field": "mean_price_thousand_value_r", "type": "quantitative", "axis": null },
+        "color": {
+          "field": "city_label",
+          "type": "nominal",
+          "title": "Capital city",
+          "domain": [
+            "Sydney",
+            "Melbourne",
+            "Brisbane",
+            "Adelaide",
+            "Perth",
+            "Hobart",
+            "Darwin",
+            "Canberra"
+          ],
+          "range": [
+            "#1f77b4",
+            "#d62728",
+            "#ff7f0e",
+            "#9467bd",
+            "#2ca02c",
+            "#8c564b",
+            "#e377c2",
+            "#17becf"
+          ]
+        },
+        "opacity": {
+          "field": "ratio_category",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Highest ratio", "Lowest ratio", "Other"],
+            "range": [1, 1, 0.6]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          { "field": "city_label", "title": "City" },
+          { "field": "mean_price_value", "title": "Mean dwelling price", "format": "$,.0f" },
+          { "field": "price_to_income", "title": "Price-to-income ratio", "format": ".1f" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "font": "Source Sans Pro", "fontSize": 11, "fill": "#314155", "align": "left", "baseline": "middle", "dx": 8 },
+      "encoding": {
+        "x": { "field": "mean_price_thousand_value_r", "type": "quantitative" },
+        "text": { "field": "price_to_income", "format": ".1f" }
+      }
+    }
+  ],
+
+  "resolve": { "scale": { "y": "shared" } }
+}

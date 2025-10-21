@@ -1,0 +1,182 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 340,
+
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "labelColor": "#314155",
+      "titleColor": "#1f2d3d",
+      "grid": true
+    },
+    "legend": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro",
+      "format": "+.0%"
+    },
+    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 700 }
+  },
+
+  "title": {
+    "text": { "signal": "'Salary & wages participation by state — ' + yearParam" },
+    "subtitle": "Share of residents with salary or wage income. Bars use a consistent state palette; the dashed orange rule marks the national benchmark."
+  },
+
+  "params": [
+    {
+      "name": "yearParam",
+      "value": 2022
+    }
+  ],
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "salary_wage_share": "number",
+        "individuals": "number",
+        "end_year": "number"
+      }
+    }
+  },
+
+  "transform": [
+    { "filter": "datum.region_category == 'State'" },
+    { "filter": "datum.end_year == yearParam" },
+
+    { "calculate": "datum.salary_wage_share > 1 ? datum.salary_wage_share/100 : datum.salary_wage_share", "as": "salary_share_frac" },
+
+    { "calculate": "datum.salary_share_frac * datum.individuals", "as": "salary_weighted" },
+    {
+      "joinaggregate": [
+        { "op": "sum", "field": "salary_weighted", "as": "nat_salary_weighted" },
+        { "op": "sum", "field": "individuals", "as": "nat_individuals" }
+      ]
+    },
+    { "calculate": "datum.nat_individuals == 0 ? 0 : datum.nat_salary_weighted / datum.nat_individuals", "as": "nat_share_frac" },
+
+    { "calculate": "datum.salary_share_frac - datum.nat_share_frac", "as": "diff_to_nat" },
+
+    {
+      "window": [{ "op": "rank", "as": "rank_desc" }],
+      "sort": [{ "field": "salary_share_frac", "order": "descending" }]
+    }
+  ],
+
+  "layer": [
+    {
+      "mark": { "type": "bar", "cornerRadiusEnd": 6, "tooltip": true },
+      "encoding": {
+        "y": {
+          "field": "region_name",
+          "type": "nominal",
+          "title": "State / territory",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "salary_share_frac",
+          "type": "quantitative",
+          "title": "Share with salary or wage income",
+          "axis": { "format": ".0%" },
+          "scale": { "domain": [0.70, 1.00], "nice": false, "clamp": true }
+        },
+        "color": {
+          "field": "region_name",
+          "type": "nominal",
+          "title": "State / territory",
+          "domain": [
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory"
+          ],
+          "range": [
+            "#1f77b4",
+            "#d62728",
+            "#ff7f0e",
+            "#9467bd",
+            "#2ca02c",
+            "#8c564b",
+            "#e377c2",
+            "#17becf"
+          ]
+        },
+        "tooltip": [
+          { "field": "region_name", "title": "State / territory" },
+          { "field": "salary_share_frac", "title": "Salary & wages share", "format": ".1%" },
+          { "field": "diff_to_nat", "title": "Difference to national", "format": "+.1%" },
+          { "field": "rank_desc", "title": "Rank (highest=1)" }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
+        "fontSize": 11,
+        "fill": "#233142"
+      },
+      "encoding": {
+        "y": { "field": "region_name", "type": "nominal", "sort": "-x" },
+        "x": {
+          "field": "salary_share_frac",
+          "type": "quantitative",
+          "scale": { "domain": [0.70, 1.00], "nice": false, "clamp": true }
+        },
+        "text": { "field": "salary_share_frac", "format": ".1%" }
+      }
+    },
+
+    {
+      "data": { "values": [{}] },
+      "transform": [
+        { "aggregate": [{ "op": "max", "field": "nat_share_frac", "as": "nat_share_frac" }] }
+      ],
+      "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6, 3], "strokeWidth": 2 },
+      "encoding": {
+        "x": {
+          "field": "nat_share_frac",
+          "type": "quantitative",
+          "scale": { "domain": [0.70, 1.00], "nice": false, "clamp": true }
+        }
+      }
+    },
+
+    {
+      "data": { "values": [{}] },
+      "transform": [
+        { "aggregate": [{ "op": "max", "field": "nat_share_frac", "as": "nat_share_frac" }] }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 6,
+        "dy": -4,
+        "fontSize": 12,
+        "fill": "#d95f02",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "nat_share_frac",
+          "type": "quantitative",
+          "scale": { "domain": [0.70, 1.00], "nice": false, "clamp": true }
+        },
+        "y": { "value": -6 },
+        "text": { "value": "National average" }
+      }
+    }
+  ]
+}
