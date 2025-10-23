@@ -16,7 +16,7 @@
     { "name": "yearLabelParam", "value": "2021–22" }
   ],
   "data": {
-    "url": "data/sa3/income_by_geography_tidy.csv",
+    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -35,7 +35,7 @@
       "lookup": "region_code",
       "from": {
         "data": {
-          "url": "geo/SA3.json",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
           "format": { "type": "json", "property": "features" }
         },
         "key": "properties.SA3_CODE21",
@@ -92,28 +92,21 @@
     },
     {
       "lookup": "state_key",
-      "as": "property",
       "from": {
         "data": {
-          "url": "data/state/property_prices_tidy.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
           "format": {
             "type": "csv",
-            "parse": {
-              "year": "number",
-              "mean_price_thousand": "number"
-            }
+            "parse": { "mean_price_thousand": "number" }
           }
         },
         "key": "state",
-        "fields": ["state", "year", "quarter", "mean_price_thousand"],
-        "transform": [
-          { "filter": "datum.year == yearParam" },
-          { "filter": "datum.quarter == concat('Jun-', yearParam)" }
-        ]
-      }
+        "fields": ["mean_price_thousand"]
+      },
+      "as": ["mean_price_thousand_pp"]
     },
     {
-      "calculate": "property.mean_price_thousand * 1000",
+      "calculate": "datum.mean_price_thousand_pp * 1000",
       "as": "mean_price_value"
     },
     {
@@ -164,7 +157,8 @@
         },
         "encoding": {
           "color": {
-            "datum": "metric",
+            "field": "metric",
+            "type": "nominal",
             "scale": {
               "domain": [
                 "average_income",
@@ -178,7 +172,8 @@
                 "#944bbb",
                 "#2f7d4c"
               ]
-            }
+            },
+            "legend": null
           }
         }
       },
@@ -199,11 +194,12 @@
         }
       },
       {
+        "transform": [
+          { "calculate": "city_display + ' · ' + yearLabelParam", "as": "display_text" }
+        ],
         "mark": { "type": "text", "color": "white", "align": "left", "fontSize": 12, "opacity": 0.8 },
         "encoding": {
-          "text": {
-            "signal": "city_display + ' · ' + yearLabelParam"
-          },
+          "text": { "field": "display_text" },
           "x": { "value": 18 },
           "y": { "value": 110 }
         }

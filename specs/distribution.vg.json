@@ -22,7 +22,7 @@
     { "name": "metricParam", "value": "price_to_income" }
   ],
   "data": {
-    "url": "data/sa3/income_by_geography_tidy.csv",
+    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -42,7 +42,7 @@
       "lookup": "region_code",
       "from": {
         "data": {
-          "url": "geo/SA3.json",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
           "format": { "type": "json", "property": "features" }
         },
         "key": "properties.SA3_CODE21",
@@ -70,21 +70,14 @@
       "lookup": "state_name",
       "from": {
         "data": {
-          "url": "data/state/property_prices_tidy.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
           "format": {
             "type": "csv",
-            "parse": {
-              "year": "number",
-              "mean_price_thousand": "number"
-            }
+            "parse": { "mean_price_thousand": "number" }
           }
         },
         "key": "state",
-        "fields": ["mean_price_thousand"],
-        "transform": [
-          { "filter": "datum.year == yearParam" },
-          { "filter": "datum.quarter == concat('Jun-', yearParam)" }
-        ]
+        "fields": ["mean_price_thousand"]
       },
       "as": ["mean_price_thousand"]
     },
@@ -119,7 +112,7 @@
           "field": "metric_value",
           "type": "quantitative",
           "bin": { "maxbins": 24 },
-          "title": { "signal": "metric_title" }
+          "title": "Metric value"
         },
         "y": {
           "aggregate": "count",
@@ -159,9 +152,7 @@
       "encoding": {
         "x": { "field": "metric_mean", "type": "quantitative" },
         "y": { "value": 0 },
-        "text": {
-          "signal": "'Mean'"
-        }
+        "text": { "value": "Mean" }
       }
     },
     {
@@ -188,9 +179,7 @@
       "encoding": {
         "x": { "field": "metric_median", "type": "quantitative" },
         "y": { "value": 0 },
-        "text": {
-          "signal": "'Median'"
-        }
+        "text": { "value": "Median" }
       }
     }
   ]

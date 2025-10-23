@@ -19,7 +19,7 @@
     { "name": "yearParam", "value": 2022 }
   ],
   "data": {
-    "url": "data/sa3/income_by_geography_tidy.csv",
+    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -37,23 +37,16 @@
       "lookup": "region_name",
       "from": {
         "data": {
-          "url": "data/state/property_prices_tidy.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
           "format": {
             "type": "csv",
-            "parse": {
-              "year": "number",
-              "mean_price_thousand": "number"
-            }
+            "parse": { "mean_price_thousand": "number" }
           }
         },
         "key": "state",
-        "fields": ["mean_price_thousand", "quarter"],
-        "transform": [
-          { "filter": "datum.year == yearParam" },
-          { "filter": "datum.quarter == concat('Jun-', yearParam)" }
-        ]
+        "fields": ["mean_price_thousand"]
       },
-      "as": ["mean_price_thousand", "price_quarter"]
+      "as": ["mean_price_thousand"]
     },
     {
       "calculate": "datum.mean_price_thousand * 1000",
@@ -71,23 +64,18 @@
       "lookup": "national_key",
       "from": {
         "data": {
-          "url": "data/sa3/income_by_geography_tidy.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
           "format": {
             "type": "csv",
             "parse": {
               "total_income": "number",
               "average_taxable_income": "number",
-              "individuals": "number",
-              "end_year": "number"
+              "individuals": "number"
             }
           }
         },
         "key": "region_name",
-        "fields": ["total_income", "average_taxable_income", "individuals"],
-        "transform": [
-          { "filter": "datum.region_category == 'Australia'" },
-          { "filter": "datum.end_year == yearParam" }
-        ]
+        "fields": ["total_income", "average_taxable_income", "individuals"]
       },
       "as": [
         "national_total_income",
@@ -99,22 +87,14 @@
       "lookup": "national_key",
       "from": {
         "data": {
-          "url": "data/state/property_prices_tidy.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
           "format": {
             "type": "csv",
-            "parse": {
-              "year": "number",
-              "mean_price_thousand": "number"
-            }
+            "parse": { "mean_price_thousand": "number" }
           }
         },
         "key": "state",
-        "fields": ["mean_price_thousand"],
-        "transform": [
-          { "filter": "datum.state == 'Australia'" },
-          { "filter": "datum.year == yearParam" },
-          { "filter": "datum.quarter == concat('Jun-', yearParam)" }
-        ]
+        "fields": ["mean_price_thousand"]
       },
       "as": ["national_mean_price_thousand"]
     },
@@ -216,9 +196,7 @@
       ],
       "encoding": {
         "x": { "field": "national_ratio" },
-        "text": {
-          "signal": "'National average · ' + format(datum.national_ratio, '.1f') + ' yrs'"
-        },
+        "text": { "value": "National average" },
         "y": { "value": -6 }
       }
     }

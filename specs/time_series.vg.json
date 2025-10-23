@@ -25,7 +25,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/state/property_prices_tidy.csv",
+        "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -105,7 +105,7 @@
     },
     {
       "data": {
-        "url": "data/avg_weekly_earnings_tidy.csv",
+        "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/avg_weekly_earnings_tidy.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -181,7 +181,7 @@
     },
     {
       "data": {
-        "url": "data/cities/cpi_overall_tidy.csv",
+        "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/cities/cpi_overall_tidy.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -254,50 +254,6 @@
             "format": ".1f"
           }
         ]
-      }
-    },
-    {
-      "data": { "values": [1] },
-      "transform": [
-        {
-          "calculate": "timeParse('Jun-' + yearParam, '%b-%Y')",
-          "as": "selected_date"
-        }
-      ],
-      "mark": {
-        "type": "rule",
-        "stroke": "#d62728",
-        "strokeDash": [6, 3],
-        "strokeWidth": 2
-      },
-      "encoding": {
-        "x": { "field": "selected_date", "type": "temporal" },
-        "color": { "value": null }
-      }
-    },
-    {
-      "data": { "values": [1] },
-      "transform": [
-        {
-          "calculate": "timeParse('Jun-' + yearParam, '%b-%Y')",
-          "as": "selected_date"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 6,
-        "dy": -6,
-        "fontSize": 12,
-        "fontWeight": "bold",
-        "fill": "#d62728"
-      },
-      "encoding": {
-        "x": { "field": "selected_date", "type": "temporal" },
-        "y": { "value": 0 },
-        "text": {
-          "signal": "'Selected year'"
-        }
       }
     }
   ]
