@@ -109,6 +109,22 @@ p {
   margin: 1.5rem 0 0.5rem;
 }
 
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.section-header .controls {
+  margin: 0;
+}
+
 .controls label {
   font-weight: 600;
   font-size: 0.95rem;

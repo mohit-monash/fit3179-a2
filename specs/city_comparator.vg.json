@@ -19,7 +19,6 @@
     "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
   },
   "params": [
-    { "name": "cityParam", "value": "Australia" },
     { "name": "yearParam", "value": 2022 }
   ],
   "data": {
@@ -77,16 +76,23 @@
       "as": "average_income"
     },
     {
-      "lookup": "state_name",
+      "calculate": "datum.state_name + '|' + yearParam",
+      "as": "state_year_key"
+    },
+    {
+      "lookup": "state_year_key",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
+          "url": "data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
-            "parse": { "mean_price_thousand": "number" }
+            "parse": {
+              "mean_price_thousand": "number",
+              "year": "number"
+            }
           }
         },
-        "key": "state",
+        "key": "state_year",
         "fields": ["mean_price_thousand"]
       },
       "as": ["mean_price_thousand"]
@@ -112,7 +118,13 @@
       "as": "mean_price_thousand_value"
     },
     {
-      "calculate": "cityParam == datum.gcc_name",
+      "window": [
+        { "op": "rank", "as": "ratio_rank" }
+      ],
+      "sort": [{ "field": "price_to_income", "order": "descending" }]
+    },
+    {
+      "calculate": "datum.ratio_rank == 1",
       "as": "is_selected"
     }
   ],

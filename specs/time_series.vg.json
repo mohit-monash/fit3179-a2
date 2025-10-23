@@ -254,6 +254,25 @@
             "format": ".1f"
           }
         ]
+    }
+    },
+    {
+      "data": { "values": [{}] },
+      "transform": [
+        {
+          "calculate": "timeParse(yearParam + '-06-30', '%Y-%m-%d')",
+          "as": "selected_date"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "strokeDash": [6, 4],
+        "stroke": "#6b6b6b",
+        "strokeWidth": 1.4
+      },
+      "encoding": {
+        "x": { "field": "selected_date", "type": "temporal" },
+        "color": { "value": null }
       }
     }
   ]

@@ -17,9 +17,8 @@
     "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
   },
   "params": [
-    { "name": "cityParam", "value": "Australia" },
-    { "name": "yearParam", "value": 2022 },
-    { "name": "metricParam", "value": "price_to_income" }
+    { "name": "cityParam", "value": "Greater Sydney" },
+    { "name": "yearParam", "value": 2022 }
   ],
   "data": {
     "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
@@ -64,19 +63,26 @@
       "filter": "indexof(datum.gcc_name, 'Migratory') < 0 && indexof(datum.gcc_name, 'No usual address') < 0 && indexof(datum.gcc_name, 'Outside') < 0"
     },
     {
-      "filter": "cityParam == 'Australia' ? true : datum.gcc_name == cityParam"
+      "filter": "datum.gcc_name == cityParam"
     },
     {
-      "lookup": "state_name",
+      "calculate": "datum.state_name + '|' + yearParam",
+      "as": "state_year_key"
+    },
+    {
+      "lookup": "state_year_key",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
+          "url": "data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
-            "parse": { "mean_price_thousand": "number" }
+            "parse": {
+              "mean_price_thousand": "number",
+              "year": "number"
+            }
           }
         },
-        "key": "state",
+        "key": "state_year",
         "fields": ["mean_price_thousand"]
       },
       "as": ["mean_price_thousand"]
@@ -90,17 +96,9 @@
       "as": "price_to_income"
     },
     {
-      "calculate": "metricParam == 'price_to_income' ? datum.price_to_income : metricParam == 'average_income' ? datum.average_taxable_income : metricParam == 'median_income' ? datum.median_taxable_income : datum.salary_wage_share",
-      "as": "metric_value"
-    },
-    {
-      "calculate": "metricParam == 'price_to_income' ? 'Years of income needed' : metricParam == 'average_income' ? 'Average taxable income ($)' : metricParam == 'median_income' ? 'Median taxable income ($)' : 'Residents with salary/wage income (%)'",
-      "as": "metric_title"
-    },
-    {
       "joinaggregate": [
-        { "op": "mean", "field": "metric_value", "as": "metric_mean" },
-        { "op": "median", "field": "metric_value", "as": "metric_median" }
+        { "op": "mean", "field": "price_to_income", "as": "metric_mean" },
+        { "op": "median", "field": "price_to_income", "as": "metric_median" }
       ]
     }
   ],
@@ -109,10 +107,10 @@
       "mark": { "type": "bar", "opacity": 0.75, "clip": true },
       "encoding": {
         "x": {
-          "field": "metric_value",
+          "field": "price_to_income",
           "type": "quantitative",
           "bin": { "maxbins": 24 },
-          "title": "Metric value"
+          "title": "Price-to-income ratio (years)"
         },
         "y": {
           "aggregate": "count",
@@ -152,7 +150,7 @@
       "encoding": {
         "x": { "field": "metric_mean", "type": "quantitative" },
         "y": { "value": 0 },
-        "text": { "value": "Mean" }
+        "text": { "value": "Mean (yrs)" }
       }
     },
     {
@@ -179,7 +177,7 @@
       "encoding": {
         "x": { "field": "metric_median", "type": "quantitative" },
         "y": { "value": 0 },
-        "text": { "value": "Median" }
+        "text": { "value": "Median (yrs)" }
       }
     }
   ]

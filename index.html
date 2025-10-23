@@ -39,60 +39,27 @@
         </p>
       </header>
 
-      <div class="annotation">
-        <strong>How to read this page.</strong> Use the controls below to pick a
-        city, affordability metric and financial year (ending in June). Every
-        chart updates in sync, so selections stay consistent as you move through
-        the story.
-      </div>
-
-      <section class="vis-section" id="controls-section">
-        <div class="controls" id="global-controls">
-          <label>
-            City
-            <select id="city-select">
-              <option value="Australia">All (Australia)</option>
-              <option value="Greater Sydney">Sydney</option>
-              <option value="Greater Melbourne">Melbourne</option>
-              <option value="Greater Brisbane">Brisbane</option>
-              <option value="Greater Adelaide">Adelaide</option>
-              <option value="Greater Perth">Perth</option>
-              <option value="Greater Hobart">Hobart</option>
-              <option value="Australian Capital Territory">Canberra</option>
-              <option value="Greater Darwin">Darwin</option>
-            </select>
-          </label>
-          <label>
-            Metric
-            <select id="metric-select">
-              <option value="price_to_income">Price-to-income ratio</option>
-              <option value="average_income">Average taxable income ($)</option>
-              <option value="median_income">Median taxable income ($)</option>
-              <option value="salary_share">
-                Salary &amp; wage share of residents (%)
-              </option>
-            </select>
-          </label>
-          <label>
-            Financial year
-            <select id="year-select">
-              <option value="2018">2017–18</option>
-              <option value="2019">2018–19</option>
-              <option value="2020">2019–20</option>
-              <option value="2021">2020–21</option>
-              <option value="2022" selected>2021–22</option>
-            </select>
-          </label>
-          <label id="sa3-search-wrapper">
-            SA3 search
-            <input
-              id="sa3-search"
-              type="search"
-              placeholder="Type a suburb or SA3 name"
-            />
-          </label>
+      <section class="vis-section" id="snapshot">
+        <div class="section-header">
+          <h2>Pick a financial year to see the national snapshot</h2>
+          <div class="controls" id="snapshot-controls">
+            <label>
+              Financial year
+              <select id="year-select">
+                <option value="2018">2017–18</option>
+                <option value="2019">2018–19</option>
+                <option value="2020">2019–20</option>
+                <option value="2021">2020–21</option>
+                <option value="2022" selected>2021–22</option>
+              </select>
+            </label>
+          </div>
         </div>
-
+        <p>
+          Use the year selector to update the affordability scoreboard and the
+          national comparison charts below. Each view recalculates tax incomes,
+          property prices and ratios for the chosen financial year.
+        </p>
         <div class="vis-wrapper">
           <div id="kpi-vis" class="vis-container"></div>
         </div>
@@ -124,13 +91,62 @@
         </div>
       </section>
 
+      <section class="vis-section" id="state-trend">
+        <h2>How affordability ratios shifted across every state</h2>
+        <p>
+          Tracking the price-to-income ratio over time shows just how quickly
+          housing costs have decoupled from wages. Each line indexes 2011 to 100
+          so you can compare the pace of deterioration across states and
+          territories.
+        </p>
+        <div class="vis-wrapper">
+          <div id="state-trend-vis" class="vis-container"></div>
+        </div>
+      </section>
+
+      <section class="vis-section" id="income-mix">
+        <h2>Where wage income dominates the tax base</h2>
+        <p>
+          Some states rely more heavily on salary and wage earners than others.
+          A higher share of wage income suggests more households depend on the
+          labour market to keep pace with rising housing costs.
+        </p>
+        <div class="vis-wrapper">
+          <div id="salary-share-vis" class="vis-container"></div>
+        </div>
+      </section>
+
       <section class="vis-section" id="sa3-drilldown">
         <h2>SA3 drill-down: affordability varies sharply within each city</h2>
         <p>
           Select a city to see how neighbourhoods compare. The choropleth maps
-          each SA3 by the chosen metric. Click an area or bar to highlight the
-          pair. Use the search box to jump to a specific SA3.
+          each SA3 by the price-to-income ratio for the chosen financial year. Click
+          an area or bar to highlight the pair. Use the search box to jump to a
+          specific SA3.
         </p>
+        <div class="controls" id="city-controls">
+          <label>
+            Capital city
+            <select id="city-select">
+              <option value="Greater Sydney">Sydney</option>
+              <option value="Greater Melbourne">Melbourne</option>
+              <option value="Greater Brisbane">Brisbane</option>
+              <option value="Greater Adelaide">Adelaide</option>
+              <option value="Greater Perth">Perth</option>
+              <option value="Greater Hobart">Hobart</option>
+              <option value="Australian Capital Territory">Canberra</option>
+              <option value="Greater Darwin">Darwin</option>
+            </select>
+          </label>
+          <label id="sa3-search-wrapper">
+            SA3 search
+            <input
+              id="sa3-search"
+              type="search"
+              placeholder="Type a suburb or SA3 name"
+            />
+          </label>
+        </div>
         <div class="vis-wrapper vis-wide">
           <div id="sa3-vis" class="vis-container"></div>
         </div>
@@ -141,8 +157,8 @@
         <p>
           We index each series to 100 at the start of 2011. Property prices grow
           far faster than household earnings, while CPI indicates broader cost
-          pressures. The selected year is marked to align with the snapshot
-          views above.
+          pressures. The highlighted point marks the year picked in the
+          snapshot above.
         </p>
         <div class="vis-wrapper">
           <div id="timeseries-vis" class="vis-container"></div>
@@ -152,8 +168,8 @@
       <section class="vis-section" id="distribution">
         <h2>Distribution: where affordability pressure concentrates</h2>
         <p>
-          The histogram shows the spread of the selected metric across SA3s in
-          the chosen city. Long tails to the right signal pockets of high
+          The histogram shows how price-to-income ratios spread across SA3s in
+          the selected city. Long tails to the right signal pockets of high
           pressure—areas where prices stretch far beyond local incomes.
         </p>
         <div class="vis-wrapper">

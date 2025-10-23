@@ -14,8 +14,6 @@
     "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
   },
   "params": [
-    { "name": "cityParam", "value": "Australia" },
-    { "name": "stateParam", "value": "Australia" },
     { "name": "yearParam", "value": 2022 }
   ],
   "data": {
@@ -34,16 +32,23 @@
     { "filter": "datum.region_category == 'State'" },
     { "filter": "datum.end_year == yearParam" },
     {
-      "lookup": "region_name",
+      "calculate": "datum.region_name + '|' + yearParam",
+      "as": "state_year_key"
+    },
+    {
+      "lookup": "state_year_key",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
+          "url": "data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
-            "parse": { "mean_price_thousand": "number" }
+            "parse": {
+              "mean_price_thousand": "number",
+              "year": "number"
+            }
           }
         },
-        "key": "state",
+        "key": "state_year",
         "fields": ["mean_price_thousand"]
       },
       "as": ["mean_price_thousand"]
@@ -57,43 +62,23 @@
       "as": "price_to_income"
     },
     {
-      "calculate": "'Australia'",
-      "as": "national_key"
+      "calculate": "'Australia|' + yearParam",
+      "as": "national_state_year_key"
     },
     {
-      "lookup": "national_key",
+      "lookup": "national_state_year_key",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
+          "url": "data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
             "parse": {
-              "total_income": "number",
-              "average_taxable_income": "number",
-              "individuals": "number"
+              "mean_price_thousand": "number",
+              "year": "number"
             }
           }
         },
-        "key": "region_name",
-        "fields": ["total_income", "average_taxable_income", "individuals"]
-      },
-      "as": [
-        "national_total_income",
-        "national_average_income",
-        "national_individuals"
-      ]
-    },
-    {
-      "lookup": "national_key",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
-          "format": {
-            "type": "csv",
-            "parse": { "mean_price_thousand": "number" }
-          }
-        },
-        "key": "state",
+        "key": "state_year",
         "fields": ["mean_price_thousand"]
       },
       "as": ["national_mean_price_thousand"]
@@ -103,12 +88,30 @@
       "as": "national_mean_price_value"
     },
     {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "total_income",
+          "as": "national_total_income_sum"
+        },
+        {
+          "op": "sum",
+          "field": "individuals",
+          "as": "national_individuals_sum"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.national_total_income_sum / datum.national_individuals_sum",
+      "as": "national_average_income"
+    },
+    {
       "calculate": "datum.national_mean_price_value / datum.national_average_income",
       "as": "national_ratio"
     },
     {
-      "calculate": "datum.region_name == stateParam && stateParam != 'Australia'",
-      "as": "is_selected_state"
+      "calculate": "datum.price_to_income >= datum.national_ratio",
+      "as": "is_above_national"
     }
   ],
   "layer": [
@@ -129,7 +132,7 @@
         },
         "color": {
           "condition": {
-            "test": "datum.is_selected_state",
+            "test": "datum.is_above_national",
             "value": "#0f6ab4"
           },
           "value": "#c8d6e5"
@@ -153,6 +156,11 @@
             "field": "average_taxable_income",
             "title": "Average taxable income",
             "format": "$,.0f"
+          },
+          {
+            "field": "national_ratio",
+            "title": "National benchmark",
+            "format": ".1f"
           }
         ]
       }

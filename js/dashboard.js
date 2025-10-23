@@ -1,21 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const citySelect = document.getElementById("city-select");
-  const metricSelect = document.getElementById("metric-select");
   const yearSelect = document.getElementById("year-select");
+  const citySelect = document.getElementById("city-select");
   const searchInput = document.getElementById("sa3-search");
-  const searchWrapper = document.getElementById("sa3-search-wrapper");
-
-  const stateByCity = {
-    Australia: "Australia",
-    "Greater Sydney": "New South Wales",
-    "Greater Melbourne": "Victoria",
-    "Greater Brisbane": "Queensland",
-    "Greater Adelaide": "South Australia",
-    "Greater Perth": "Western Australia",
-    "Greater Hobart": "Tasmania",
-    "Australian Capital Territory": "Australian Capital Territory",
-    "Greater Darwin": "Northern Territory"
-  };
 
   const yearLabels = {
     2018: "2017–18",
@@ -31,6 +17,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     kpiResult,
     overviewResult,
     cityResult,
+    stateTrendResult,
+    salaryShareResult,
     sa3Result,
     timeseriesResult,
     distributionResult
@@ -38,6 +26,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     vegaEmbed("#kpi-vis", "specs/kpi_cards.vg.json", embedOptions),
     vegaEmbed("#overview-vis", "specs/state_overview.vg.json", embedOptions),
     vegaEmbed("#city-vis", "specs/city_comparator.vg.json", embedOptions),
+    vegaEmbed("#state-trend-vis", "specs/state_trend.vg.json", embedOptions),
+    vegaEmbed("#salary-share-vis", "specs/salary_share.vg.json", embedOptions),
     vegaEmbed("#sa3-vis", "specs/sa3_map_rank.vg.json", embedOptions),
     vegaEmbed("#timeseries-vis", "specs/time_series.vg.json", embedOptions),
     vegaEmbed("#distribution-vis", "specs/distribution.vg.json", embedOptions)
@@ -47,22 +37,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     kpi: kpiResult.view,
     overview: overviewResult.view,
     city: cityResult.view,
+    stateTrend: stateTrendResult.view,
+    salaryShare: salaryShareResult.view,
     sa3: sa3Result.view,
     timeseries: timeseriesResult.view,
     distribution: distributionResult.view
   };
 
-  function getCityLabel(value) {
-    if (value === "Australia") {
-      return "Australia";
-    }
-    const option = Array.from(citySelect.options).find(
-      (opt) => opt.value === value
-    );
-    return option ? option.text : value;
-  }
-
-  function debounce(fn, wait = 200) {
+  function debounce(fn, wait = 150) {
     let timeout;
     return (...args) => {
       clearTimeout(timeout);
@@ -88,7 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         view.signal(name, value);
         dirty = true;
       } catch (error) {
-        // Signal might not exist on this view; ignore silently.
+        // Ignore missing signals on a view.
       }
     }
     if (dirty) {
@@ -97,87 +79,91 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   let previousCity = citySelect.value;
-  let previousMetric = metricSelect.value;
 
-  const performUpdate = async () => {
-    const cityValue = citySelect.value;
-    const metricValue = metricSelect.value;
+  const updateYearDrivenViews = async () => {
     const yearValue = Number(yearSelect.value);
-    const stateValue = stateByCity[cityValue] || "Australia";
     const yearLabel = yearLabels[yearValue] || `${yearValue - 1}–${yearValue}`;
-    const cityLabel = getCityLabel(cityValue);
-
-    if (cityValue === "Australia") {
-      searchWrapper.classList.add("hidden");
-      if (searchInput.value !== "") {
-        searchInput.value = "";
-      }
-    } else {
-      searchWrapper.classList.remove("hidden");
-    }
-    const searchValue =
-      cityValue === "Australia" ? "" : searchInput.value.trim();
 
     await setSignals(views.kpi, {
-      cityParam: cityValue,
-      cityLabelParam: cityLabel,
       yearParam: yearValue,
       yearLabelParam: yearLabel
     });
 
     await setSignals(views.overview, {
-      cityParam: cityValue,
-      stateParam: stateValue,
       yearParam: yearValue
     });
 
     await setSignals(views.city, {
-      cityParam: cityValue,
+      yearParam: yearValue
+    });
+
+    await setSignals(views.salaryShare, {
+      yearParam: yearValue
+    });
+
+    await setSignals(views.stateTrend, {
+      yearParam: yearValue
+    });
+
+    await setSignals(views.sa3, {
       yearParam: yearValue
     });
 
     await setSignals(views.timeseries, {
-      cityParam: cityValue,
-      stateParam: stateValue,
       yearParam: yearValue
     });
 
     await setSignals(views.distribution, {
-      cityParam: cityValue,
-      yearParam: yearValue,
-      metricParam: metricValue
+      yearParam: yearValue
     });
+  };
 
-    const cityChanged = previousCity !== cityValue;
-    const metricChanged = previousMetric !== metricValue;
+  const updateCityDrivenViews = async () => {
+    const cityValue = citySelect.value;
+    let searchValue = searchInput.value.trim();
+
+    if (previousCity !== cityValue) {
+      searchInput.value = "";
+      searchValue = "";
+    }
 
     await setSignals(views.sa3, {
       cityParam: cityValue,
-      yearParam: yearValue,
-      metricParam: metricValue,
       searchParam: searchValue
     });
 
-    if (cityChanged || metricChanged) {
+    await setSignals(views.distribution, {
+      cityParam: cityValue
+    });
+
+    if (previousCity !== cityValue) {
       try {
         views.sa3.signal("sa3_select", null);
         await views.sa3.runAsync();
       } catch (error) {
         console.warn("Unable to reset SA3 selection:", error);
       }
+      previousCity = cityValue;
     }
-
-    previousCity = cityValue;
-    previousMetric = metricValue;
   };
 
-  const updateViews = debounce(performUpdate, 60);
+  const handleSearchInput = debounce(async () => {
+    await setSignals(views.sa3, {
+      searchParam: searchInput.value.trim()
+    });
+  });
 
-  citySelect.addEventListener("change", () => updateViews());
-  metricSelect.addEventListener("change", () => updateViews());
-  yearSelect.addEventListener("change", () => updateViews());
-  searchInput.addEventListener("input", updateViews);
+  yearSelect.addEventListener("change", () => {
+    updateYearDrivenViews();
+  });
 
-  // Initial render
-  performUpdate();
+  citySelect.addEventListener("change", () => {
+    updateCityDrivenViews();
+  });
+
+  searchInput.addEventListener("input", handleSearchInput);
+
+  // Initial renders
+  await updateYearDrivenViews();
+  await updateCityDrivenViews();
 });

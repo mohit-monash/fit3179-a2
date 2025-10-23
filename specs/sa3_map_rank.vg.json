@@ -23,15 +23,11 @@
   "params": [
     {
       "name": "cityParam",
-      "value": "Australia"
+      "value": "Greater Sydney"
     },
     {
       "name": "yearParam",
       "value": 2022
-    },
-    {
-      "name": "metricParam",
-      "value": "price_to_income"
     },
     {
       "name": "searchParam",
@@ -91,21 +87,26 @@
       "filter": "indexof(datum.gcc_name, 'Migratory') < 0 && indexof(datum.gcc_name, 'No usual address') < 0 && indexof(datum.gcc_name, 'Outside') < 0"
     },
     {
-      "filter": "cityParam == 'Australia' ? true : datum.gcc_name == cityParam"
+      "filter": "datum.gcc_name == cityParam"
     },
     {
-      "lookup": "state_name",
+      "calculate": "datum.state_name + '|' + yearParam",
+      "as": "state_year_key"
+    },
+    {
+      "lookup": "state_year_key",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
+          "url": "data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
             "parse": {
-              "mean_price_thousand": "number"
+              "mean_price_thousand": "number",
+              "year": "number"
             }
           }
         },
-        "key": "state",
+        "key": "state_year",
         "fields": [
           "mean_price_thousand"
         ]
@@ -126,20 +127,12 @@
       "filter": "searchParam == '' ? true : indexof(lower(datum.region_name), lower(searchParam)) >= 0"
     },
     {
-      "calculate": "metricParam == 'price_to_income' ? datum.price_to_income : metricParam == 'average_income' ? datum.average_taxable_income : metricParam == 'median_income' ? datum.median_taxable_income : datum.salary_wage_share",
+      "calculate": "datum.price_to_income",
       "as": "metric_value"
     },
     {
-      "calculate": "metricParam == 'price_to_income' ? 'Years of income needed' : metricParam == 'average_income' ? 'Average taxable income ($)' : metricParam == 'median_income' ? 'Median taxable income ($)' : 'Residents with salary/wage income (%)'",
-      "as": "metric_title"
-    },
-    {
-      "calculate": "metricParam == 'price_to_income' ? format(datum.metric_value, '.1f') + ' yrs' : metricParam == 'salary_share' ? format(datum.metric_value, '.1f') + '%' : ('$' + format(datum.metric_value, ',.0f'))",
+      "calculate": "format(datum.metric_value, '.1f') + ' yrs'",
       "as": "value_display"
-    },
-    {
-      "calculate": "metricParam == 'price_to_income' ? 'purples' : metricParam == 'salary_share' ? 'tealblues' : 'blues'",
-      "as": "color_scheme"
     }
   ],
   "hconcat": [
@@ -177,9 +170,9 @@
             "color": {
               "field": "metric_value",
               "type": "quantitative",
-              "title": "Metric value",
+              "title": "Price-to-income ratio (years)",
               "scale": {
-                "scheme": "blues"
+                "scheme": "purples"
               }
             },
             "opacity": {
@@ -197,7 +190,7 @@
               },
               {
                 "field": "value_display",
-                "title": "Metric"
+                "title": "Price-to-income"
               },
               {
                 "field": "price_to_income",
@@ -311,14 +304,14 @@
             "x": {
               "field": "metric_value",
               "type": "quantitative",
-              "title": null
+              "title": "Price-to-income ratio (years)"
             },
             "color": {
               "field": "metric_value",
               "type": "quantitative",
               "legend": null,
               "scale": {
-                "scheme": "blues"
+                "scheme": "purples"
               }
             },
             "opacity": {
@@ -336,7 +329,7 @@
               },
               {
                 "field": "value_display",
-                "title": "Metric"
+                "title": "Price-to-income"
               },
               {
                 "field": "price_to_income",
