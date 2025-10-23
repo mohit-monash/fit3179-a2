@@ -1,7 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
-    "view": { "stroke": null },
+    "view": {
+      "stroke": null
+    },
     "axis": {
       "labelFont": "Source Sans Pro",
       "titleFont": "Source Sans Pro",
@@ -12,55 +14,35 @@
       "labelFont": "Source Sans Pro",
       "titleFont": "Source Sans Pro"
     },
-    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
+    "title": {
+      "font": "Source Sans Pro",
+      "fontSize": 18,
+      "fontWeight": 600
+    }
   },
   "params": [
-    { "name": "cityParam", "value": "Australia" },
-    { "name": "yearParam", "value": 2022 },
-    { "name": "metricParam", "value": "price_to_income" },
-    { "name": "searchParam", "value": "" },
     {
-      "name": "sa3_select",
-      "select": {
-        "type": "point",
-        "fields": ["region_code"],
-        "toggle": "event.shiftKey",
-        "clear": "dblclick"
-      }
+      "name": "cityParam",
+      "value": "Australia"
+    },
+    {
+      "name": "yearParam",
+      "value": 2022
+    },
+    {
+      "name": "metricParam",
+      "value": "price_to_income"
+    },
+    {
+      "name": "searchParam",
+      "value": ""
     }
   ],
   "data": {
-    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
-    "format": {
-      "type": "csv",
-      "parse": {
-        "total_income": "number",
-        "average_taxable_income": "number",
-        "median_taxable_income": "number",
-        "salary_wage_share": "number",
-        "individuals": "number",
-        "end_year": "number"
-      }
-    }
+    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
+    "format": { "type": "json", "property": "features" }
   },
   "transform": [
-    { "filter": "datum.region_category == 'SA3'" },
-    { "filter": "datum.end_year == yearParam" },
-    {
-      "lookup": "region_code",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
-          "format": { "type": "json", "property": "features" }
-        },
-        "key": "properties.SA3_CODE21",
-        "fields": [
-          "geometry",
-          "properties.GCC_NAME21",
-          "properties.STE_NAME21"
-        ]
-      }
-    },
     {
       "calculate": "datum['properties.GCC_NAME21']",
       "as": "gcc_name"
@@ -68,6 +50,42 @@
     {
       "calculate": "datum['properties.STE_NAME21']",
       "as": "state_name"
+    },
+    {
+      "calculate": "datum['properties.SA3_CODE21']",
+      "as": "region_code"
+    },
+    {
+      "lookup": "region_code",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
+          "format": {
+            "type": "csv",
+            "parse": {
+              "total_income": "number",
+              "average_taxable_income": "number",
+              "median_taxable_income": "number",
+              "salary_wage_share": "number",
+              "individuals": "number",
+              "end_year": "number"
+            }
+          }
+        },
+        "key": "region_code",
+        "fields": [
+          "region_name",
+          "total_income",
+          "average_taxable_income",
+          "median_taxable_income",
+          "salary_wage_share",
+          "individuals",
+          "end_year"
+        ]
+      }
+    },
+    {
+      "filter": "datum.end_year == yearParam"
     },
     {
       "filter": "indexof(datum.gcc_name, 'Migratory') < 0 && indexof(datum.gcc_name, 'No usual address') < 0 && indexof(datum.gcc_name, 'Outside') < 0"
@@ -82,13 +100,19 @@
           "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
           "format": {
             "type": "csv",
-            "parse": { "mean_price_thousand": "number" }
+            "parse": {
+              "mean_price_thousand": "number"
+            }
           }
         },
         "key": "state",
-        "fields": ["mean_price_thousand"]
+        "fields": [
+          "mean_price_thousand"
+        ]
       },
-      "as": ["mean_price_thousand"]
+      "as": [
+        "mean_price_thousand"
+      ]
     },
     {
       "calculate": "datum.mean_price_thousand * 1000",
@@ -121,17 +145,42 @@
   "hconcat": [
     {
       "width": 540,
-      "projection": { "type": "mercator" },
+      "projection": {
+        "type": "mercator"
+      },
       "layer": [
         {
-          "mark": { "type": "geoshape", "stroke": "#f7f7f7", "strokeWidth": 0.4 },
+          "params": [
+            {
+              "name": "sa3_select",
+              "select": {
+                "type": "point",
+                "fields": [
+                  "region_code"
+                ],
+                "toggle": "event.shiftKey",
+                "clear": "dblclick",
+                "resolve": "global"
+              }
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "stroke": "#f7f7f7",
+            "strokeWidth": 0.4
+          },
           "encoding": {
-            "shape": { "field": "geometry", "type": "geojson" },
+            "shape": {
+              "field": "geometry",
+              "type": "geojson"
+            },
             "color": {
               "field": "metric_value",
               "type": "quantitative",
               "title": "Metric value",
-              "scale": { "scheme": "blues" }
+              "scale": {
+                "scheme": "blues"
+              }
             },
             "opacity": {
               "condition": {
@@ -142,8 +191,14 @@
               "value": 0.85
             },
             "tooltip": [
-              { "field": "region_name", "title": "SA3" },
-              { "field": "value_display", "title": "Metric" },
+              {
+                "field": "region_name",
+                "title": "SA3"
+              },
+              {
+                "field": "value_display",
+                "title": "Metric"
+              },
               {
                 "field": "price_to_income",
                 "title": "Price-to-income",
@@ -164,11 +219,20 @@
             "strokeWidth": 2
           },
           "transform": [
-            { "filter": { "param": "sa3_select" } }
+            {
+              "filter": {
+                "param": "sa3_select"
+              }
+            }
           ],
           "encoding": {
-            "shape": { "field": "geometry", "type": "geojson" },
-            "color": { "value": null }
+            "shape": {
+              "field": "geometry",
+              "type": "geojson"
+            },
+            "color": {
+              "value": null
+            }
           }
         }
       ]
@@ -180,8 +244,13 @@
           "window": [
             {
               "op": "rank",
-              "sort": [{ "field": "metric_value", "order": "ascending" }],
               "as": "rank_low"
+            }
+          ],
+          "sort": [
+            {
+              "field": "metric_value",
+              "order": "ascending"
             }
           ]
         },
@@ -189,8 +258,13 @@
           "window": [
             {
               "op": "rank",
-              "sort": [{ "field": "metric_value", "order": "descending" }],
               "as": "rank_high"
+            }
+          ],
+          "sort": [
+            {
+              "field": "metric_value",
+              "order": "descending"
             }
           ]
         },
@@ -198,11 +272,32 @@
           "calculate": "searchParam == '' ? (datum.rank_low <= 8 || datum.rank_high <= 8) : true",
           "as": "include_bar"
         },
-        { "filter": "datum.include_bar" }
+        {
+          "filter": "datum.include_bar"
+        }
       ],
       "layer": [
         {
-          "mark": { "type": "bar", "cornerRadiusEnd": 4 },
+          "mark": {
+            "type": "rule",
+            "stroke": "#f7f7f7",
+            "strokeWidth": 0.8
+          },
+          "encoding": {
+            "x": {
+              "field": "metric_value",
+              "type": "quantitative"
+            },
+            "size": {
+              "value": 0
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "bar",
+            "cornerRadiusEnd": 4
+          },
           "encoding": {
             "y": {
               "field": "region_name",
@@ -222,7 +317,9 @@
               "field": "metric_value",
               "type": "quantitative",
               "legend": null,
-              "scale": { "scheme": "blues" }
+              "scale": {
+                "scheme": "blues"
+              }
             },
             "opacity": {
               "condition": {
@@ -233,8 +330,14 @@
               "value": 0.6
             },
             "tooltip": [
-              { "field": "region_name", "title": "SA3" },
-              { "field": "value_display", "title": "Metric" },
+              {
+                "field": "region_name",
+                "title": "SA3"
+              },
+              {
+                "field": "value_display",
+                "title": "Metric"
+              },
               {
                 "field": "price_to_income",
                 "title": "Price-to-income",
@@ -242,11 +345,17 @@
               }
             ],
             "stroke": {
-              "condition": { "param": "sa3_select", "value": "#ff6600" },
+              "condition": {
+                "param": "sa3_select",
+                "value": "#ff6600"
+              },
               "value": null
             },
             "strokeWidth": {
-              "condition": { "param": "sa3_select", "value": 2 },
+              "condition": {
+                "param": "sa3_select",
+                "value": 2
+              },
               "value": 0
             }
           }
@@ -269,12 +378,20 @@
                 "order": "descending"
               }
             },
-            "x": { "field": "metric_value" },
-            "text": { "field": "value_display" }
+            "x": {
+              "field": "metric_value"
+            },
+            "text": {
+              "field": "value_display"
+            }
           }
         }
       ]
     }
   ],
-  "resolve": { "scale": { "color": "shared" } }
+  "resolve": {
+    "scale": {
+      "color": "shared"
+    }
+  }
 }

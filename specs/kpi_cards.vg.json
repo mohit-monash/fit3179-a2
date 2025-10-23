@@ -1,13 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 240,
-  "height": 140,
   "padding": 8,
   "config": {
     "view": { "stroke": null },
     "axis": { "labelFont": "Source Sans Pro", "titleFont": "Source Sans Pro" },
     "legend": { "labelFont": "Source Sans Pro", "titleFont": "Source Sans Pro" },
-    "title": { "font": "Source Sans Pro", "fontSize": 16, "fontWeight": 600 }
+    "title": { "font": "Source Sans Pro", "fontSize": 16, "fontWeight": 600 },
+    "facet": { "columns": 4 }
   },
   "params": [
     { "name": "cityParam", "value": "Australia" },
@@ -70,6 +69,10 @@
       "as": "state_key"
     },
     {
+      "calculate": "datum.state_key + '|' + yearParam",
+      "as": "state_year_key"
+    },
+    {
       "aggregate": [
         { "op": "sum", "field": "total_income", "as": "total_income_sum" },
         { "op": "sum", "field": "individuals", "as": "individuals_sum" },
@@ -91,16 +94,19 @@
       "as": "salary_share_pct"
     },
     {
-      "lookup": "state_key",
+      "lookup": "state_year_key",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_tidy.csv",
+          "url": "data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
-            "parse": { "mean_price_thousand": "number" }
+            "parse": {
+              "mean_price_thousand": "number",
+              "year": "number"
+            }
           }
         },
-        "key": "state",
+        "key": "state_year",
         "fields": ["mean_price_thousand"]
       },
       "as": ["mean_price_thousand_pp"]
@@ -138,7 +144,6 @@
   "facet": {
     "field": "metric",
     "type": "nominal",
-    "columns": 4,
     "sort": [
       "average_income",
       "mean_price_value",
@@ -148,6 +153,8 @@
     "title": null
   },
   "spec": {
+    "width": 240,
+    "height": 140,
     "layer": [
       {
         "mark": {
@@ -195,7 +202,7 @@
       },
       {
         "transform": [
-          { "calculate": "city_display + ' · ' + yearLabelParam", "as": "display_text" }
+          { "calculate": "datum.city_display + ' · ' + yearLabelParam", "as": "display_text" }
         ],
         "mark": { "type": "text", "color": "white", "align": "left", "fontSize": 12, "opacity": 0.8 },
         "encoding": {
