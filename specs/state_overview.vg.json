@@ -39,7 +39,7 @@
       "lookup": "state_year_key",
       "from": {
         "data": {
-          "url": "data/state/property_prices_yearly.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
             "parse": {
@@ -69,7 +69,7 @@
       "lookup": "national_state_year_key",
       "from": {
         "data": {
-          "url": "data/state/property_prices_yearly.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
             "parse": {
@@ -84,7 +84,7 @@
       "as": ["national_mean_price_thousand"]
     },
     {
-      "calculate": "(datum.national_mean_price_thousand ?? 0) * 1000",
+      "calculate": "(datum.national_mean_price_thousand != null ? datum.national_mean_price_thousand : 0) * 1000",
       "as": "national_mean_price_value"
     },
     {

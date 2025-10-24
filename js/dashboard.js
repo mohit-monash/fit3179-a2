@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const yearSelect = document.getElementById("year-select");
   const citySelect = document.getElementById("city-select");
   const searchInput = document.getElementById("sa3-search");
+  const cityYearSlider = document.getElementById("city-year-slider");
+  const cityYearDisplay = document.getElementById("city-year-display");
 
   const yearLabels = {
     2018: "2017–18",
@@ -12,6 +14,31 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   const embedOptions = { actions: false, renderer: "canvas" };
+
+  function getCityLabel(value) {
+    if (!value) {
+      return "";
+    }
+    const option = Array.from(citySelect.options).find(
+      (opt) => opt.value === value
+    );
+    return option ? option.text.trim() : value.replace("Greater ", "");
+  }
+
+  function getYearValue() {
+    return Number(yearSelect.value);
+  }
+
+  function getYearLabel(yearValue) {
+    return yearLabels[yearValue] || `${yearValue - 1}–${yearValue}`;
+  }
+
+  function updateCityYearDisplay(yearValue) {
+    if (!cityYearDisplay) {
+      return;
+    }
+    cityYearDisplay.textContent = getYearLabel(yearValue);
+  }
 
   const [
     kpiResult,
@@ -43,6 +70,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     timeseries: timeseriesResult.view,
     distribution: distributionResult.view
   };
+
+  async function updateCityYear(yearValue, { syncSlider = false } = {}) {
+    if (syncSlider && cityYearSlider) {
+      cityYearSlider.value = String(yearValue);
+    }
+    updateCityYearDisplay(yearValue);
+    await setSignals(views.city, {
+      yearParam: yearValue
+    });
+  }
+
+  async function updateKpiSignals() {
+    const yearValue = getYearValue();
+    const cityValue = citySelect.value;
+    await setSignals(views.kpi, {
+      yearParam: yearValue,
+      yearLabelParam: getYearLabel(yearValue),
+      cityParam: cityValue,
+      cityLabelParam: getCityLabel(cityValue)
+    });
+  }
 
   function debounce(fn, wait = 150) {
     let timeout;
@@ -81,27 +129,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   let previousCity = citySelect.value;
 
   const updateYearDrivenViews = async () => {
-    const yearValue = Number(yearSelect.value);
-    const yearLabel = yearLabels[yearValue] || `${yearValue - 1}–${yearValue}`;
+    const yearValue = getYearValue();
 
-    await setSignals(views.kpi, {
-      yearParam: yearValue,
-      yearLabelParam: yearLabel
-    });
+    await updateKpiSignals();
 
     await setSignals(views.overview, {
       yearParam: yearValue
     });
 
-    await setSignals(views.city, {
-      yearParam: yearValue
-    });
-
     await setSignals(views.salaryShare, {
-      yearParam: yearValue
-    });
-
-    await setSignals(views.stateTrend, {
       yearParam: yearValue
     });
 
@@ -116,16 +152,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     await setSignals(views.distribution, {
       yearParam: yearValue
     });
+
+    await updateCityYear(yearValue, { syncSlider: true });
   };
 
   const updateCityDrivenViews = async () => {
     const cityValue = citySelect.value;
     let searchValue = searchInput.value.trim();
 
+    const cityYearValue = cityYearSlider
+      ? Number(cityYearSlider.value)
+      : getYearValue();
+
+    await updateCityYear(cityYearValue);
+
     if (previousCity !== cityValue) {
       searchInput.value = "";
       searchValue = "";
     }
+
+    await updateKpiSignals();
 
     await setSignals(views.sa3, {
       cityParam: cityValue,
@@ -162,6 +208,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   searchInput.addEventListener("input", handleSearchInput);
+
+  if (cityYearSlider) {
+    updateCityYearDisplay(Number(cityYearSlider.value || getYearValue()));
+    cityYearSlider.addEventListener("input", () => {
+      const yearValue = Number(cityYearSlider.value);
+      updateCityYear(yearValue).catch((error) => {
+        console.warn("Unable to update capital city year:", error);
+      });
+    });
+  }
 
   // Initial renders
   await updateYearDrivenViews();

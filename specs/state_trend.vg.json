@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 780,
-  "height": 320,
+  "width": "container",
+  "height": 360,
   "config": {
     "view": { "stroke": null },
     "axis": {
@@ -16,9 +16,6 @@
     },
     "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
   },
-  "params": [
-    { "name": "yearParam", "value": 2022 }
-  ],
   "data": {
     "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
     "format": {
@@ -42,7 +39,7 @@
       "lookup": "state_year_key",
       "from": {
         "data": {
-          "url": "data/state/property_prices_yearly.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
             "parse": {
@@ -69,59 +66,37 @@
       "as": "year_date"
     }
   ],
-  "layer": [
-    {
-      "mark": {
-        "type": "line",
-        "strokeWidth": 2.2,
-        "interpolate": "monotone"
-      },
-      "encoding": {
-        "x": {
-          "field": "year_date",
-          "type": "temporal",
-          "title": "Financial year",
-          "axis": { "format": "%Y" }
-        },
-        "y": {
-          "field": "price_to_income",
-          "type": "quantitative",
-          "title": "Price-to-income ratio (years)",
-          "axis": { "format": ".1f" }
-        },
-        "color": {
-          "field": "region_name",
-          "type": "nominal",
-          "title": "State / territory"
-        },
-        "tooltip": [
-          { "field": "region_name", "title": "State" },
-          { "field": "end_year", "title": "Year" },
-          {
-            "field": "price_to_income",
-            "title": "Price-to-income",
-            "format": ".2f"
-          }
-        ]
-      }
+  "mark": {
+    "type": "line",
+    "strokeWidth": 2.6,
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "year_date",
+      "type": "temporal",
+      "title": "Financial year",
+      "axis": { "format": "%Y", "labelFlush": false }
     },
-    {
-      "data": { "values": [{}] },
-      "transform": [
-        {
-          "calculate": "timeParse(yearParam + '-06-30', '%Y-%m-%d')",
-          "as": "selected_date"
-        }
-      ],
-      "mark": {
-        "type": "rule",
-        "strokeDash": [6, 4],
-        "stroke": "#555",
-        "strokeWidth": 1.6
-      },
-      "encoding": {
-        "x": { "field": "selected_date", "type": "temporal" }
+    "y": {
+      "field": "price_to_income",
+      "type": "quantitative",
+      "title": "Price-to-income ratio (years)",
+      "axis": { "format": ".1f" }
+    },
+    "color": {
+      "field": "region_name",
+      "type": "nominal",
+      "title": "State / territory"
+    },
+    "tooltip": [
+      { "field": "region_name", "title": "State" },
+      { "field": "end_year", "title": "Year" },
+      {
+        "field": "price_to_income",
+        "title": "Price-to-income",
+        "format": ".2f"
       }
-    }
-  ]
+    ]
+  }
 }

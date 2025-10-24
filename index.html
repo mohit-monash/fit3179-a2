@@ -82,10 +82,26 @@
         <h2>Capital city focus: property prices versus household earnings</h2>
         <p>
           Large cities show the widest gap between what people earn and the cost
-          of a typical dwelling. Here we plot the mean dwelling price alongside
-          the average taxable income for each capital, both expressed in
-          thousands of dollars.
+          of a typical dwelling. Use the slider to move across financial years.
+          The chart plots the mean dwelling price alongside the average taxable
+          income for each capital, both expressed in thousands of dollars.
         </p>
+        <div class="slider-block" id="city-year-controls">
+          <div class="slider-labels">
+            <span class="slider-title">Financial year</span>
+            <span class="slider-value" id="city-year-display">2021–22</span>
+          </div>
+          <input
+            id="city-year-slider"
+            class="slider-input"
+            type="range"
+            min="2018"
+            max="2022"
+            step="1"
+            value="2022"
+            aria-label="Capital city financial year"
+          />
+        </div>
         <div class="vis-wrapper">
           <div id="city-vis" class="vis-container"></div>
         </div>

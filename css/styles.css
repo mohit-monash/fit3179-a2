@@ -149,6 +149,58 @@ p {
   box-shadow: 0 0 0 2px rgba(15, 106, 180, 0.2);
 }
 
+.slider-block {
+  margin: 1.5rem 0 1rem;
+  max-width: 520px;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #233142;
+  margin-bottom: 0.5rem;
+}
+
+.slider-title {
+  font-size: 0.95rem;
+}
+
+.slider-value {
+  font-size: 1rem;
+  color: #0f2e4a;
+}
+
+.slider-input {
+  width: 100%;
+  max-width: 520px;
+  accent-color: #0f6ab4;
+  height: 6px;
+}
+
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0f6ab4;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 0 2px rgba(15, 106, 180, 0.2);
+}
+
+.slider-input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0f6ab4;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 0 2px rgba(15, 106, 180, 0.2);
+}
+
 .footnote {
   font-size: 0.85rem;
   color: #5c6f82;

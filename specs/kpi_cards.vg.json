@@ -79,7 +79,7 @@
         { "op": "sum", "field": "median_weighted", "as": "median_weighted_sum" },
         { "op": "sum", "field": "salary_weighted", "as": "salary_weighted_sum" }
       ],
-      "groupby": ["state_key"]
+      "groupby": ["state_key", "state_year_key"]
     },
     {
       "calculate": "datum.total_income_sum / datum.individuals_sum",
@@ -97,7 +97,7 @@
       "lookup": "state_year_key",
       "from": {
         "data": {
-          "url": "data/state/property_prices_yearly.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
             "parse": {

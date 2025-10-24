@@ -73,7 +73,7 @@
       "lookup": "state_year_key",
       "from": {
         "data": {
-          "url": "data/state/property_prices_yearly.csv",
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
           "format": {
             "type": "csv",
             "parse": {
