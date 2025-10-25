@@ -1,42 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Choropleth of SA3 price-to-income ratios with city filter, search highlight and click selection.",
-  "width": 880,
-  "height": 560,
-  "projection": { "type": "equalEarth" },
-  "config": {
-    "background": "#eef2f7",
-    "view": { "stroke": null },
-    "axis": {
-      "labelFont": "Source Sans Pro",
-      "titleFont": "Source Sans Pro",
-      "labelColor": "#314155",
-      "titleColor": "#1f2d3d"
-    },
-    "legend": {
-      "labelFont": "Source Sans Pro",
-      "titleFont": "Source Sans Pro",
-      "labelColor": "#314155",
-      "titleColor": "#1f2d3d",
-      "orient": "bottom",
-      "direction": "horizontal"
-    },
-    "title": { "font": "Source Sans Pro", "fontSize": 18, "fontWeight": 600 }
-  },
+  "description": "Two income maps, filtered by GCCSA and year (no 'All Australia' option).",
+  "config": { "background": "#eef2f7", "view": { "stroke": null } },
+  "title": "SA3 income — GCCSA view",
+
   "params": [
-    { "name": "yearParam", "value": 2022 },
-    { "name": "cityParam", "value": "Greater Sydney" },
-    { "name": "searchParam", "value": "" },
     {
-      "name": "sa3_select",
-      "select": {
-        "type": "point",
-        "fields": ["region_code"],
-        "on": "click",
-        "toggle": false
-      }
+      "name": "yearParam",
+      "value": 2018
+    },
+    {
+      "name": "cityParam",
+      "value": "Greater Melbourne"
     }
   ],
+
   "data": {
     "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/sa3_price_income_combined.csv",
     "format": {
@@ -47,20 +25,19 @@
         "total_income": "number",
         "median_taxable_income": "number",
         "average_taxable_income": "number",
-        "avg_income_thousand": "number",
         "salary_share_pct": "number",
-        "mean_price_thousand": "number",
-        "mean_price_value": "number",
-        "mean_price_thousand_value": "number",
         "price_to_income": "number",
         "price_to_income_rank_city": "number",
         "area_sq_km": "number"
       }
     }
   },
+
   "transform": [
     { "filter": "datum.end_year == yearParam" },
     { "filter": "datum.gcc_name == cityParam" },
+    { "calculate": "toString(datum.region_code)", "as": "region_code" },
+    { "calculate": "datum.average_taxable_income / datum.median_taxable_income", "as": "income_skew_ratio" },
     {
       "lookup": "region_code",
       "from": {
@@ -68,82 +45,66 @@
           "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
           "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" }
         },
-        "key": "properties.SA3_CODE21",
-        "fields": ["geometry"]
+        "key": "properties.SA3_CODE21"
+      },
+      "as": "feature"
+    },
+    { "filter": "datum.feature != null" }
+  ],
+
+  "hconcat": [
+    {
+      "title": "Average taxable income",
+      "width": 460,
+      "height": 540,
+      "projection": { "type": "mercator" },
+      "mark": { "type": "geoshape" },
+      "encoding": {
+        "shape": { "field": "feature", "type": "geojson" },
+        "color": {
+          "field": "average_taxable_income",
+          "type": "quantitative",
+          "scale": { "scheme": "greens" },
+          "legend": { "format": "$,.0f", "title": "Average taxable income" }
+        },
+        "stroke": { "value": "#ffffff" },
+        "strokeWidth": { "value": 0.6 },
+        "opacity": { "value": 0.95 },
+        "tooltip": [
+          { "field": "sa3_name", "title": "SA3" },
+          { "field": "gcc_name", "title": "GCCSA" },
+          { "field": "state_name", "title": "State/Territory" },
+          { "field": "average_taxable_income", "title": "Average taxable income", "format": "$,.0f" },
+          { "field": "median_taxable_income", "title": "Median taxable income", "format": "$,.0f" }
+        ]
       }
     },
-    { "filter": "datum.geometry" },
     {
-      "calculate": "lower(trim(searchParam))",
-      "as": "search_term"
-    },
-    {
-      "calculate": "datum.search_term == '' ? false : indexof(datum.sa3_name_lower, datum.search_term) >= 0",
-      "as": "search_match"
+      "title": "Income skew (mean ÷ median)",
+      "width": 460,
+      "height": 540,
+      "projection": { "type": "mercator" },
+      "mark": { "type": "geoshape" },
+      "encoding": {
+        "shape": { "field": "feature", "type": "geojson" },
+        "color": {
+          "field": "income_skew_ratio",
+          "type": "quantitative",
+          "scale": { "scheme": "oranges" },
+          "legend": { "format": ".2f", "title": "Mean ÷ Median" }
+        },
+        "stroke": { "value": "#ffffff" },
+        "strokeWidth": { "value": 0.6 },
+        "opacity": { "value": 0.95 },
+        "tooltip": [
+          { "field": "sa3_name", "title": "SA3" },
+          { "field": "gcc_name", "title": "GCCSA" },
+          { "field": "state_name", "title": "State/Territory" },
+          { "field": "income_skew_ratio", "title": "Mean ÷ Median", "format": ".2f" }
+        ]
+      }
     }
   ],
-  "mark": { "type": "geoshape" },
-  "encoding": {
-    "color": {
-      "field": "price_to_income",
-      "type": "quantitative",
-      "title": "Price-to-income ratio (years)",
-      "scale": { "scheme": "blues" },
-      "legend": { "format": ".1f" }
-    },
-    "stroke": {
-      "condition": {
-        "param": "sa3_select",
-        "empty": false,
-        "value": "#f97316"
-      },
-      "value": "#ffffff"
-    },
-    "strokeWidth": {
-      "condition": {
-        "param": "sa3_select",
-        "empty": false,
-        "value": 2
-      },
-      "value": 0.6
-    },
-    "opacity": {
-      "condition": [
-        {
-          "param": "sa3_select",
-          "empty": false,
-          "value": 1
-        },
-        {
-          "test": "datum.search_term == '' || datum.search_match",
-          "value": 0.95
-        }
-      ],
-      "value": 0.25
-    },
-    "tooltip": [
-      { "field": "sa3_name", "title": "SA3" },
-      { "field": "gcc_name", "title": "GCCSA" },
-      { "field": "state_name", "title": "State" },
-      {
-        "field": "price_to_income",
-        "title": "Price-to-income (yrs)",
-        "format": ".1f"
-      },
-      {
-        "field": "avg_income_thousand",
-        "title": "Average taxable income ($k)",
-        "format": ".1f"
-      },
-      {
-        "field": "mean_price_value",
-        "title": "State mean price",
-        "format": "$,.0f"
-      },
-      {
-        "field": "price_to_income_rank_city",
-        "title": "Rank in city"
-      }
-    ]
-  }
+
+  "resolve": { "scale": { "color": "independent" } }
 }

@@ -137,12 +137,12 @@
       </section>
 
       <section class="vis-section" id="sa3-drilldown">
-        <h2>SA3 drill-down: affordability varies sharply within each city</h2>
+        <h2>SA3 drill-down: income patterns within each city</h2>
         <p>
-          Select a city to see how neighbourhoods compare. The choropleth maps
-          each SA3 by the price-to-income ratio for the chosen financial year. Click
-          an area or bar to highlight the pair. Use the search box to jump to a
-          specific SA3.
+          Select a capital city and financial year to compare neighbourhood
+          incomes. The maps show the average taxable income alongside the
+          mean-to-median ratio, highlighting areas with more skewed earnings
+          distributions.
         </p>
         <div class="controls" id="city-controls">
           <label>
@@ -158,13 +158,15 @@
               <option value="Greater Darwin">Darwin</option>
             </select>
           </label>
-          <label id="sa3-search-wrapper">
-            SA3 search
-            <input
-              id="sa3-search"
-              type="search"
-              placeholder="Type a suburb or SA3 name"
-            />
+          <label>
+            Financial year
+            <select id="sa3-year-select">
+              <option value="2018">2017–18</option>
+              <option value="2019">2018–19</option>
+              <option value="2020">2019–20</option>
+              <option value="2021">2020–21</option>
+              <option value="2022">2021–22</option>
+            </select>
           </label>
         </div>
         <div class="vis-wrapper vis-wide">

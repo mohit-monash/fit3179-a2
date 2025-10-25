@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const globalYearSlider = document.getElementById("global-year-slider");
   const globalYearDisplay = document.getElementById("global-year-display");
   const citySelect = document.getElementById("city-select");
-  const searchInput = document.getElementById("sa3-search");
+  const sa3YearSelect = document.getElementById("sa3-year-select");
   const cityYearSlider = document.getElementById("city-year-slider");
   const cityYearDisplay = document.getElementById("city-year-display");
 
@@ -103,14 +103,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  function debounce(fn, wait = 150) {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => fn(...args), wait);
-    };
-  }
-
   async function setSignals(view, mapping) {
     if (!view) {
       return;
@@ -136,8 +128,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       await view.runAsync();
     }
   }
-
-  let previousCity = citySelect.value;
 
   const updateYearDrivenViews = async () => {
     const yearValue = getYearValue();
@@ -166,12 +156,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       yearParam: yearValue
     });
 
+    if (sa3YearSelect && sa3YearSelect.value !== String(yearValue)) {
+      sa3YearSelect.value = String(yearValue);
+    }
+
     await updateCityYear(yearValue, { syncSlider: true });
   };
 
   const updateCityDrivenViews = async () => {
     const cityValue = citySelect.value;
-    let searchValue = searchInput.value.trim();
 
     const cityYearValue = cityYearSlider
       ? Number(cityYearSlider.value)
@@ -179,38 +172,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await updateCityYear(cityYearValue);
 
-    if (previousCity !== cityValue) {
-      searchInput.value = "";
-      searchValue = "";
-    }
-
     await updateKpiSignals();
 
     await setSignals(views.sa3, {
-      cityParam: cityValue,
-      searchParam: searchValue
+      cityParam: cityValue
     });
 
     await setSignals(views.distribution, {
       cityParam: cityValue
     });
-
-    if (previousCity !== cityValue) {
-      try {
-        views.sa3.signal("sa3_select", null);
-        await views.sa3.runAsync();
-      } catch (error) {
-        console.warn("Unable to reset SA3 selection:", error);
-      }
-      previousCity = cityValue;
-    }
   };
-
-  const handleSearchInput = debounce(async () => {
-    await setSignals(views.sa3, {
-      searchParam: searchInput.value.trim()
-    });
-  });
 
   if (globalYearSlider) {
     updateGlobalYearDisplay(getYearValue());
@@ -221,11 +192,24 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  citySelect.addEventListener("change", () => {
-    updateCityDrivenViews();
-  });
+  if (sa3YearSelect) {
+    sa3YearSelect.value = String(getYearValue());
+    sa3YearSelect.addEventListener("change", () => {
+      const selectedYear = Number(sa3YearSelect.value);
+      if (globalYearSlider && globalYearSlider.value !== String(selectedYear)) {
+        globalYearSlider.value = String(selectedYear);
+      }
+      updateYearDrivenViews().catch((error) => {
+        console.warn("Unable to update SA3 year:", error);
+      });
+    });
+  }
 
-  searchInput.addEventListener("input", handleSearchInput);
+  citySelect.addEventListener("change", () => {
+    updateCityDrivenViews().catch((error) => {
+      console.warn("Unable to update capital city:", error);
+    });
+  });
 
   if (cityYearSlider) {
     updateCityYearDisplay(Number(cityYearSlider.value || getYearValue()));
