@@ -41,8 +41,8 @@
       "lookup": "region_code",
       "from": {
         "data": {
-          "url": "geo/SA3.json",
-          "format": { "type": "json", "property": "features" }
+          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
+          "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" }
         },
         "key": "properties.SA3_CODE21",
         "fields": [
