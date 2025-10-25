@@ -1,19 +1,24 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "SA3 boundaries — minimal outline to verify geometry",
-  "width": 720,
-  "height": 520,
+  "description": "SA3 boundaries — TopoJSON base map",
+  "width": 900,
+  "height": 600,
+  "background": "transparent",
   "projection": { "type": "equalEarth" },
   "data": {
-    "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/SA3/MapServer/1/query?where=1=1&outFields=sa3_code_2021,sa3_name_2021&outSR=4326&returnGeometry=true&geometryPrecision=5&maxAllowableOffset=0.01&f=geojson",
-    "format": { "type": "json", "property": "features" }
+    "url": "geo/SA3.json",
+    "format": { "type": "topojson", "feature": "SA3_2021_AUST_GDA2020" }
   },
-  "mark": { "type": "geoshape", "filled": false, "stroke": "white", "strokeWidth": 0.5 },
+  "mark": { "type": "geoshape", "filled": true },
   "encoding": {
-    "shape": { "field": "geometry", "type": "geojson" },
+    "color": { "value": "#e5e7eb" },
+    "stroke": { "value": "#ffffff" },
+    "strokeWidth": { "value": 0.4 },
     "tooltip": [
-      { "field": "properties.sa3_name_2021", "title": "SA3" }
+      { "field": "properties.SA3_NAME21", "title": "SA3" },
+      { "field": "properties.STE_NAME21", "title": "State" },
+      { "field": "properties.GCC_NAME21", "title": "GCCSA" }
     ]
   },
-  "config": { "view": { "stroke": null }, "background": "#eef2f7" }
+  "config": { "view": { "stroke": "transparent" } }
 }
