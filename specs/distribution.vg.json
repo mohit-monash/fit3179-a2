@@ -117,7 +117,7 @@
           "type": "quantitative",
           "title": "SA3 count"
         },
-        "color": { "value": "#1f77b4" },
+        "color": { "value": "#1b9e77" },
         "tooltip": [
           {
             "aggregate": "count",
@@ -129,7 +129,7 @@
     {
       "mark": {
         "type": "rule",
-        "stroke": "#d62728",
+        "stroke": "#d95f02",
         "strokeDash": [6, 3],
         "strokeWidth": 2
       },
@@ -145,7 +145,7 @@
         "dx": 6,
         "dy": -6,
         "fontSize": 12,
-        "fill": "#d62728"
+        "fill": "#d95f02"
       },
       "encoding": {
         "x": { "field": "metric_mean", "type": "quantitative" },
@@ -156,7 +156,7 @@
     {
       "mark": {
         "type": "rule",
-        "stroke": "#9467bd",
+        "stroke": "#7570b3",
         "strokeDash": [2, 4],
         "strokeWidth": 2
       },
@@ -172,7 +172,7 @@
         "dx": 6,
         "dy": 12,
         "fontSize": 12,
-        "fill": "#9467bd"
+        "fill": "#7570b3"
       },
       "encoding": {
         "x": { "field": "metric_median", "type": "quantitative" },

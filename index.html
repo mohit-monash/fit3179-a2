@@ -5,9 +5,9 @@
     <title>Australian Affordability | Data Story</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Import Vega & Vega-Lite -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     <!-- Import pure.css -->
     <link
@@ -42,17 +42,21 @@
       <section class="vis-section" id="snapshot">
         <div class="section-header">
           <h2>Pick a financial year to see the national snapshot</h2>
-          <div class="controls" id="snapshot-controls">
-            <label>
-              Financial year
-              <select id="year-select">
-                <option value="2018">2017–18</option>
-                <option value="2019">2018–19</option>
-                <option value="2020">2019–20</option>
-                <option value="2021">2020–21</option>
-                <option value="2022" selected>2021–22</option>
-              </select>
-            </label>
+          <div class="slider-block" id="snapshot-controls">
+            <div class="slider-labels">
+              <span class="slider-title">Financial year</span>
+              <span class="slider-value" id="global-year-display">2021–22</span>
+            </div>
+            <input
+              id="global-year-slider"
+              class="slider-input slider-input--wide"
+              type="range"
+              min="2018"
+              max="2022"
+              step="1"
+              value="2022"
+              aria-label="Global financial year"
+            />
           </div>
         </div>
         <p>

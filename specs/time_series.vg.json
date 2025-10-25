@@ -81,7 +81,7 @@
               "Average weekly earnings",
               "CPI (All groups)"
             ],
-            "range": ["#ff7f0e", "#1f77b4", "#2ca02c"]
+            "range": ["#d95f02", "#1b9e77", "#7570b3"]
           }
         },
         "tooltip": [
@@ -157,7 +157,7 @@
               "Average weekly earnings",
               "CPI (All groups)"
             ],
-            "range": ["#ff7f0e", "#1f77b4", "#2ca02c"]
+            "range": ["#d95f02", "#1b9e77", "#7570b3"]
           }
         },
         "tooltip": [
@@ -234,7 +234,7 @@
               "Average weekly earnings",
               "CPI (All groups)"
             ],
-            "range": ["#ff7f0e", "#1f77b4", "#2ca02c"]
+            "range": ["#d95f02", "#1b9e77", "#7570b3"]
           }
         },
         "tooltip": [

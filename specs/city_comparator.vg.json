@@ -130,7 +130,7 @@
   ],
   "layer": [
     {
-      "mark": { "type": "rule", "stroke": "#c0ccd8", "strokeWidth": 2 },
+      "mark": { "type": "rule", "stroke": "#d9e2ec", "strokeWidth": 2 },
       "encoding": {
         "y": {
           "field": "city_label",
@@ -169,9 +169,9 @@
         "color": {
           "condition": {
             "test": "datum.is_selected",
-            "value": "#1f77b4"
+            "value": "#1b9e77"
           },
-          "value": "#6baed6"
+          "value": "#cbe5dc"
         },
         "tooltip": [
           { "field": "city_label", "title": "City" },
@@ -211,9 +211,9 @@
         "color": {
           "condition": {
             "test": "datum.is_selected",
-            "value": "#ff7f0e"
+            "value": "#d95f02"
           },
-          "value": "#ffb360"
+          "value": "#f5c6a6"
         },
         "tooltip": [
           { "field": "city_label", "title": "City" },

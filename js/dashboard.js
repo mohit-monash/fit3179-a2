@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const yearSelect = document.getElementById("year-select");
+  const globalYearSlider = document.getElementById("global-year-slider");
+  const globalYearDisplay = document.getElementById("global-year-display");
   const citySelect = document.getElementById("city-select");
   const searchInput = document.getElementById("sa3-search");
   const cityYearSlider = document.getElementById("city-year-slider");
@@ -26,11 +27,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function getYearValue() {
-    return Number(yearSelect.value);
+    if (!globalYearSlider) {
+      return 2022;
+    }
+    return Number(globalYearSlider.value);
   }
 
   function getYearLabel(yearValue) {
     return yearLabels[yearValue] || `${yearValue - 1}–${yearValue}`;
+  }
+
+  function updateGlobalYearDisplay(yearValue) {
+    if (!globalYearDisplay) {
+      return;
+    }
+    globalYearDisplay.textContent = getYearLabel(yearValue);
   }
 
   function updateCityYearDisplay(yearValue) {
@@ -131,6 +142,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const updateYearDrivenViews = async () => {
     const yearValue = getYearValue();
 
+    updateGlobalYearDisplay(yearValue);
+
     await updateKpiSignals();
 
     await setSignals(views.overview, {
@@ -199,9 +212,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
-  yearSelect.addEventListener("change", () => {
-    updateYearDrivenViews();
-  });
+  if (globalYearSlider) {
+    updateGlobalYearDisplay(getYearValue());
+    globalYearSlider.addEventListener("input", () => {
+      updateYearDrivenViews().catch((error) => {
+        console.warn("Unable to update global year:", error);
+      });
+    });
+  }
 
   citySelect.addEventListener("change", () => {
     updateCityDrivenViews();

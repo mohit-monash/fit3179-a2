@@ -1,390 +1,48 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "SA3 boundaries (no data) — ASGS 2021",
+
+  "width": 720,
+  "height": 520,
+
+  "projection": {
+    "type": "mercator",
+    "center": [134.472639, -27.439861],
+    "scale": 500
+  },
+
+  "title": {
+    "text": "SA3 boundaries (no data)",
+    "subtitle": ["Geometry: ABS ASGS 2021 SA3"],
+    "fontSize": 16
+  },
+
   "config": {
-    "view": {
-      "stroke": null
-    },
-    "axis": {
-      "labelFont": "Source Sans Pro",
-      "titleFont": "Source Sans Pro",
-      "labelColor": "#314155",
-      "titleColor": "#1f2d3d"
-    },
-    "legend": {
-      "labelFont": "Source Sans Pro",
-      "titleFont": "Source Sans Pro"
-    },
-    "title": {
-      "font": "Source Sans Pro",
-      "fontSize": 18,
-      "fontWeight": 600
-    }
+    "view": { "stroke": null },
+    "legend": { "titleFontSize": 12, "labelFontSize": 11 }
   },
-  "params": [
+
+  "layer": [
     {
-      "name": "cityParam",
-      "value": "Greater Sydney"
+      "data": { "sphere": true },
+      "mark": { "type": "geoshape", "fill": "#eef2f7", "stroke": "#cfd8dc" }
     },
     {
-      "name": "yearParam",
-      "value": 2022
+      "data": { "graticule": { "step": [30, 30] } },
+      "mark": { "type": "geoshape", "filled": false, "stroke": "#d0d0d0" }
     },
     {
-      "name": "searchParam",
-      "value": ""
-    }
-  ],
-  "data": {
-    "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
-    "format": { "type": "json", "property": "features" }
-  },
-  "transform": [
-    {
-      "calculate": "datum['properties.GCC_NAME21']",
-      "as": "gcc_name"
-    },
-    {
-      "calculate": "datum['properties.STE_NAME21']",
-      "as": "state_name"
-    },
-    {
-      "calculate": "datum['properties.SA3_CODE21']",
-      "as": "region_code"
-    },
-    {
-      "lookup": "region_code",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/sa3/income_by_geography_tidy.csv",
-          "format": {
-            "type": "csv",
-            "parse": {
-              "total_income": "number",
-              "average_taxable_income": "number",
-              "median_taxable_income": "number",
-              "salary_wage_share": "number",
-              "individuals": "number",
-              "end_year": "number"
-            }
-          }
-        },
-        "key": "region_code",
-        "fields": [
-          "region_name",
-          "total_income",
-          "average_taxable_income",
-          "median_taxable_income",
-          "salary_wage_share",
-          "individuals",
-          "end_year"
+      "data": {
+        "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
+        "format": { "type": "json", "property": "features" }
+      },
+      "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 0.5, "fill": "#dddddd" },
+      "encoding": {
+        "shape": { "field": "geometry", "type": "geojson" },
+        "tooltip": [
+          { "field": "properties.SA3_NAME21", "title": "SA3" }
         ]
       }
-    },
-    {
-      "filter": "datum.end_year == yearParam"
-    },
-    {
-      "filter": "indexof(datum.gcc_name, 'Migratory') < 0 && indexof(datum.gcc_name, 'No usual address') < 0 && indexof(datum.gcc_name, 'Outside') < 0"
-    },
-    {
-      "filter": "datum.gcc_name == cityParam"
-    },
-    {
-      "calculate": "datum.state_name + '|' + yearParam",
-      "as": "state_year_key"
-    },
-    {
-      "lookup": "state_year_key",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/data/state/property_prices_yearly.csv",
-          "format": {
-            "type": "csv",
-            "parse": {
-              "mean_price_thousand": "number",
-              "year": "number"
-            }
-          }
-        },
-        "key": "state_year",
-        "fields": [
-          "mean_price_thousand"
-        ]
-      },
-      "as": [
-        "mean_price_thousand"
-      ]
-    },
-    {
-      "calculate": "datum.mean_price_thousand * 1000",
-      "as": "mean_price_value"
-    },
-    {
-      "calculate": "datum.mean_price_value / datum.average_taxable_income",
-      "as": "price_to_income"
-    },
-    {
-      "filter": "searchParam == '' ? true : indexof(lower(datum.region_name), lower(searchParam)) >= 0"
-    },
-    {
-      "calculate": "datum.price_to_income",
-      "as": "metric_value"
-    },
-    {
-      "calculate": "format(datum.metric_value, '.1f') + ' yrs'",
-      "as": "value_display"
     }
-  ],
-  "hconcat": [
-    {
-      "width": 540,
-      "projection": {
-        "type": "mercator"
-      },
-      "layer": [
-        {
-          "params": [
-            {
-              "name": "sa3_select",
-              "select": {
-                "type": "point",
-                "fields": [
-                  "region_code"
-                ],
-                "toggle": "event.shiftKey",
-                "clear": "dblclick",
-                "resolve": "global"
-              }
-            }
-          ],
-          "mark": {
-            "type": "geoshape",
-            "stroke": "#f7f7f7",
-            "strokeWidth": 0.4
-          },
-          "encoding": {
-            "shape": {
-              "field": "geometry",
-              "type": "geojson"
-            },
-            "color": {
-              "field": "metric_value",
-              "type": "quantitative",
-              "title": "Price-to-income ratio (years)",
-              "scale": {
-                "scheme": "purples"
-              }
-            },
-            "opacity": {
-              "condition": {
-                "param": "sa3_select",
-                "empty": false,
-                "value": 1
-              },
-              "value": 0.85
-            },
-            "tooltip": [
-              {
-                "field": "region_name",
-                "title": "SA3"
-              },
-              {
-                "field": "value_display",
-                "title": "Price-to-income"
-              },
-              {
-                "field": "price_to_income",
-                "title": "Price-to-income",
-                "format": ".1f"
-              },
-              {
-                "field": "average_taxable_income",
-                "title": "Average taxable income",
-                "format": "$,.0f"
-              }
-            ]
-          }
-        },
-        {
-          "mark": {
-            "type": "geoshape",
-            "stroke": "#ff6600",
-            "strokeWidth": 2
-          },
-          "transform": [
-            {
-              "filter": {
-                "param": "sa3_select"
-              }
-            }
-          ],
-          "encoding": {
-            "shape": {
-              "field": "geometry",
-              "type": "geojson"
-            },
-            "color": {
-              "value": null
-            }
-          }
-        }
-      ]
-    },
-    {
-      "width": 320,
-      "transform": [
-        {
-          "window": [
-            {
-              "op": "rank",
-              "as": "rank_low"
-            }
-          ],
-          "sort": [
-            {
-              "field": "metric_value",
-              "order": "ascending"
-            }
-          ]
-        },
-        {
-          "window": [
-            {
-              "op": "rank",
-              "as": "rank_high"
-            }
-          ],
-          "sort": [
-            {
-              "field": "metric_value",
-              "order": "descending"
-            }
-          ]
-        },
-        {
-          "calculate": "searchParam == '' ? (datum.rank_low <= 8 || datum.rank_high <= 8) : true",
-          "as": "include_bar"
-        },
-        {
-          "filter": "datum.include_bar"
-        }
-      ],
-      "layer": [
-        {
-          "mark": {
-            "type": "rule",
-            "stroke": "#f7f7f7",
-            "strokeWidth": 0.8
-          },
-          "encoding": {
-            "x": {
-              "field": "metric_value",
-              "type": "quantitative"
-            },
-            "size": {
-              "value": 0
-            }
-          }
-        },
-        {
-          "mark": {
-            "type": "bar",
-            "cornerRadiusEnd": 4
-          },
-          "encoding": {
-            "y": {
-              "field": "region_name",
-              "type": "nominal",
-              "title": null,
-              "sort": {
-                "field": "metric_value",
-                "order": "descending"
-              }
-            },
-            "x": {
-              "field": "metric_value",
-              "type": "quantitative",
-              "title": "Price-to-income ratio (years)"
-            },
-            "color": {
-              "field": "metric_value",
-              "type": "quantitative",
-              "legend": null,
-              "scale": {
-                "scheme": "purples"
-              }
-            },
-            "opacity": {
-              "condition": {
-                "param": "sa3_select",
-                "empty": false,
-                "value": 1
-              },
-              "value": 0.6
-            },
-            "tooltip": [
-              {
-                "field": "region_name",
-                "title": "SA3"
-              },
-              {
-                "field": "value_display",
-                "title": "Price-to-income"
-              },
-              {
-                "field": "price_to_income",
-                "title": "Price-to-income",
-                "format": ".1f"
-              }
-            ],
-            "stroke": {
-              "condition": {
-                "param": "sa3_select",
-                "value": "#ff6600"
-              },
-              "value": null
-            },
-            "strokeWidth": {
-              "condition": {
-                "param": "sa3_select",
-                "value": 2
-              },
-              "value": 0
-            }
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "middle",
-            "dx": 4,
-            "fontSize": 11,
-            "fill": "#314155"
-          },
-          "encoding": {
-            "y": {
-              "field": "region_name",
-              "type": "nominal",
-              "sort": {
-                "field": "metric_value",
-                "order": "descending"
-              }
-            },
-            "x": {
-              "field": "metric_value"
-            },
-            "text": {
-              "field": "value_display"
-            }
-          }
-        }
-      ]
-    }
-  ],
-  "resolve": {
-    "scale": {
-      "color": "shared"
-    }
-  }
+  ]
 }

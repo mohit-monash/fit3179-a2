@@ -73,7 +73,7 @@
           "type": "quantitative",
           "legend": null,
           "scale": {
-            "scheme": "tealblues"
+            "range": ["#d9e2ec", "#1b9e77"]
           }
         },
         "tooltip": [
@@ -121,7 +121,7 @@
           ]
         }
       ],
-      "mark": { "type": "rule", "stroke": "#d62728", "strokeDash": [6, 3], "strokeWidth": 2 },
+      "mark": { "type": "rule", "stroke": "#d95f02", "strokeDash": [6, 3], "strokeWidth": 2 },
       "encoding": {
         "x": { "field": "national_salary_share_pct", "type": "quantitative" },
         "color": { "value": null }
@@ -147,7 +147,7 @@
         "dx": 6,
         "dy": -4,
         "fontSize": 12,
-        "fill": "#d62728",
+        "fill": "#d95f02",
         "fontWeight": "bold"
       },
       "encoding": {

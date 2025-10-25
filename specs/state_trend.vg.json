@@ -87,7 +87,8 @@
     "color": {
       "field": "region_name",
       "type": "nominal",
-      "title": "State / territory"
+      "title": "State / territory",
+      "scale": { "scheme": "Dark2" }
     },
     "tooltip": [
       { "field": "region_name", "title": "State" },
