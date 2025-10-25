@@ -40,7 +40,7 @@
       "lookup": "region_code",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
+          "url": "geo/SA3.json",
           "format": { "type": "json", "property": "features" }
         },
         "key": "properties.SA3_CODE21",

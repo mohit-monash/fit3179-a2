@@ -1,48 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "SA3 boundaries (no data) — ASGS 2021",
-
+  "description": "SA3 boundaries — minimal outline to verify geometry",
   "width": 720,
   "height": 520,
-
-  "projection": {
-    "type": "mercator",
-    "center": [134.472639, -27.439861],
-    "scale": 500
+  "projection": { "type": "equalEarth" },
+  "data": {
+    "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/SA3/MapServer/1/query?where=1=1&outFields=sa3_code_2021,sa3_name_2021&outSR=4326&returnGeometry=true&geometryPrecision=5&maxAllowableOffset=0.01&f=geojson",
+    "format": { "type": "json", "property": "features" }
   },
-
-  "title": {
-    "text": "SA3 boundaries (no data)",
-    "subtitle": ["Geometry: ABS ASGS 2021 SA3"],
-    "fontSize": 16
+  "mark": { "type": "geoshape", "filled": false, "stroke": "white", "strokeWidth": 0.5 },
+  "encoding": {
+    "shape": { "field": "geometry", "type": "geojson" },
+    "tooltip": [
+      { "field": "properties.sa3_name_2021", "title": "SA3" }
+    ]
   },
-
-  "config": {
-    "view": { "stroke": null },
-    "legend": { "titleFontSize": 12, "labelFontSize": 11 }
-  },
-
-  "layer": [
-    {
-      "data": { "sphere": true },
-      "mark": { "type": "geoshape", "fill": "#eef2f7", "stroke": "#cfd8dc" }
-    },
-    {
-      "data": { "graticule": { "step": [30, 30] } },
-      "mark": { "type": "geoshape", "filled": false, "stroke": "#d0d0d0" }
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/mohit-monash/fit3179-a2/main/geo/SA3.json",
-        "format": { "type": "json", "property": "features" }
-      },
-      "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 0.5, "fill": "#dddddd" },
-      "encoding": {
-        "shape": { "field": "geometry", "type": "geojson" },
-        "tooltip": [
-          { "field": "properties.SA3_NAME21", "title": "SA3" }
-        ]
-      }
-    }
-  ]
+  "config": { "view": { "stroke": null }, "background": "#eef2f7" }
 }
